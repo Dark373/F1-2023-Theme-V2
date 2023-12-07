@@ -1,0 +1,327 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_session"
+            },
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Session.Drivers}",
+                    "Limit": "{DriverLimit}",
+                    "IndexStart": "{StartPositionsFrom}",
+                    "RowSpacing": 30,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 12,
+                        "FontSize": 30,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        // //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",                                
+                                "ComponentName" : "position_cell",
+                                "paddingRight": 15,
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+                         
+                        {
+                            "Header": "",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "position_jump_cell"    
+                            }
+                        },
+                        //driver line
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "driver_line_cell"                                
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_line_cell"                                
+                            }
+                        },
+                        {
+                            "Header": "[GRID]",
+                            "Template": {
+                                "Padding": "50, 0",
+                                "MarginLeft": 0,
+    "Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+    ],
+                                "BlockType": "text",
+                                "Source": "{Item.GridPosition}",
+                                "HorizontalAlignment": "Left",
+                                "TextOptions": {
+                                    "FontName": "{Formula1-Italic}",
+                                    "FontSize": 30,
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        },
+                        {
+                            "Header": "[STOPS]",
+                            "Template": {
+                                "Padding": "12, 0",
+                                "MarginLeft": 0,
+    "Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+    ],
+                                "BlockType": "text",
+                                "Source": "{Item.PitsCount}",
+                                "RenderIf": "{Session.IsLiveData}",
+                                "HorizontalAlignment": "Left",
+                                "TextOptions": {
+                                    "FontName": "{Formula1-Italic}",
+                                    "FontSize": 30,
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        },
+                        {
+                            "Header": "[BEST]",
+                            "Template": {
+"Background": "{BackgroundDefault}",
+    "Triggers": [
+         {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+         {
+            "Condition": "{Item.IsRaceFastestLap}",
+            "Property": "Foreground",
+            "Value": "{FastestLapRaceSelectedForeground}",
+        },
+        {
+                                        "Condition" : "{Item.FastestLapTime, Converter=EmptyObjectToTrue}",
+                                        "Property" : "Source",
+                                        "Value" : ""
+                                    }
+    ],
+                                "BlockType": "text",
+                                "Padding": "25, 0",
+                                "Source": "{Item.FastestLapTime}",
+                                "HorizontalAlignment": "Left",
+                                "TextOptionsExtern" : "driverCell",     
+                                "TextOptions": {
+                                    "FontName": "{Formula1-Italic}",
+                                    "FontSize": 30,
+                                    "HorizontalAlignment": "Center"
+                                },
+                            }
+                        },
+
+                        //interval
+                        {
+                            "Header": "[TIME]",
+                            "Template": {
+                                "Padding": "25, 0",
+                                "MarginLeft": 0,
+    "Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+    ],
+                                "BlockType": "text",
+                                "Source": "{Item.IntervalRace}",
+                                "HorizontalAlignment": "Left",
+                                "TextOptions": {
+                                    "FontName": "{Formula1-Italic}",
+                                    "FontSize": 30,
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        },
+
+                        //points
+                        {
+                            "Header": "[POINTS]",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Padding": "24, 0",
+"Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+    ],
+                                "HorizontalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.DriverPointsString}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Bottom",
+                                        "FontName": "{Magistral-BoldItalic}",
+                                        "FontSize": 30,                                            
+                                        "HorizontalAlignment": "Center",
+                                        "Foreground": "FFFFFF",
+                                        "Triggers" : [
+                                                                    {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+                                                                    {
+                                                                        "Condition":"{Item.DriverPointsString, Converter=EmptyObjectToFalse}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : "+{Item.DriverPointsString}"
+                                                                    },
+                                                                    {
+                                                                        "Condition":"{Item.DriverPointsString, Converter=EmptyObjectToTrue}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : "ㅤ"
+                                                                    }
+                                                                ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+
+            //footer
+            {
+                "BlockType" : "stack",
+                "Margin" : "8, 36, 0, 0",
+                "Spacing" : 32,
+                "Items" :[
+                    {
+                        "BlockType" : "component",
+                        "Name" : "stickerFastestLap",
+                        "RenderIf" : "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                        "ComponentOptions" :
+                        {
+                            "ComponentName" : "sticker",
+                            "Vars" :
+                            {
+                                "bg" : "{FastestLapRaceStickerBackground}",
+                                "header" : "[FASTEST LAP]",
+                                "main" : "{Session.FastestLapDriver.Name}",
+                                "main2": "{Session.FastestLapDriver.RealName, Converter=StringToUpperString}",
+                                "team": "{Session.FastestLapDriver.Description, Converter=StringToUpperString}",
+                                "data" : "{Session.FastestLapTime}",
+                                "lap": "[LAP] {Session.FastestLapNumLap}",
+                                "point": "(+1 [point])"
+                            }
+                        }
+                    },
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,320 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+           //header block
+{
+    "Name": "headerBlock",
+    "MarginBottom": 0,
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 0,
+            "HorizontalAlignment": "Left",
+            "Items": [
+        {
+            "Name": "f1-logo",
+            "BlockType": "image",
+            "MarginBottom": 4,
+            "Height": 22,
+            "HorizontalAlignment" : "Left",
+            "Source": "images/f1-logo.png",
+            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
+            "Triggers": [
+        {
+            "Condition": "{DarkOfficialRenders}",
+            "Property": "Source",
+            "Value": "images/f1-logo-white.png",
+        }
+    ],
+        },
+        {
+            "Name":"LeagueLogo",
+            "BlockType":"image",
+            "Height": "{LogoSize}",
+            "Width":"auto",
+            "HorizontalAlignment" : "Left",
+            "Source": "{Season.LeagueInfo.LeagueLogo}",
+            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+        },        
+                //league name
+                {
+                    "BlockType" : "stack",
+                    "VerticalAlignment" : "Center",
+                    "Items" :
+                    [
+                         {                            
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} {Season.Name, Converter=StringToUpperString}",                            
+                            "FontName": "{Formula1-Black}",
+                            "FontSize": 35,
+                            "Foreground": "FF0000"
+                        },
+                    ]
+                },
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "MarginTop": -8,
+                    "Spacing": 0,
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "[{Statistics.Header, Converter=StringToUpperString}]",                            
+                            "FontName": "{Formula1-Black}",
+                            "FontSize": 35,
+                            "Foreground": "000000",
+                            "Triggers": [
+        {
+            "Condition": "{DarkOfficialRenders}",
+            "Property": "Foreground",
+            "Value": "FFFFFF",
+        },
+    ],
+                       },
+                    ]
+                },       
+            ]
+        },
+    ],
+},
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Statistics.Drivers}",
+                    "Limit": "{DriverLimit}",
+                    "IndexStart": "{StartPositionsFrom}",
+                    "RowSpacing": 12,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 30,
+                        "Foreground": "000000",
+                        "MarginBottom": 8,
+                                "Triggers": [
+                                    {
+                                        "Condition": "{DarkOfficialRenders}",
+                                        "Property": "Foreground",
+                                        "Value": "FFFFFF",
+                                    },
+                                 ]
+                    },
+                    "Columns": [
+                        // //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "RenderIf": "{RenderPositions}",
+                                "ComponentName": "position_cell_official",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "position": "{Item.Position}"
+                                    }
+                                }
+                            }
+                        },
+
+                        //driver line
+                        {
+                            "Header": "",
+                            "WidthStretch": true,
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "driver_line_cell_official"
+                            }
+                        },
+
+                        //column 0
+                        {
+                            "Header": "{Statistics.Column0.Header}",
+                            "IsSeparator": "{Statistics.Column0.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column0.GroupId}",
+                            "WidthStretch": true,
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value0"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 1
+                        {
+                            "Header": "{Statistics.Column1.Header}",
+                            "IsSeparator": "{Statistics.Column1.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column1.GroupId}",
+                            "WidthStretch": true,
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value1"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 2
+                        {
+                            "Header": "{Statistics.Column2.Header}",
+                            "WidthStretch": true,
+                            "IsSeparator": "{Statistics.Column2.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column2.GroupId}",
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value2"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 3
+                        {
+                            "Header": "{Statistics.Column3.Header}",
+                            "WidthStretch": true,
+                            "IsSeparator": "{Statistics.Column3.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column3.GroupId}",
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value3"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 4
+                        {
+                            "Header": "{Statistics.Column4.Header}",
+                            "IsSeparator": "{Statistics.Column4.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column4.GroupId}",
+                            "MarginLeft": 15,
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value4"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 5
+                        {
+                            "Header": "{Statistics.Column5.Header}",
+                            "IsSeparator": "{Statistics.Column5.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column5.GroupId}",
+                            "WidthStretch": true,
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value5"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 6
+                        {
+                            "Header": "{Statistics.Column6.Header}",
+                            "IsSeparator": "{Statistics.Column6.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column6.GroupId}",
+                            "WidthStretch": true,
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value6"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 7
+                        {
+                            "Header": "{Statistics.Column7.Header}",
+                            "IsSeparator": "{Statistics.Column7.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column7.GroupId}",
+                            "WidthStretch": true,
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value7"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 8
+                        {
+                            "Header": "{Statistics.Column8.Header}",
+                            "IsSeparator": "{Statistics.Column8.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column8.GroupId}",
+                            "WidthStretch": true,
+                            "MarginLeft": 15,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value8"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+        ]
+    }
+}

@@ -1,0 +1,173 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {               
+                "BlockType": "component",
+                "ComponentName": "header_block_stats",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header" : "PENALTIES"
+                    }
+                }               
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "MarginRight" : 200,
+              "TableOptions": {
+                "ItemsSource": "{Penalties.Drivers}",
+                "OrderByDescending": "PenaltyPointsActive",
+                "OrderByDescending2": "PenaltySeconds",
+                "OrderByDescending3": "PenaltyIngameSeconds",                
+                "RowSpacing": 16,
+                "ColSpacing": 16,
+                "HeaderTemplate": {
+                  "BlockType": "text",
+                  "MarginBottom": 8,
+                  "TextOptionsExtern": "tableColumnHeader"
+                },
+                "Columns": [
+
+                  //driver line
+                  {
+                    "Header": "",
+                    "WidthStretch": true,
+                    "Template": {
+                      "BlockType": "component",
+                      "ComponentName": "driver_line_cell"
+                    }
+                  },
+
+                  //points
+                  {
+                    "Header": "Active",
+                    "MarginLeft": 0,
+                    "Template": {
+
+                      "BlockType": "dock",
+                      "PaddingLeft": 24,
+                      "PaddingRight": 24,
+                      "Background": "{BackgroundDefault}",
+                      "Items": [
+                        {
+                          "BlockType": "text",
+                          "Source": "{Item.PenaltyPointsActive, Converter=NumberZeroToEmpty}",
+                          "HorizontalAlignment": "Center",
+                          "VerticalAlignment": "Center",
+                          "FontName": "{FontNameBold}",
+                          "Foreground": "#B83939",
+                          "TextOptionsExtern": "primaryNumber"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
+                    "Header": "Warnings",
+                    "MarginLeft": 0,
+                    "Template": {
+                      "BlockType": "text",
+                      "Padding": "24, 0",
+                      "Background": "{BackgroundDefault}",
+                      "Source": "{Item.PenaltyWarningsActive, Converter=NumberZeroToEmpty}",
+                      "FontName": "{FontNameBold}",
+                      "Foreground": "#B83939",
+                      "TextOptionsExtern": "primaryNumber"
+                    }
+                  },
+
+                  {
+                    "Header": "Stewards",
+                    "MarginLeft": 0,
+                    "Template": {
+                      "BlockType": "text",
+                      "Padding": "24, 0",
+                      "Background": "{BackgroundDefault}",
+                      "Source": "{Item.PenaltySeconds}s",
+                      "Foreground": "{StandingsPointsForeground}",
+                      "TextOptionsExtern": "primaryNumber",
+                      "Triggers": [
+                         {
+                                "Condition": "{Item.PenaltySeconds, Converter=NumberEquals, Parameter=0}",
+                                "Property": "Source",
+                                "Value": "ㅤ",
+                         }
+                       ],
+                    }
+                  },
+
+                  {
+                    "Header": "Positions",
+                    "MarginLeft": 0,
+                    "Template": {
+                      "BlockType": "text",
+                      "Padding": "24, 0",
+                      "Background": "{BackgroundDefault}",
+                      "Source": "{Item.PenaltyPositions, Converter=NumberZeroToEmpty}",
+                      "Foreground": "{StandingsPointsForeground}",
+                      "TextOptionsExtern": "primaryNumber"
+                    }
+                  },
+
+                  {
+                    "Header": "Game",
+                    "MarginLeft": 0,
+                    "Template": {
+                      "BlockType": "text",
+                      "Padding": "24, 0",
+                      "Background": "{BackgroundDefault}",
+                      "Source": "{Item.PenaltyIngameSeconds}s",
+                      "Foreground": "{StandingsPointsForeground}",
+                      "TextOptionsExtern": "primaryNumber",
+                      "Triggers": [
+                         {
+                                "Condition": "{Item.PenaltyIngameSeconds, Converter=NumberEquals, Parameter=0}",
+                                "Property": "Source",
+                                "Value": "ㅤ",
+                         }
+                       ],
+                    }
+                  },
+
+                  {
+                    "Header": "Overall",
+                    "MarginLeft": 0,
+                    "Template": {
+                      "BlockType": "text",
+                      "Padding": "24, 0",
+                      "Background": "{BackgroundDefault}",
+                      "Source": "{Item.PenaltyPointsOverall, Converter=NumberZeroToEmpty}",
+                      "Foreground": "{StandingsPointsForeground}",
+                      "TextOptionsExtern": "primaryNumber"
+                    }
+                  },
+
+                  {
+                    "Header": "Warns-AT",
+                    "MarginLeft": 0,
+                    "Template": {
+                      "BlockType": "text",
+                      "Padding": "24, 0",
+                      "Background": "{BackgroundDefault}",
+                      "Source": "{Item.PenaltyWarningsOverall, Converter=NumberZeroToEmpty}",
+                      "Foreground": "{StandingsPointsForeground}",
+                      "TextOptionsExtern": "primaryNumber"
+                    }
+                  }
+                ]
+              }
+            }
+        ]
+    }
+}

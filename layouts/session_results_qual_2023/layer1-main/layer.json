@@ -1,0 +1,193 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",    
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_session"
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "MarginRight" : 0,
+                "TableOptions": {
+                    "ItemsSource": "{Session.Drivers}",
+                    "Limit": "{DriverLimit}",
+                    "IndexStart": "{StartPositionsFrom}",
+                    "RowSpacing": 30,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 12,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",   
+                                "PaddingRight": 15,                            
+                                "ComponentName" : "position_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+
+                        //driver line
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "driver_line_cell"                                
+                            }
+                        },
+
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_line_cell"                                
+                            }
+                        },                        
+
+                        //time
+                                                {
+                            "Header": "[TIME]",
+                            "Template": {                                                               
+                                "BlockType": "dock",
+                                "Padding": "50, 0",                                
+                                "VerticalAlignment" : "Center",
+                                "HorizontalAlignment" : "Center",
+                                "Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+    ], 
+                                "Items" :[
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Time}",
+                                        "VerticalAlignment" : "Center",
+                                        "HorizontalAlignment": "Center",
+                                        "TextOptions": {
+                                            "FontName": "{Formula1-Italic}",
+                                            "FontSize": 30,
+                                            "HorizontalAlignment": "Center"
+                                        },
+                                        "Triggers" : [
+                                            {
+                                                "Condition" : "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                                "Setters" :
+                                                [
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "{FastestLapQualSelectedForeground}"
+                                                    }
+                                                ]
+                                            }
+                                        ]     
+                                    },
+                                ]                                 
+                            }
+                        },
+                        {
+                            "Header": "[TYRE]",
+                            "Template": {                                                               
+                                "BlockType": "dock",
+                                "Padding": "20, 0",                                
+                                "VerticalAlignment" : "Center",
+                                "HorizontalAlignment" : "Center",
+                                "Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+    ], 
+                                "Items" :[
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "tyres_{Item.FastestLapTyres}.png",
+                                        "VerticalAlignment" : "Center",
+                                        "HorizontalAlignment": "Center",
+                                        "Height": 38,
+                                        "Width": 38,    
+                                    },
+                                ]                                 
+                            }
+                        },
+                    ]
+                }
+            }, 
+            {
+                "BlockType" : "stack",
+                "Margin" : "0, 20, 0, 0",
+                "Spacing" : 0,
+                "Items" :[
+                    {
+                        "BlockType" : "component",
+                        "Name" : "stickerFastestLap",
+                        "ComponentOptions" :
+                        {
+                            "ComponentName" : "sticker_quali",
+                            "Vars" :
+                            {
+                                "bg" : "{FastestLapRaceStickerBackground}",
+                                "tyre" : "[AVAILABLE TYRES]:",
+                                "soft" :  "[SOFT]",
+                                "medium": "[MEDIUM]",
+                                "hard":   "[HARD]",
+                                "int" :   "[INTERMEDIATE]",
+                                "wet":    "[WET]"
+                            }
+                        }
+                    }
+                ]
+            }           
+        ]
+    }
+}
