@@ -1,0 +1,129 @@
+{
+    "BlockType": "stack",
+    "Height": "120",
+    "Width": "600",
+    "MarginRight": 50,
+    "MarginBottom": 20,
+    "BackgroundImage": "images/team/reservebg.png",
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "MarginLeft": 4,
+            "Orientation": "Vertical",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "MarginLeft": 0,
+                    "MarginTop": 5,
+                    "Orientation": "Horizontal",
+                    "Items": [
+                        //Clear
+                        {
+                            "BlockType": "image",
+                            "Height": 30,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "images/Clear.png",
+                                "VerticalAlignment": "Center"
+                            }
+                        },
+                        {
+                                                    "BlockType": "text",
+                                                    //"MinWidth": 400,
+                                                    "MarginLeft": 4,
+                                                    "Source": " {Item.Driver.Name, Converter=StringToUpperString}",
+                                                    "HorizontalAlignment": "Left",
+                                                    "VerticalAlignment": "Center",
+                                                    "FontName": "{Formula1-Italic}",
+                                                    "Foreground": "{Foregroundwhithe}",
+                                                    "FontSize": "25",
+                                                    "Triggers": [
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Driver.RealName}"
+                                                        },
+                                                         
+                                                    ]
+                                                }
+                                             ]
+                                                },
+                    ]
+                },
+                {
+                                            "BlockType": "stack",
+                                            "HorizontalAlignment": "Left",
+                                            "MarginLeft": 4,
+                                            "MarginBottom": -8,
+                                            "Orientation": "Horizontal",
+                                            "Items": [
+                                        {
+                                            "BlockType": "text",
+                                            "Source": " {Item.Driver.RealName, Converter=StringToUpperString}",
+                                            "HorizontalAlignment": "Left",
+                                            "VerticalAlignment": "Center",
+                                            "FontName": "{Magistral-BoldItalic}",
+                                            "Foreground": "{Item.Team.Color}",
+                                            "FontSize": "35",
+                                            "Triggers": [
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": " {Item.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                }
+                                             ]
+                                        }
+                                     ]
+                                  },
+                //Need another block for team logo and team text
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "MarginLeft": 14,
+                    "Orientation": "Horizontal",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "MinWidth": 400,
+                            "Source": "RESERVE",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundWhithe}",
+                            "FontSize": "20"
+                        }
+                    ]
+                }
+            ]
+        },
+        //right part
+        {
+            "BlockType": "dock",
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //number
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Driver.RaceNumber, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Right",
+                    "MarginRight": 10,
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameBold}",
+                    "FontSize": 55,
+                    "Opacity": 50
+                }
+            ]
+        }
+    ]
+}

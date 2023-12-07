@@ -1,0 +1,305 @@
+{
+  "BlockType": "stack",
+  "Padding": "24,12,24,12",
+  "Orientation": "Vertical",
+  "Spacing": 16,
+
+  "Items": [
+    //driver line
+    {
+      "BlockType": "stack",
+      "Orientation": "Horizontal",
+      "Items": [
+        //flag
+        {
+          "BlockType": "image",
+          "Height": 36,
+          "MarginRight": 12,
+          "VerticalAlignment": "Center",
+          "ImageOptions": {
+            "Path": "<{Penalty.Driver.Nationality.LogoPath}>",
+            "VerticalAlignment": "Center"
+          }
+        },
+
+        //name
+        {
+          "BlockType": "text",
+          "MarginLeft": 8,
+          "MarginRight": 64,
+          "Source": "<{Penalty.Driver.Name}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center",
+          "FontName": "{FontNameDefault}",
+          "FontSize": 48
+        },
+
+        //no penalty
+        {
+          "BlockType": "text",
+          "Source": "NO FURTHER ACTION",
+          "RenderIf": "<{Penalty.IsNoPunishment}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center",
+          "FontName": "{FontNameBold}",
+          "Foreground": "#45CE45",
+          "Background": "#124512",
+          "Padding": "16",
+          "FontSize": 32
+        },
+
+        //cancelled
+        {
+          "BlockType": "text",
+          "Source": "CANCELLED",
+          "MarginRight": 12,
+          "RenderIf": "<{Penalty.IsCancelled}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center",
+          "FontName": "{FontNameBold}",
+          "Foreground": "#45CE45",
+          "Background": "#124512",
+          "Padding": "16",
+          "FontSize": 32
+        },
+
+        //pp
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> PP",
+          "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center",
+          "FontName": "{FontNameBold}",
+          "Foreground": "#CE4545",
+          "Background": "#451212",
+          "Padding": "16",
+          "FontSize": 32
+        },
+
+        //warning
+        {
+          "BlockType": "text",
+          "Source": "+W",
+          "RenderIf": "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center",
+          "FontName": "{FontNameBold}",
+          "Foreground": "#CE4545",
+          "Background": "#451212",
+          "Padding": "16",
+          "FontSize": 32
+        },
+
+        //pen. time
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.PenaltySeconds, Converter=NumberToSignedString}> sec.",
+          "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center",
+          "FontName": "{FontNameBold}",
+          "Foreground": "#C07373",
+          "Background": "#451212",
+          "Padding": "16",
+          "FontSize": 32
+        },
+
+        //pen. pos
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> pos.",
+          "RenderIf": "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center",
+          "FontName": "{FontNameBold}",
+          "Foreground": "#C07373",
+          "Background": "#451212",
+          "Padding": "16",
+          "FontSize": 32
+        },
+
+        //action
+        {
+          "BlockType": "stack",
+          "Orientation": "Horizontal",
+          "Items": [
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.PenaltyActionString}>",
+              "RenderIf": "<{Penalty.IsAction}>",
+              "HorizontalAlignment": "Left",
+              "VerticalAlignment": "Center",
+              "FontName": "{FontNameBold}",
+              "Foreground": "#D53131",
+              "Background": "#343400",
+              "Padding": "16",
+              "FontSize": 28
+            },
+
+            {
+              "BlockType": "text",
+              "MaxWidth": 600,
+              "Source": "(<{Penalty.PenaltyActionValue}>)",
+              "RenderIf": "<{Penalty.PenaltyActionValue, Converter=NumberIsNotZero}>",
+              "HorizontalAlignment": "Left",
+              "VerticalAlignment": "Center",
+              "FontName": "{FontNameBold}",
+              "Foreground": "#D53131",
+              "Background": "#343400",
+              "Padding": "16",
+              "FontSize": 28
+            }
+          ]
+        }
+      ]
+
+
+    },
+
+
+    //offense line
+    {
+      "BlockType": "stack",
+      "Orientation": "Horizontal",
+      "Margin": "0,24,0,0",
+      "RenderIf": "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+      "Items": [
+        {
+          "BlockType": "text",
+          "Source": "Offense:",
+          "Width": 150,
+          //"MarginRight" : 16,                                  
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#686868",
+          "FontSize": 28
+        },
+
+        {
+          "BlockType": "text",
+          "MaxWidth": 1400,
+          "Height": "*",
+          "Source": "<{Penalty.Offense}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#B8B8B8",
+          "FontSize": 28,
+          "TextOptions": {
+            "Wrap": true
+          }
+        }
+      ]
+    },
+
+    //description line
+    {
+      "BlockType": "stack",
+      "Orientation": "Horizontal",
+      "Margin": "0,24,0,0",
+      "RenderIf": "<{Penalty.Description, Converter=EmptyObjectToFalse}>",
+      "Items": [
+        {
+          "BlockType": "text",
+          "Source": "Details:",
+          "Width": 150,
+          //"MarginRight" : 16,                                  
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#686868",
+          "FontSize": 28
+        },
+
+        {
+          "BlockType": "text",
+          "MaxWidth": 1400,
+          "Height": "*",
+          "Source": "<{Penalty.Description}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#B8B8B8",
+          "FontSize": 28,
+          "TextOptions": {
+            "Wrap": true
+          }
+        }
+      ]
+    },
+
+    //involved
+    {
+      "BlockType": "stack",
+      "Orientation": "Horizontal",
+      "Margin": "0,24,0,0",
+      "RenderIf": "<{Penalty.DriversInvolved, Converter=EmptyObjectToFalse}>",
+      "Items": [
+        {
+          "BlockType": "text",
+          "Source": "Involved:",
+          "Width": 150,
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#686868",
+          "FontSize": 28
+        },
+
+        {
+          "BlockType": "text",
+          "MaxWidth": 1400,
+          "Height": "*",
+          "Source": "<{Penalty.DriversInvolvedString}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#A0A513",
+          "FontSize": 28,
+          "TextOptions": {
+            "Wrap": true
+          }
+        }
+      ]
+    },
+
+    //verdict
+    {
+      "BlockType": "stack",
+      "Orientation": "Horizontal",
+      "Margin": "0,24,0,0",
+      "RenderIf": "<{Penalty.Verdict, Converter=EmptyObjectToFalse}>",
+      "Items": [
+        {
+          "BlockType": "text",
+          "Source": "Decision:",
+          "Width": 150,
+          //"MarginRight" : 16,                                  
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#686868",
+          "FontSize": 28
+        },
+
+        {
+          "BlockType": "text",
+          "MaxWidth": 1400,
+          "Height": "*",
+          "Source": "<{Penalty.Verdict}>",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Top",
+          "FontName": "{FontNameDefault}",
+          "Foreground": "#B8B8B8",
+          "FontSize": 28,
+          "TextOptions": {
+            "Wrap": true
+          }
+        }
+      ]
+    }
+
+  ]
+} 

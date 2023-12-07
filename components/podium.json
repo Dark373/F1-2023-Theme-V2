@@ -1,0 +1,466 @@
+{
+    "BlockType" : "stack",
+    "Background" : "{Item.Team.Color}",
+    "Width" : "220",
+    "Height" : "360",
+    "Triggers" : [
+                                         {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
+                                            "Property" : "Background",
+                                            "Value" : "15185F"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                                            "Property" : "Background",
+                                            "Value" : "FE0000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                                            "Property" : "Background",
+                                            "Value" : "00A19C"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
+                                            "Property" : "Background",
+                                            "Value" : "0C1E2C"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
+                                            "Property" : "Background",
+                                            "Value" : "FD8000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
+                                            "Property" : "Background",
+                                            "Value" : "A50E2D"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
+                                            "Property" : "Background",
+                                            "Value" : "015850"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
+                                            "Property" : "Background",
+                                            "Value" : "B6BABD"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                                            "Property" : "Background",
+                                            "Value" : "022948"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
+                                            "Property" : "Background",
+                                            "Value" : "03A0E3"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=var}",
+                                            "Property" : "Background",
+                                            "Value" : "FFFFFF"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=prema}",
+                                            "Property" : "Background",
+                                            "Value" : "FFFFFF"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=trident}",
+                                            "Property" : "Background",
+                                            "Value" : "FFFFFF"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=carlin}",
+                                            "Property" : "Background",
+                                            "Value" : "000000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                            "Property" : "Height",
+                                            "Value" : "420"
+                                        },
+                                        {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                            "Property" : "Height",
+                                            "Value" : "380"
+                                        },
+                                    ],
+    "Items" : [
+        {
+            "BlockType" : "dock",
+            "Width" : "500",
+            "Height" : "500",
+            "Orientation" : "Vertical",
+            "HorizontalAlignment" : "Center",
+            "Items" : [
+                {
+                    "BlockType" : "dock",
+                    "Orientation" : "Horizontal",
+                    "Items": [
+                        {
+                            "BlockType" : "stack",
+                            "Orientation" : "Vertical",
+                            "HorizontalAlignment" : "Left",
+                            "Items" : [
+
+                                {
+                                    "BlockType" : "text",
+                                    "Margin" : "10,5,0,0",
+"Orientation" : "Horizontal",
+                                    "Source" : "[{Item.Position}]",
+                                    "Foreground" : "#ffffff",
+                                    "FontName" : "{Formula1-Black}",
+                                    "FontSize" : "60",
+                                    "TextOptions" : {
+                                        "HorizontalAlignment" : "Left"
+                                    }, 
+                                    "Triggers" : [
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                },
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=var}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=prema}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=trident}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                {
+                                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "MarginTop",
+                                            "Value" : "0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "MarginTop",
+                                            "Value" : "0"
+                                        }
+                                    ]
+                                },
+                             ]
+                          },
+                                {
+                                    "BlockType" : "text",
+                                    "Margin" : "48,-71,0,21",
+"Orientation" : "Horizontal",
+                                    "Source" : "[TH]",
+                                    "Foreground" : "#ffffff",
+                                    "FontName" : "{Formula1-Black}",
+                                    "FontSize" : "35",
+                                    "TextOptions" : {
+                                        "HorizontalAlignment" : "Left"
+                                    },
+                                    "Triggers" : [
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                },
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=var}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=prema}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=trident}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                        {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
+                                            "Property" : "Foreground",
+                                            "Value" : "000000"
+                                        },
+                                {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                            "Property" : "Source",
+                                            "Value" : "[ST]"
+                                },
+                                {
+                                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "[ND]"
+                                        },
+                                        {
+                                            "Property" : "MarginLeft",
+                                            "Value" : "54"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "[RD]"
+                                        },
+                                        {
+                                            "Property" : "MarginLeft",
+                                            "Value" : "50"
+                                        }
+                                    ]
+                                },
+                             ]
+                         },
+                
+                {
+                    "BlockType": "image",
+                    "Height": 180,
+                    "MarginTop": -30,
+                    "MarginLeft": -25,
+                    "PaddingRight": 0,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    },
+                    "Triggers" : [
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
+                                            "Property" : "Source",
+                                            "Value" : "images/mclaren.white"
+                                },
+                                {
+                                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "MarginTop",
+                                            "Value" : "-25"
+                                        },
+                                        {
+                                            "Property" : "MarginLeft",
+                                            "Value" : "-35"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "MarginTop",
+                                            "Value" : "-25"
+                                        },
+                                        {
+                                            "Property" : "MarginLeft",
+                                            "Value" : "-35"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "MarginTop",
+                                            "Value" : "0"
+                                        },
+                                        {
+                                            "Property" : "MarginLeft",
+                                            "Value" : "-17"
+                                        },
+                                        {
+                                            "Property" : "Height",
+                                            "Value" : "252"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                                {
+                            "BlockType" : "image",
+                            "HorizontalAlignment" : "Left",
+                            "Margin" : "-35,0,0,0",
+                            "Source" : "images/suit/{Item.Team.Name}_{Item.SeatPosition}.png",
+                            "Width" : "400",
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : ""
+                                        },
+                                    ]
+                                },
+                                {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                            "Property" : "MarginTop",
+                                            "Value" : "-220"
+                                },
+                                {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                            "Property" : "MarginTop",
+                                            "Value" : "-225"
+                                },
+                                {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                            "Property" : "MarginTop",
+                                            "Value" : "-225"
+                                }
+                            ]
+                        }, 
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "BlockType" : "stack",
+                    "RenderIf": "{UseDriverAvatars, Converter=BoolReverse}",
+                    "Background": "000000",
+                    "HorizontalAlignment" : "Center", 
+                    "Orientation" : "Vertical",
+                    "Triggers" : [
+                                {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                            "Property" : "MarginTop",
+                                            "Value" : 60
+                                },
+                                {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                            "Property" : "MarginTop",
+                                            "Value" : 21
+                                },
+                                {
+                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                            "Property" : "MarginTop",
+                                            "Value" : "1"
+                                }
+                            ],
+                    "Items": [
+                {
+                    "BlockType" : "text",
+                    "Source" : "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}",
+                    "Foreground" : "#ffffff",
+                    "FontName" : "{Formula1-Black}",
+                    "FontSize" : "18",
+                    "Padding" : "120,10",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlignment" : "Center",
+                    "Triggers": [
+                                   {
+                                        "Condition":"{RealNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition":"{InGameNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                            }
+                                        ]
+                                   },
+                                   {
+                                        "Condition":"{SwitchNameFields}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
+                                            },
+                                        ]
+                                    },
+                                 ]
+                }, 
+              ]
+            },
+            {
+                    "BlockType" : "stack",
+                    "RenderIf": "{UseDriverAvatars}",
+                    "Background": "14141C",
+                    "HorizontalAlignment" : "Center", 
+                    "Orientation" : "Vertical",
+                    "Triggers" : [
+                                {
+                                            "Condition" : "{DarkOfficialRenders, Converter=BoolReverse}",
+                                            "Property" : "Background",
+                                            "Value" : "000000"
+                                }
+                            ],
+                    "Items": [
+                {
+                    "BlockType" : "text",
+                    "Source" : "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}",
+                    "Foreground" : "#ffffff",
+                    "FontName" : "{Formula1-Black}",
+                    "FontSize" : "18",
+                    "Padding" : "120,10",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlignment" : "Center",
+                    "Triggers": [
+                                   {
+                                        "Condition":"{RealNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition":"{InGameNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                            }
+                                        ]
+                                   },
+                                   {
+                                        "Condition":"{SwitchNameFields}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
+                                            },
+                                        ]
+                                    },
+                                 ]
+                }, 
+              ]
+            },
+          ]
+        }        
+    ],
+}

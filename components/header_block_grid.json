@@ -1,0 +1,126 @@
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Padding" : "0,0",
+    "Orientation": "Horizontal",
+    "Items": [
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "MarginTop" : 15,
+            "MarginLeft" : 15,
+            "MarginRight" : 48,
+            "Spacing": 6,
+            "HorizontalAlignment": "Left",
+            "Items": [
+                {
+                    "BlockType": "text",                            
+                    "VerticalAlignment": "Center",                            
+                    "Source": "<header>",
+                    "Width" : 750,
+                    "FontName" : "{FontNameBold}",
+                    "Foreground" : "{HeaderForeground}",
+                    "FontSize": 60,
+                    "TextOptions" : {
+                        "Wrap" : true,
+                    }
+                },
+                {                            
+                    "BlockType": "text",                                                                         
+                    "MarginLeft": 12,
+                    "VerticalAlignment": "Center",
+                    "Source": "<subHeader>",
+                    "FontName" : "{FontNameBold}",
+                    "Foreground" : "{HeaderForeground}",
+                    "FontSize": 40
+                }
+            ]
+        },
+        {
+            "Name": "headerCenterPart",
+            "BlockType": "stack",
+            "Orientation": "Horizontal",
+            "HorizontalAlignment" : "Center",
+            "MarginTop" : 15,
+            "Spacing": 8,
+            "Items": [
+                {
+                    "Name": "leagueLogo",
+                    "BlockType": "image",
+                    "VerticalAlignment" : "Top",
+                    "Height": 145,
+                    "MarginTop": -10,
+                    "MarginLeft": 36,
+                    "Source": "{Season.LeagueInfo.LeagueLogo}"
+                },
+                {
+                    "Name" : "middleheader",
+                    "BlockType":"stack",
+                    "Orientation" : "Vertical",
+                    "HorizontalAlignment" : "Center",
+                    "Items" :[
+                        {
+                            "BlockType" : "text",
+                            "FontSize" : 60,
+                            "Foreground" : "{HeaderForeground}",
+                            "FontName" : "{FontNameBold}",
+                            "VerticalAlignment" : "Top",
+                            "HorizontalAlignment" : "Center",
+                            "Source" : "{Season.Name}"
+                        },
+                        {
+                            "BlockType" : "text",
+                            "FontSize" : 40,
+                            "Foreground" : "{HeaderForeground}",
+                            "FontName" : "{FontNameBold}",
+                            "VerticalAlignment" : "Top",
+                            "HorizontalAlignment" : "Center",
+                            "Source" : "{Season.LeagueInfo.LeagueFullName}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "MarginLeft" : 48,
+            "MarginTop" : 15,
+            "MarginRight" : 15,
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Vertical",
+                            "Spacing": 8,
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "[Round] {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground" : "{HeaderForeground}",
+                                    "FontSize": 40
+                                },
+
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "[Season progress] {Season.SeasonProgressPercent}%",
+                                    "FontName": "{FontNameBold}",  
+                                    "Foreground" : "{HeaderForeground}",                                 
+                                    "FontSize": 40
+                                }                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

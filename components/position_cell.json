@@ -1,0 +1,35 @@
+{
+    "BlockType": "text",
+    "Source": "<position>",
+    "Width": 45,
+    "Height": 0,
+    "FontName": "{Formula1-Italic}",
+    "FontSize": 30,
+    "Foreground": "{BackgroundAlt1}",
+    "TextOptions": {
+        "HorizontalAlignment": "Center"       
+    },
+    "Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "FFFFFF"
+        },
+        {
+            "Condition": "{ChampionColour}",
+            "Property": "Background",
+            "Value": "E9C652"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+            "Property": "Background",
+            "Value": "{BackgroundDefault}"
+        },
+    ],
+}

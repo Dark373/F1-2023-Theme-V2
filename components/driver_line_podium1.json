@@ -1,0 +1,218 @@
+{
+    "BlockType": "dock",
+    "Width": "573",
+    "Background": "14141C",
+    "Triggers": [
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]   
+                                                            },
+                                                            {
+                                                                "Condition" : "{DriverLimit, Converter=NumberLess, Parameter=10}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Width",
+                                                                        "Value" : "586"
+                                                                    }
+                                                                ]   
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=2}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=4}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=6}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=8}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=10}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=12}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]      
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=14}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]      
+                                                            },
+                                                            {
+                                                                "Condition" : "{ItemIndex, Converter=NumberEquals, Parameter=16}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Background",
+                                                                        "Value" : "#0C0B11"
+                                                                    }
+                                                                ]      
+                                                            },
+                                                        ],
+                                                    
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Height": 42,
+                    "MarginRight": 5,
+                    "PaddingLeft": 28,
+                    "PaddingRight": 28,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    },
+                },
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 800,
+                    "Source": "{Item.Driver.Name}",
+                    "Foreground": "FFFFFF",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{Formula1-Regular}",
+                    "FontSize": 20,
+                    "Triggers": [
+                                   {
+                                        "Condition":"{RealNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition":"{InGameNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                            }
+                                        ]
+                                   },
+                                   {
+                                        "Condition":"{SwitchNameFields}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.RealName}"
+                                            }
+                                        ]
+                                    },
+                                 ]
+                },
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,
+                    "MarginLeft": 8,
+                    "Source": "{Item.Driver.RealName, Converter=StringToUpperString}",
+                    "Foreground": "FFFFFF",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{Formula1-Bold}",
+                    "FontSize": 20,
+                    "Triggers": [
+                                   {
+                                        "Condition":"{RealNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": ""
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition":"{InGameNameOnRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": ""
+                                            }
+                                        ]
+                                   },
+                                   {
+                                        "Condition":"{SwitchNameFields}",
+                                        "Setters":[
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Driver.Name, Converter=StringToUpperString}"
+                                            }
+                                        ]
+                                    },
+                                 ]
+                },
+                {
+                    "BlockType": "text",
+                    "MarginLeft": 8,
+                    "MaxWidth": 1000,                    
+                    "Source": " {Item.Team.Name, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Left",
+                    "MarginRight": 100,
+                    "FontSize": 10,
+                    "VerticalAlignment": "Center",
+                    "Foreground": "FFFFFF",
+                    "TextOptionsExtern": "teamCell" 
+                },
+            ]
+        },
+    ]
+}

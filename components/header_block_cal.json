@@ -1,0 +1,103 @@
+//header block
+{
+    "Name": "headerBlock",
+    "MarginLeft": 10,
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 0,
+            "HorizontalAlignment": "Left",
+            "Items": [
+            {
+            "Name": "f1-logo",
+            "BlockType": "image",
+            "Height": "55",
+            "HorizontalAlignment" : "Left",
+            "Source": "images/f1-logo.png",
+            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
+            "Triggers": [
+        {
+            "Condition": "{DarkOfficialRenders}",
+            "Property": "Source",
+            "Value": "images/f1-logo-white.png",
+        }
+    ],
+        },
+        {
+            "Name":"LeagueLogo",
+            "BlockType":"image",
+            "Height": "{LogoSize}",
+            "Width":"auto",
+            "HorizontalAlignment" : "Left",
+            "Source": "{Season.LeagueInfo.LeagueLogo}",
+            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+        },
+                //league name
+                {
+                    "BlockType" : "stack",
+                    "VerticalAlignment" : "Center",
+                    "Items" :
+                    [
+                         {                            
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "{Season.Name, Converter=StringToUpperString}",                            
+                            "FontName": "{Formula1-Black}",
+                            "FontSize": 110,
+                            "Foreground": "FF0000",
+                            "Triggers":[
+                                    {
+                                        "Condition":"{SecondCalendarEventsInColumn, Converter=NumberEquals, Parameter=0}",
+                                        "Setters":[
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 70
+                                            }
+                                        ]
+                                    }
+                                ]
+                        },
+                     ]
+                },
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "MarginTop": -24,
+                    "Spacing": 0,
+                    "Items": [
+                        {
+                            "Name": "leagueLogo",
+                            "BlockType": "text",
+                            "Foreground": "000000",
+                            "FontSize": 110,
+                            "FontName": "Formula1-Black",
+                            "Source": "[CALENDAR]",
+                            "Triggers": [
+        {
+            "Condition": "{DarkOfficialRenders}",
+            "Property": "Foreground",
+            "Value": "FFFFFF",
+        },
+                                    {
+                                        "Condition":"{SecondCalendarEventsInColumn, Converter=NumberEquals, Parameter=0}",
+                                        "Setters":[
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 108
+                                            }
+                                        ]
+                                    }
+                                ]
+                        },
+                    ]
+                },       
+            ]
+        },
+    ]
+}
