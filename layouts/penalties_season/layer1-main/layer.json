@@ -9,7 +9,7 @@
             //header block
             {               
                 "BlockType": "component",
-                "ComponentName": "header_block_stats",
+                "ComponentName": "header_block_stats_official",
                 "ComponentOptions" :
                 {
                     "Vars":
@@ -24,18 +24,29 @@
                 "Name": "mainTable",
                 "BlockType": "table",
                 "Margin" : "{MarginTable}",
-                "MarginRight" : 200,
+                "MarginRight" : 15,
               "TableOptions": {
                 "ItemsSource": "{Penalties.Drivers}",
                 "OrderByDescending": "PenaltyPointsActive",
                 "OrderByDescending2": "PenaltySeconds",
-                "OrderByDescending3": "PenaltyIngameSeconds",                
-                "RowSpacing": 16,
-                "ColSpacing": 16,
+                "OrderByDescending3": "PenaltyIngameSeconds", 
+                "Limit": "{DriverLimit}",
+                "IndexStart": "{StartPositionsFrom}",               
+                "RowSpacing": 12,
+                "ColSpacing": 0,
                 "HeaderTemplate": {
                   "BlockType": "text",
-                  "MarginBottom": 8,
-                  "TextOptionsExtern": "tableColumnHeader"
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 30,
+                        "Foreground": "000000",
+                        "MarginBottom": 8,
+                                "Triggers": [
+                                    {
+                                        "Condition": "{DarkOfficialRenders}",
+                                        "Property": "Foreground",
+                                        "Value": "FFFFFF",
+                                    },
+                                 ]
                 },
                 "Columns": [
 
@@ -45,124 +56,166 @@
                     "WidthStretch": true,
                     "Template": {
                       "BlockType": "component",
-                      "ComponentName": "driver_line_cell"
+                      "ComponentName": "driver_line_cell_official"
                     }
                   },
 
                   //points
                   {
-                    "Header": "Active",
-                    "MarginLeft": 0,
+                    "Header": "[PP]",
+                    "MarginLeft": 15,
                     "Template": {
 
                       "BlockType": "dock",
-                      "PaddingLeft": 24,
-                      "PaddingRight": 24,
                       "Background": "{BackgroundDefault}",
                       "Items": [
                         {
                           "BlockType": "text",
+                          "Padding": "30, 0",
                           "Source": "{Item.PenaltyPointsActive, Converter=NumberZeroToEmpty}",
                           "HorizontalAlignment": "Center",
                           "VerticalAlignment": "Center",
-                          "FontName": "{FontNameBold}",
                           "Foreground": "#B83939",
-                          "TextOptionsExtern": "primaryNumber"
+                          "TextOptionsExtern": "OfficialNumber"
                         }
-                      ]
+                      ],
+            "Triggers" : [
+                {
+                     "Condition": "{DarkOfficialRenders}",
+                     "Property": "Background",
+                     "Value": "171717"
+                },
+             ]
                     }
                   },
 
                   {
-                    "Header": "Warnings",
-                    "MarginLeft": 0,
+                    "Header": "[WARNINGS]",
+                    "MarginLeft": 15,
                     "Template": {
                       "BlockType": "text",
-                      "Padding": "24, 0",
+                      "Padding": "12, 0",
                       "Background": "{BackgroundDefault}",
                       "Source": "{Item.PenaltyWarningsActive, Converter=NumberZeroToEmpty}",
-                      "FontName": "{FontNameBold}",
                       "Foreground": "#B83939",
-                      "TextOptionsExtern": "primaryNumber"
+                      "TextOptionsExtern": "OfficialNumber",
+            "Triggers" : [
+                {
+                     "Condition": "{DarkOfficialRenders}",
+                     "Property": "Background",
+                     "Value": "171717"
+                },
+             ]
                     }
                   },
 
                   {
-                    "Header": "Stewards",
-                    "MarginLeft": 0,
+                    "Header": "[STEWARDS]",
+                    "MarginLeft": 15,
                     "Template": {
                       "BlockType": "text",
-                      "Padding": "24, 0",
+                      "Padding": "12, 0",
                       "Background": "{BackgroundDefault}",
                       "Source": "{Item.PenaltySeconds}s",
-                      "Foreground": "{StandingsPointsForeground}",
-                      "TextOptionsExtern": "primaryNumber",
+                      "Foreground": "FFFFFF",
+                      "TextOptionsExtern": "OfficialNumber",
                       "Triggers": [
                          {
                                 "Condition": "{Item.PenaltySeconds, Converter=NumberEquals, Parameter=0}",
                                 "Property": "Source",
                                 "Value": "ㅤ",
-                         }
+                         },
+                {
+                     "Condition": "{DarkOfficialRenders}",
+                     "Property": "Background",
+                     "Value": "171717"
+                },
                        ],
                     }
                   },
 
                   {
-                    "Header": "Positions",
-                    "MarginLeft": 0,
+                    "Header": "[POSITIONS]",
+                    "MarginLeft": 15,
                     "Template": {
                       "BlockType": "text",
-                      "Padding": "24, 0",
+                      "Padding": "12, 0",
                       "Background": "{BackgroundDefault}",
                       "Source": "{Item.PenaltyPositions, Converter=NumberZeroToEmpty}",
-                      "Foreground": "{StandingsPointsForeground}",
-                      "TextOptionsExtern": "primaryNumber"
+                      "Foreground": "FFFFFF",
+                      "TextOptionsExtern": "OfficialNumber",
+                      "Triggers": [
+                         {
+                                "Condition": "{DarkOfficialRenders}",
+                                "Property": "Background",
+                                "Value": "171717",
+                         },
+                       ]
                     }
                   },
 
                   {
-                    "Header": "Game",
-                    "MarginLeft": 0,
+                    "Header": "[GAME]",
+                    "MarginLeft": 15,
                     "Template": {
                       "BlockType": "text",
-                      "Padding": "24, 0",
+                      "Padding": "12, 0",
                       "Background": "{BackgroundDefault}",
                       "Source": "{Item.PenaltyIngameSeconds}s",
-                      "Foreground": "{StandingsPointsForeground}",
-                      "TextOptionsExtern": "primaryNumber",
+                      "Foreground": "FFFFFF",
+                      "TextOptionsExtern": "OfficialNumber",
                       "Triggers": [
                          {
                                 "Condition": "{Item.PenaltyIngameSeconds, Converter=NumberEquals, Parameter=0}",
                                 "Property": "Source",
                                 "Value": "ㅤ",
-                         }
+                         },
+                         {
+                                "Condition": "{DarkOfficialRenders}",
+                                "Property": "Background",
+                                "Value": "171717",
+                         },
                        ],
                     }
                   },
 
                   {
-                    "Header": "Overall",
-                    "MarginLeft": 0,
+                    "Header": "[PP-AT]",
+                    "MarginLeft": 15,
                     "Template": {
                       "BlockType": "text",
-                      "Padding": "24, 0",
+                      "Padding": "12, 0",
                       "Background": "{BackgroundDefault}",
                       "Source": "{Item.PenaltyPointsOverall, Converter=NumberZeroToEmpty}",
-                      "Foreground": "{StandingsPointsForeground}",
-                      "TextOptionsExtern": "primaryNumber"
+                      "Foreground": "FFFFFF",
+                      "TextOptionsExtern": "OfficialNumber",
+                      "Triggers": [
+                         {
+                                "Condition": "{DarkOfficialRenders}",
+                                "Property": "Background",
+                                "Value": "171717",
+                         },
+                       ],
                     }
                   },
 
                   {
-                    "Header": "Warns-AT",
-                    "MarginLeft": 0,
+                    "Header": "[WARNS-AT]",
+                    "MarginLeft": 15,
                     "Template": {
                       "BlockType": "text",
-                      "Padding": "24, 0",
+                      "Padding": "12, 0",
                       "Background": "{BackgroundDefault}",
                       "Source": "{Item.PenaltyWarningsOverall, Converter=NumberZeroToEmpty}",
-                      "Foreground": "{StandingsPointsForeground}",
-                      "TextOptionsExtern": "primaryNumber"
+                      "Foreground": "FFFFFF",
+                      "TextOptionsExtern": "OfficialNumber",
+                      "Triggers": [
+                         {
+                                "Condition": "{DarkOfficialRenders}",
+                                "Property": "Background",
+                                "Value": "171717",
+                         },
+                       ],
                     }
                   }
                 ]

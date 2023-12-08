@@ -1,13 +1,33 @@
 {
     "BlockRoot": {
         "Name": "root",
-        "BlockType": "stack",
+        "BlockType": "dock",
+        "Orientation" : "Vertical",
         "Items": [
             {
-                "Name": "bg0",
-                "BlockType": "image", 
-                "Source": "bg0.png"
+                "BlockType": "image",
+                "RenderIf": "{DarkOfficialRenders}", 
+                "Source": "bg_cal_dark.png",
+                "Triggers": [
+                   {
+                       "Condition": "{PlainBackground}",
+                       "Property": "Source",
+                       "Value": "bg2.png"
+                   }
+               ],
+            },
+            {
+                "BlockType" : "image",
+                "RenderIf": "{DarkOfficialRenders, Converter=BoolReverse}",
+                "Source" : "bg_cal_light.png",
+                "Triggers": [
+                   {
+                       "Condition": "{PlainBackground}",
+                       "Property": "Source",
+                       "Value": "bg1.png"
+                   }
+               ],
             }
-        ]
+        ],
     }
 }
