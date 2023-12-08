@@ -35,7 +35,7 @@
                     "Source": "[{Item.Team.FullName, Converter=StringToUpperString}]",
                     "HorizontalAlignment": "Left",
                     "MarginTop": 4,
-                    "MarginLeft": 260,
+                    "MarginLeft": 280,
                     "FontName": "{Formula1-Black}",
                     "FontSize": 42,
                     "VerticalAlignment": "Center",
