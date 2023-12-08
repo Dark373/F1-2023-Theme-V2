@@ -11,4 +11,10 @@
         "FontSize": 30,
         "Foreground": "FFFFFF",     
     },
+    {
+        "Name" : "OfficialNumber",
+        "FontName": "{Formula1-Black}",
+        "FontSize": 48,
+        "HorizontalAlignment" : "Center"        
+    },
 ]
