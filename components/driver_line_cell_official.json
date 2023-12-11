@@ -49,17 +49,7 @@
                     "Foreground" : "#ffffff",
                     "FontName": "{Formula1-Black}",
                     "Triggers" : [
-                        {
-                                                    "Condition": "{DarkOfficialRenders, Converter=BoolReverse}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Foreground",
-                                                            "Value": "000000"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                                                                {
+                                                {
                                                     "Condition": "{Item.Driver.Name, Converter=EmptyObjectToFalse}",
                                                     "Setters": [
                                                         {
@@ -79,17 +69,7 @@
                                                          
                                                     ]
                                                 },
-                        {
-                                                    "Condition": "{DarkOfficialRenders}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Foreground",
-                                                            "Value": "FFFFFF"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                         {
+                                                {
                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                     "Setters": [
                                                         {
@@ -111,6 +91,26 @@
                                                 },
                                                 {
                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=virtuosi}",
                                                     "Setters": [
                                                         {
                                                             "Property": "Foreground",
