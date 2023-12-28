@@ -249,7 +249,7 @@
                     "PaddingRight": 0,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Team.LogoPath}",
+                        "Path": "images/logos/{Item.Team.Name}.png",
                         "VerticalAlignment": "Center"
                     },
                     "Triggers" : [
@@ -257,6 +257,11 @@
                                             "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
                                             "Property" : "Source",
                                             "Value" : "images/mclaren.white"
+                                },
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=aston martin}",
+                                            "Property" : "Source",
+                                            "Value" : "images/aston martin.white"
                                 },
                                 {
                                     "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
@@ -303,7 +308,7 @@
                                 },
                             ]
                         },
-                                {
+                        {
                             "BlockType" : "image",
                             "HorizontalAlignment" : "Left",
                             "Margin" : "-35,0,0,0",

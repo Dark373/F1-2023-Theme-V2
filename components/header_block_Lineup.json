@@ -24,8 +24,15 @@
                             "VerticalAlignment": "Center",
                             "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} {Season.Name, Converter=StringToUpperString}",                            
                             "FontName": "{Formula1-Black}",
-                            "FontSize": 50,
-                            "Foreground": "FFFFFF"
+                            "FontSize": 70,
+                            "Foreground": "000000",
+                            "Triggers" : [
+                                {
+                                     "Condition": "{DarkOfficialRenders}",
+                                     "Property": "Foreground",
+                                     "Value": "FFFFFF"
+                                },
+                             ]
                         },
                     ]
                 },
@@ -40,8 +47,8 @@
                             "VerticalAlignment": "Center",
                             "Source": "[LINE-UP]",
                             "FontName": "{Formula1-Black}",
-                            "FontSize": 80,
-                            "Foreground": "{Foregroundwhithe}"
+                            "FontSize": 100,
+                            "Foreground": "FF0000"
                         },
                     ]
                 },       

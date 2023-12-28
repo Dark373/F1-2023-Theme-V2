@@ -90,8 +90,8 @@
                              "Property" : "Background",
                              "Value" : "A50E2D"
                       },
-                                            {
-                             "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
+                      {
+                             "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=aston martin}",
                              "Property" : "Background",
                              "Value" : "015850"
                       },
@@ -111,18 +111,27 @@
                              "Value" : "03A0E3"
                       }, 
                       {
-                                                    "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Background",
-                                                            "Value": "BackgroundDefault"
-                                                        },
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "{Item.Team.LogoPath}"
-                                                        },
-                                                    ]
-                                                },
+                          "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                          "Setters": [
+                              {
+                                  "Property": "Background",
+                                  "Value": "BackgroundDefault"
+                              },
+                              {
+                                  "Property": "Source",
+                                  "Value": "images/logos/{Item.Team.Name}.png"
+                              },
+                          ]
+                      },
+                      {
+                          "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=aston martin}",
+                          "Setters": [
+                              {
+                                  "Property": "Source",
+                                  "Value": "images/{Item.Team.Name}.white.png"
+                              }
+                          ]
+                      }
                    ],
                     "MarginLeft" : 55,
                     "Height": 40,
@@ -131,7 +140,7 @@
                     "Padding": "12, 0",
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Team.LogoPath}",
+                        "Path": "images/logos/{Item.Team.Name}.png",
                         "VerticalAlignment": "Center"
                     },
                 },

@@ -74,6 +74,22 @@
                                             {
                                                 "Property": "Background",
                                                 "Value": "FFFFFF"
+                                            },
+                                            {
+                                                "Property": "PaddingTop",
+                                                "Value": "27"
+                                            },
+                                            {
+                                                "Property": "PaddingBottom",
+                                                "Value": "28"
+                                            },
+                                            {
+                                                "Property": "PaddingLeft",
+                                                "Value": "24"
+                                            },
+                                            {
+                                                "Property": "PaddingRight",
+                                                "Value": "24"
                                             }
                                         ]
                                     }
@@ -91,7 +107,34 @@
                                         "ImageOptions": {
                                             "Path": "{Item.Track.Nation.LogoPath}",
                                             "VerticalAlignment": "Center"
-                                        }
+                                        },
+                                    "Triggers":[
+                                    {
+                                        "Condition":"{DarkOfficialRenders}",
+                                        "Setters":[
+                                            {
+                                                "Property": "PaddingTop",
+                                                "Value": "-15"
+                                            },
+                                            {
+                                                "Property": "PaddingBottom",
+                                                "Value": "-15"
+                                            },
+                                            {
+                                                "Property": "PaddingLeft",
+                                                "Value": "2"
+                                            },
+                                            {
+                                                "Property": "PaddingRight",
+                                                "Value": "2"
+                                            },
+                                            {
+                                                "Property": "Background",
+                                                "Value": "000000"
+                                            }
+                                        ]
+                                    }
+                                ],
                                     },
                                 ]
                         },

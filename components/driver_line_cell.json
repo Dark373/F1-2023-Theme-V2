@@ -105,7 +105,7 @@
                         "Template": {
                             "BlockType": "image",
                             "Height": 30,
-                            "Source": "{Item}"
+                            "Source": ""
                         }
                     }
                 },

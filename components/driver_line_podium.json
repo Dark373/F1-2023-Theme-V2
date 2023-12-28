@@ -115,15 +115,20 @@
                     "PaddingRight": 28,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Team.LogoPath}",
+                        "Path": "images/logos/{Item.Team.Name}.png",
                         "VerticalAlignment": "Center"
                     },
                     "Triggers" : [
                                 {
                                             "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
                                             "Property" : "Source",
-                                            "Value" : "images/alphatauri.black.png"
+                                            "Value" : "images/alphatauri.black"
                                 },
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=alfa romeo}",
+                                            "Property" : "Source",
+                                            "Value" : "images/alfa romeo.black"
+                                }
                             ]
                        },
 

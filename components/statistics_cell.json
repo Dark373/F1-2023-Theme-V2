@@ -19,7 +19,7 @@
             "TextOptions": {
                 "FontName": "{Formula1-Black}",
                 "Foreground": "FFFFFF",
-                "FontSize": 48,
+                "FontSize": 52,
                 "HorizontalAlignment": "Center"
             },                   
             "Triggers" : [
@@ -198,7 +198,7 @@
             "TextOptions": {
                 "FontName": "{Formula1-Black}",
                 "Foreground": "FFFFFF",
-                "FontSize": 48,
+                "FontSize": 52,
                 "HorizontalAlignment": "Center"
             },                   
             "Triggers" : [
@@ -244,7 +244,7 @@
             "TextOptions": {
                 "FontName": "{Formula1-Black}",
                 "Foreground": "FFFFFF",
-                "FontSize": 48,
+                "FontSize": 52,
                 "HorizontalAlignment": "Center"
             },                   
             "Triggers" : [
@@ -299,7 +299,7 @@
             "TextOptions" :
             {
                 "FontName": "{Formula1-Black}",
-                "FontSize": 48,
+                "FontSize": 52,
                 "HorizontalAlignment": "Center",
                 "ColorizeRating" : 
                 {

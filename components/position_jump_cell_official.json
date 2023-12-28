@@ -18,7 +18,7 @@
                     "Source" : "arrow_up_v2.png",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
-                    "Height" : 50                                                                
+                    "Height" : 50                                                              
                 },
                 {
                     "BlockType" : "text",
@@ -27,7 +27,7 @@
                     "RenderIf" : "{Item.PositionJump, Converter=NumberEquals, Parameter=0}",
                     "Source" : "౜",
                     "HorizontalAlignment": "Center",
-                    "VerticalAlignment" : "Center",                                                              
+                    "VerticalAlignment" : "Center"                                                             
                 },
                 {
                     "BlockType" : "image",
@@ -35,8 +35,8 @@
                     "Source" : "arrow_down_v2.png",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
-                    "Height" : 50                                                             
-                }, 
+                    "Height" : 50                                                                    
+                },
             ]                                           
         }
     ]

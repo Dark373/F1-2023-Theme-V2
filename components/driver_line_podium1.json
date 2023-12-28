@@ -115,9 +115,16 @@
                     "PaddingRight": 28,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Team.LogoPath}",
+                        "Path": "images/logos/{Item.Team.Name}.png",
                         "VerticalAlignment": "Center"
                     },
+                    "Triggers" : [
+                                {
+                                            "Condition" : "{Item.Team.Name, Converter=StringEquals, Parameter=aston martin}",
+                                            "Property" : "Source",
+                                            "Value" : "images/aston martin.white"
+                                },
+                            ]
                 },
 
                 //name

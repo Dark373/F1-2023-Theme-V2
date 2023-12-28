@@ -4,7 +4,7 @@
     "Padding" : "50,24,0,12",
     "Background": "{BackgroundDefault}", 
     "VerticalAlignment" : "Center",   
-    "Spacing" : 90,
+    "Spacing" : 115,
     "Items" :
     [
         {

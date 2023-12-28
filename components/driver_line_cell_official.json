@@ -38,6 +38,38 @@
             "VerticalAlignment": "Center",
             "Items": [
                 {
+                    "BlockType": "image",
+                    "RenderIf": "{Item.Team.Name, Converter=BoolReverse}",
+                    "MarginLeft": 20,
+                    "Source": "images/reserve.png",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Height": "150",
+                    "MarginTop" : 2,
+                    "TextOptionsExtern" : "tableCellBold",
+                    "Foreground" : "#ffffff",
+                    "FontName": "{Formula1-Black}",
+                    "Triggers" : [
+                                                {
+                                                    "Condition": "{NotF1SeasonOrCustomTeams}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Height",
+                                                            "Value": 110
+                                                        },
+                                                        {
+                                                            "Property": "MarginLeft",
+                                                            "Value": 0
+                                                        },    
+                                                        {
+                                                            "Property": "MarginTop",
+                                                            "Value": 0
+                                                        },
+                                                    ]
+                                                },
+                                            ]  
+                },
+                {
                     "BlockType": "text",
                     "MarginLeft": 280,
                     "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
@@ -119,7 +151,7 @@
                                                          
                                                     ]
                                                 },
-                        {
+                                                {
                                                     "Condition": "{RealNameOnRenders}",
                                                     "Setters": [
                                                         {
@@ -169,6 +201,16 @@
                                                          
                                                     ]
                                                 },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=BoolReverse}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "MarginLeft",
+                                                            "Value": "110"
+                                                        },
+                                                         
+                                                    ]
+                                                },
                     ]
                 }
             ]
@@ -182,25 +224,25 @@
             "PaddingLeft": 0,
             "PaddingRight": 0,
             "Items": [
-                 {
-                            "BlockType" : "image",
-                            "Padding": "-40,0",
-                            "HorizontalAlignment" : "Right",
-                            "Source" : "images/suit/{Item.Team.Name}_{Item.SeatPosition}",
-                            "Height" : "180",
-                            "Triggers" : [
+                {
+                    "BlockType" : "image",
+                    "Padding": "-40,0",
+                    "HorizontalAlignment" : "Right",
+                    "Source" : "images/suit/{Item.Team.Name}_{Item.SeatPosition}",
+                    "Height" : "180",
+                    "Triggers" : [
                         {
-                                                    "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "images/suit/reserve.png"
-                                                        }  
-                                                    ]
-                                                },
-                                             ]
+                            "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                            "Setters": [
+                                {
+                                    "Property": "Source",
+                                    "Value": "images/suit/reserve.png"
+                                }  
+                            ]
                         },
                     ]
                 },
+            ]
+        },
     ]
 }

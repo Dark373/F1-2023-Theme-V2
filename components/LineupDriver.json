@@ -1,130 +1,167 @@
 {
     "BlockType": "dock",
-    "Padding": "0,0,0,16",
+    "Padding": "0,0,0,0",
     "Orientation": "Horizontal",
     "HorizontalAlignment": "Center",
     "Width": "*",
     "Items": [
         {
             "BlockType": "stack",
-            "Height": "120",
-            "Width": "600",
-            "MarginRight": 50,
-            "BackgroundImage": "images/team/{Item.Team.Name}bg.png",
-            "Triggers": [
-                {
-                    "Condition": "{NotF1SeasonOrCustomTeams}",
-                    "Property": "BackgroundImage",
-                    "Value": "images/team/reservebg.png"
-                }
-            ],
-            "Items": [
-                //left part
+            "MarginRight": "-110",
+            "Height": "121",
+            "Width": "728",
+            "BackgroundImage": "images/team/lineups_block.png",
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{Item.Team.SecondaryColor}",
+                "BlendPercentage": 100
+            },
+            "Items": [        
                 {
                     "BlockType": "stack",
-                    "HorizontalAlignment": "Left",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center", 
                     "Orientation": "Vertical",
                     "Width": "*",
-                    "MarginLeft": 2,
+                    "MarginLeft": 0,
                     "Items": [
                         {
                             "BlockType": "stack",
+                            "VerticalAlignment": "Center",
                             "HorizontalAlignment": "Left",
                             "MarginLeft": 0,
                             "Width": "*",
                             "Orientation": "Horizontal",
                             "Items": [
                                 {
+                                    "BlockType": "dock",
+                                    "HorizontalAlignment": "Right",
+                                    "VerticalAlignment": "Center",                                 
+                                    "Items": [
+                                        
+                                //right part
+                                {
                                     "BlockType": "stack",
-                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Center",
                                     "MarginLeft": 0,
                                     "Orientation": "Vertical",
-                                    //
                                     "Items": [
-                                        {
+                                      {
                                             "BlockType": "stack",
-                                            "HorizontalAlignment": "Left",
-                                            "MarginLeft": 4,
+                                            "VerticalAlignment": "Center",
+                                            "HorizontalAlignment": "Center",
+                                            "MarginLeft": 0,
+                                            "MarginBottom": 0,
                                             "Orientation": "Horizontal",
                                             "Items": [
-                                                //Clear
-                                                {
-                                                    "BlockType": "image",
-                                                    "Height": 30,
-                                                    "VerticalAlignment": "Center",
-                                                    "ImageOptions": {
-                                                        "Path": "images/Clear.png",
-                                                        "VerticalAlignment": "Center"
-                                                    }
-                                                },
-                                                //flag
-                                                {
-                                                    "BlockType": "image",
-                                                    "RenderIf": "{ShowCountryFlagsForDrivers}",
-                                                    "Height": 30,
-                                                    "VerticalAlignment": "Center",
-                                                    "ImageOptions": {
-                                                        "Path": "{Item.Line0.Driver.Nationality.LogoPath}",
-                                                        "VerticalAlignment": "Center"
-                                                    }
-                                                },
                                                 {
                                                     "BlockType": "text",
-                                                    //"MinWidth": 400,
-                                                    "MarginLeft": 0,
-                                                    "Source": " {Item.Line0.Driver.InGameName}",
-                                                    "HorizontalAlignment": "Left",
+                                                    "Source": "{Item.Line0.Driver.Name, Converter=StringToUpperString}",
+                                                    "HorizontalAlignment": "Center",
                                                     "VerticalAlignment": "Center",
-                                                    "FontName": "{Formula1-Italic}",
-                                                    "RenderIf": "{RenderInGameNameOnLineUps}",
-                                                    "FontSize": "20",
-                                                    "Triggers": [
+                                                    "FontSize": "{FontSizeOnOfficialRenders}",
+                                                    "Foreground" : "#ffffff",
+                                                    "FontName": "{FontBlack}",
+                                                    "Triggers" : [
                                                 {
-                                                    "Condition": "{DriverNameOnLineUp}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": ""
-                                                        },
-                                                         
-                                                    ]
-                                                }
-                                             ]
-                                                },
-                                            ]
-                                        },
-                                        {
-                                            "BlockType": "stack",
-                                            "HorizontalAlignment": "Left",
-                                            "MarginLeft": 4,
-                                            "Orientation": "Horizontal",
-                                            "Items": [
-                                        {
-                                            "BlockType": "text",
-                                            "Source": "{Item.Line0.Driver.Name}",
-                                            "HorizontalAlignment": "Left",
-                                            "VerticalAlignment": "Top",
-                                            "FontName": "{Formula1-Italic}",
-                                            "Foreground": "{FontnameDefault}",
-                                            "FontSize": "35",
-                                            "Triggers": [
-                                                {
-                                                    "Condition": "{DriverNameOnLineUp}",
+                                                    "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToFalse}",
                                                     "Setters": [
                                                         {
                                                             "Property": "Foreground",
-                                                            "Value": "{Item.Team.Color}"
+                                                            "Value": "FFFFFF"
                                                         },
                                                          
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{DriverNameOnLineUp}",
+                                                    "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "00A0DE"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alpine}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "006FBA"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=virtuosi}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{RealNameOnRenders}",
                                                     "Setters": [
                                                         {
                                                             "Property": "Source",
-                                                            "Value": "{Item.Line0.Driver.Name, Converter=StringToUpperString}"
-                                                        },  
+                                                            "Value": "{Item.Line0.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{InGameNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.InGameName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{FullNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.Name, Converter=StringToUpperString} {Item.Line0.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
                                                     ]
                                                 },
                                                 {
@@ -132,748 +169,328 @@
                                                     "Setters": [
                                                         {
                                                             "Property": "Source",
-                                                            "Value": "{Item.Line0.Driver.RealName}"
-                                                        },  
-                                                    ]
-                                                }
-                                             ]
-                                        },
-                                        {
-                                            "BlockType": "text",
-                                            "Source": " {Item.Line0.Driver.RealName, Converter=StringToUpperString}",
-                                            "HorizontalAlignment": "Left",
-                                            "VerticalAlignment": "Bottom",
-                                            "FontName": "{Magistral-BoldItalic}",
-                                            "Foreground": "{Item.Team.Color}",
-                                            "FontSize": "35",
-                                            "Triggers": [
-                                                {
-                                                    "Condition": "{DriverNameOnLineUp}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": ""
+                                                            "Value": "{Item.Line0.Driver.RealName, Converter=StringToUpperString} {Item.Line0.Driver.Name, Converter=StringToUpperString}"
                                                         },
                                                          
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{SwitchNameFields}",
+                                                    "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                     "Setters": [
                                                         {
                                                             "Property": "Source",
-                                                            "Value": " {Item.Line0.Driver.Name, Converter=StringToUpperString}"
-                                                        },  
+                                                            "Value": "?"
+                                                        },
+                                                         
                                                     ]
-                                                }
-                                             ]
-                                        }
-                                     ]
-                                  },
-                                        //Need another block for team logo and team text
-                                        {
-                                            "BlockType": "stack",
-                                            "HorizontalAlignment": "Left",
-                                            "MarginLeft": 5,
-                                            "Orientation": "Horizontal",
-                                            "Items": [
-                                                {
-                                                    "BlockType": "text",
-                                                    "MinWidth": 400,
-                                                    "Source": "{Item.Team.Name, Converter=StringToUpperString}",
-                                                    "HorizontalAlignment": "Left",
-                                                    "VerticalAlignment": "Center",
-                                                    "FontName": "{FontNameBold}",
-                                                    "FontSize": "20",
-                                                },
-                                                //logo
-                                                {
-                                                    "BlockType": "image",
-                                                    "MarginLeft": 5,
-                                                    "Height": 28,
-                                                    "MarginRight": 10,
-                                                    "VerticalAlignment": "Center",
-                                                    "ImageOptions": {
-                                                        "Path": "{Item.Team.LogoPath}",
-                                                        "VerticalAlignment": "Center"
-                                                    }
                                                 }
                                             ]
-                                        }
-                                    ]
-                                },
-                                //right part
-                                {
-                                    "BlockType": "dock",
-                                    "HorizontalAlignment": "Right",
-                                    "VerticalAlignment": "Center",
-                                    //"Orientation": "Horizontal",
-                                    "Opacity": "75",
-                                    "Items": [
-                                        //number
-                                        {
+                                        },
+                                     ]
+                                  },
+                                  {
                                             "BlockType": "text",
-                                            "Source": "{Item.Line0.Driver.RaceNumber, Converter=StringToUpperString}",
-                                            "HorizontalAlignment": "Right",
-                                            "MarginRight": 10,
-                                            "MarginTop": 1,
+                                            "Source": "",
+                                            "HorizontalAlignment": "Center",
                                             "VerticalAlignment": "Center",
+                                            "FontName": "{Formula1-Regular}",
+                                            "Foreground": "FFFFFF",
+                                            "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
                                             "Triggers": [
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=ferrari}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersMercedes-Bold"
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.RealName, Converter=StringToUpperString} {Item.Line0.Driver.Name, Converter=StringToUpperString}"
                                                         },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-6"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "120"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersWilliams"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
-                                                    ]
+                                                     "Condition": "{DriverNameOnLineUp}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line0.Driver.Name, Converter=StringToUpperString} {Item.Line0.Driver.RealName, Converter=StringToUpperString}"
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersFerrari"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "130"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-10"
-                                                        }
-                                                    ]
+                                                     "Condition": "{DriverNameOnLineUp, Converter=BoolReverse}",
+                                                     "Property": "Source",
+                                                     "Value": ""
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAlfaRomeo"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "130"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-10"
-                                                        }
-                                                    ]
+                                                     "Condition": "{InGameNameOnLineUps}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line0.Driver.InGameName, Converter=StringToUpperString}"
                                                 },
-                                                {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersMclaren"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAlphaTauri"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersHaas"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAstonMartin"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-3"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "110"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAlpine-Bold"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersRedBull"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "150"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-16"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{NotF1SeasonOrCustomTeams}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersRedBull"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "150"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-10"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "Foreground": "{Item.Team.Color}"
-                                        }
+                                            ]
+                                        } 
+                                
+                                    ]
+                                },
                                     ]
                                 }
                             ]
                         },
-                        {
-                            "BlockType": "Stack",
-                            "RenderIf" :"{NotF1SeasonOrCustomTeams}",
-                            "Orientation": "Horizontal",
-                            "MarginTop": -39,
-                            "MarginLeft": 0,
-                            "Width": "*",
-                            
-                            "Items": [
-                                {
-                                    "BlockType": "shape",
-                                    "VerticalAlignment": "Center",
-                                    "Width": "595",
-                                    "Height": 0,
-                                    "Opacity": 100,
-                                    "ShapeOptions": {
-                                        "Type": "Rectangle",
-                                        "Fill": "{Item.Team.Color}"
-                                    }
-                                }
-                            ]
-                        }
                     ]
                 }
             ]
         },
         {
             "BlockType": "stack",
-            "Height": "120",
-            "Width": "600",
-            "MarginRight": 15,
-            "BackgroundImage": "images/team/{Item.Team.Name}bg.png",
-            "Triggers": [
-                {
-                    "Condition": "{NotF1SeasonOrCustomTeams}",
-                    "Property": "BackgroundImage",
-                    "Value": "images/team/reservebg.png"
-                }
-            ],
+            "Height": "121",
+            "Width": "728",
+            "BackgroundImage": "images/team/lineups_block.png",
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{Item.Team.SecondaryColor}",
+                "BlendPercentage": 100
+            },
             "Items": [
-                //left part
                 {
                     "BlockType": "stack",
-                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Right",
                     "Orientation": "Vertical",
                     "Width": "*",
-                    "MarginLeft": 2,
+                    "MarginLeft": 0,
                     "Items": [
                         {
                             "BlockType": "stack",
-                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Right",
                             "MarginLeft": 0,
                             "Width": "*",
                             "Orientation": "Horizontal",
                             "Items": [
-                                {
-                                    "BlockType": "stack",
-                                    "HorizontalAlignment": "Left",
-                                    "MarginLeft": 0,
-                                    "Orientation": "Vertical",
-                                    //
-                                    "Items": [
-                                        {
-                                            "BlockType": "stack",
-                                            "HorizontalAlignment": "Left",
-                                            "MarginLeft": 4,
-                                            "Orientation": "Horizontal",
-                                            "Items": [
-                                                //Clear
-                                                {
-                                                    "BlockType": "image",
-                                                    "Height": 30,
-                                                    "VerticalAlignment": "Center",
-                                                    "ImageOptions": {
-                                                        "Path": "images/Clear.png",
-                                                        "VerticalAlignment": "Center"
-                                                    }
-                                                },
-                                                //flag
-                                                {
-                                                    "BlockType": "image",
-                                                    "RenderIf": "{ShowCountryFlagsForDrivers}",
-                                                    "Height": 30,
-                                                    "VerticalAlignment": "Center",
-                                                    "ImageOptions": {
-                                                        "Path": "{Item.Line1.Driver.Nationality.LogoPath}",
-                                                        "VerticalAlignment": "Center"
-                                                    }
-                                                },
-                                                {
-                                                    "BlockType": "text",
-                                                    //"MinWidth": 400,
-                                                    "MarginLeft": 0,
-                                                    "Source": " {Item.Line1.Driver.InGameName}",
-                                                    "HorizontalAlignment": "Left",
-                                                    "VerticalAlignment": "Center",
-                                                    "FontName": "{Formula1-Italic}",
-                                                    "RenderIf": "{RenderInGameNameOnLineUps}",
-                                                    "Foreground": "{Foregroundwhithe}",
-                                                    "FontSize": "20",
-                                                    "Triggers": [
-                                                {
-                                                    "Condition": "{DriverNameOnLineUp}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": ""
-                                                        },
-                                                         
-                                                    ]
-                                                }
-                                             ]
-                                                },
-                                            ]
-                                        },
-                                        {
-                                            "BlockType": "stack",
-                                            "HorizontalAlignment": "Left",
-                                            "MarginLeft": 4,
-                                            "Orientation": "Horizontal",
-                                            "Items": [
-                                        {
-                                            "BlockType": "text",
-                                            "Source": "{Item.Line1.Driver.Name}",
-                                            "HorizontalAlignment": "Left",
-                                            "VerticalAlignment": "Top",
-                                            "FontName": "{Formula1-Italic}",
-                                            "Foreground": "{FontnameDefault}",
-                                            "FontSize": "35",
-                                            "Triggers": [
-                                                {
-                                                    "Condition": "{DriverNameOnLineUp}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Foreground",
-                                                            "Value": "{Item.Team.Color}"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{DriverNameOnLineUp}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "{Item.Line1.Driver.Name, Converter=StringToUpperString}"
-                                                        },  
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{SwitchNameFields}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "{Item.Line1.Driver.RealName}"
-                                                        },  
-                                                    ]
-                                                }
-                                             ]
-                                        },
-                                        {
-                                            "BlockType": "text",
-                                            "Source": " {Item.Line1.Driver.RealName, Converter=StringToUpperString}",
-                                            "HorizontalAlignment": "Left",
-                                            "VerticalAlignment": "Bottom",
-                                            "FontName": "{Magistral-BoldItalic}",
-                                            "Foreground": "{Item.Team.Color}",
-                                            "FontSize": "35",
-                                            "Triggers": [
-                                                {
-                                                    "Condition": "{DriverNameOnLineUp}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": ""
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{SwitchNameFields}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": " {Item.Line1.Driver.Name, Converter=StringToUpperString}"
-                                                        },  
-                                                    ]
-                                                }
-                                             ]
-                                        }
-                                     ]
-                                  },
-                                        //Need another block for team logo and team text
-                                        {
-                                            "BlockType": "stack",
-                                            "HorizontalAlignment": "Left",
-                                            "MarginLeft": 5,
-                                            "Orientation": "Horizontal",
-                                            "Items": [
-                                                {
-                                                    "BlockType": "text",
-                                                    "MinWidth": 400,
-                                                    "Source": "{Item.Team.Name, Converter=StringToUpperString}",
-                                                    "HorizontalAlignment": "Left",
-                                                    "VerticalAlignment": "Center",
-                                                    "FontName": "{FontNameBold}",
- 
-                                                    "FontSize": "20",
-                                                },
-                                                //logo
-                                                {
-                                                    "BlockType": "image",
-                                                    "MarginLeft": 5,
-                                                    "Height": 28,
-                                                    "MarginRight": 10,
-                                                    "VerticalAlignment": "Center",
-                                                    "ImageOptions": {
-                                                        "Path": "{Item.Team.LogoPath}",
-                                                        "VerticalAlignment": "Center"
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                //right part
                                 {
                                     "BlockType": "dock",
                                     "HorizontalAlignment": "Right",
-                                    "VerticalAlignment": "Center",
-                                    //"Orientation": "Horizontal",
-                                    "Opacity": "75",
+                                    "VerticalAlignment": "Center",                                 
                                     "Items": [
-                                        //number
-                                        {
-                                            "BlockType": "text",
-                                            "Source": "{Item.Line1.Driver.RaceNumber, Converter=StringToUpperString}",
-                                            "HorizontalAlignment": "Right",
-                                            "MarginRight": 10,
-                                            "MarginTop": 1,
+//right part
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Center",
+                                    "MarginRight": 0,
+                                    "Orientation": "Vertical",
+                                    "Items": [
+{
+                                            "BlockType": "stack",
                                             "VerticalAlignment": "Center",
-                                            "Triggers": [
+                                            "HorizontalAlignment": "Center",
+                                            "MarginLeft": 0,
+                                            "MarginBottom": 0,
+                                            "Orientation": "Horizontal",
+                                            "Items": [
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Line1.Driver.Name, Converter=StringToUpperString}",
+                                                    "HorizontalAlignment": "Center",
+                                                    "VerticalAlignment": "Center",
+                                                    "FontSize": "{FontSizeOnOfficialRenders}",
+                                                    "Foreground" : "#ffffff",
+                                                    "FontName": "{FontBlack}",
+                                                    "Triggers" : [
+                                                {
+                                                    "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToFalse}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersMercedes-Bold"
+                                                            "Property": "Foreground",
+                                                            "Value": "FFFFFF"
                                                         },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-6"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "120"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
+                                                    "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersWilliams"
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersFerrari"
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "130"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-10"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAlfaRomeo"
+                                                            "Property": "Foreground",
+                                                            "Value": "00A0DE"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "130"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-10"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alpine}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersMclaren"
+                                                            "Property": "Foreground",
+                                                            "Value": "006FBA"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAlphaTauri"
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=virtuosi}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersHaas"
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
+                                                    "Condition": "{RealNameOnRenders}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAstonMartin"
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.RealName, Converter=StringToUpperString}"
                                                         },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-3"
-                                                        },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "110"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
+                                                    "Condition": "{InGameNameOnRenders}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersAlpine-Bold"
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.InGameName, Converter=StringToUpperString}"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "160"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-20"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
+                                                    "Condition": "{FullNameOnRenders}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersRedBull"
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.Name, Converter=StringToUpperString} {Item.Line1.Driver.RealName, Converter=StringToUpperString}"
                                                         },
-                                                        {
-                                                            "Property": "FontSize",
-                                                            "Value": "150"
-                                                        },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-16"
-                                                        }
+                                                         
                                                     ]
                                                 },
                                                 {
-                                                    "Condition": "{NotF1SeasonOrCustomTeams}",
+                                                    "Condition": "{SwitchNameFields}",
                                                     "Setters": [
                                                         {
-                                                            "Property": "FontName",
-                                                            "Value": "F1NumbersRedBull"
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.RealName, Converter=StringToUpperString} {Item.Line1.Driver.Name, Converter=StringToUpperString}"
                                                         },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                    "Setters": [
                                                         {
-                                                            "Property": "FontSize",
-                                                            "Value": "150"
+                                                            "Property": "Source",
+                                                            "Value": "?"
                                                         },
-                                                        {
-                                                            "Property": "MarginTop",
-                                                            "Value": "-10"
-                                                        }
+                                                         
                                                     ]
                                                 }
-                                            ],
-                                            "Foreground": "{Item.Team.Color}"
-                                        }
+                                            ]
+                                        },
+                                     ]
+                                  },
+                                  {
+                                            "BlockType": "text",
+                                            "Source": "",
+                                            "HorizontalAlignment": "Center",
+                                            "VerticalAlignment": "Center",
+                                            "FontName": "{Formula1-Regular}",
+                                            "Foreground": "FFFFFF",
+                                            "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
+                                            "Triggers": [
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=ferrari}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.RealName, Converter=StringToUpperString} {Item.Line1.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line1.Driver.Name, Converter=StringToUpperString} {Item.Line1.Driver.RealName, Converter=StringToUpperString}"
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp, Converter=BoolReverse}",
+                                                     "Property": "Source",
+                                                     "Value": ""
+                                                },
+                                                {
+                                                     "Condition": "{InGameNameOnLineUps}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line1.Driver.InGameName, Converter=StringToUpperString}"
+                                                },
+                                            ]
+                                        } 
                                     ]
-                                }
+                                },
                             ]
                         },
-                        {
-                            "BlockType": "Stack",
-                            "RenderIf" :"{NotF1SeasonOrCustomTeams}",
-                            "Orientation": "Horizontal",
-                            "MarginTop": -39,
-                            "MarginLeft": 0,
-                            "Width": "*",
-                            
-                            "Items": [
-                                {
-                                    "BlockType": "shape",
-                                    "VerticalAlignment": "Center",
-                                    "Width": "595",
-                                    "Height": 0,
-                                    "Opacity": 100,
-                                    "ShapeOptions": {
-                                        "Type": "Rectangle",
-                                        "Fill": "{Item.Team.Color}"
-                                    }
-                                }
-                            ]
-                        }
+                     ]
+                  },                     
                     ]
                 }
             ]
-        }
+        },
     ]
 }
