@@ -1,0 +1,356 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType": "component",
+                "ComponentName": "header_block_Lineup"
+            },
+            {
+                "BlockType": "Dock",
+                "Orientation": "Vertical",
+                "Width": "*",
+                "Margin": "20,10,10,20",
+                "Items": [
+                    //
+                    //Block for each team
+                    {
+                        "BlockType": "Dock",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "center",
+                        "StretchWidth": "True",
+                        "MarginBottom": 10,
+                        "Items": [
+                            
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver_rn"
+                                    }
+                                }
+                            },
+                        ]
+                    },
+                    
+                    // //Reserve Drivers
+                    {
+                        "BlockType": "Dock",
+                        "RenderIf": "{RenderReserveDriver}",
+                        "Orientation": "Horizontal",
+                        "MarginBottom": 20,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Center",
+                                "MinWidth": 400,
+                                "MarginRight": 0,
+                                "Source": "[RESERVES]",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameBold}",
+                                "Foreground": "{ForegroundGrey}",
+                                "FontSize": "25"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "RenderIf": "{RenderReserveDriver}",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "MarginBottom": 20,
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "ItemStackOptions": {
+                                    "RenderIf": "{RenderReserveDriver}",
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "Limit": "{ReserveDriverMax}",
+                                    "Template": {
+
+    "BlockType": "stack",
+    "Height": "120",
+    "Width": "*",
+    "MarginRight": 0,
+    "MarginBottom": 20,
+    "Background": "#7F7F7F",
+    "Items": [
+        //left part
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center", 
+                    "Orientation": "Vertical",
+                    "Width": "*",
+                    "MarginLeft": 0,
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Left",
+                            "MarginLeft": 0,
+                            "Width": "*",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "dock",
+                                    "HorizontalAlignment": "Right",
+                                    "VerticalAlignment": "Center",                                 
+                                    "Items": [
+                                        //number
+                                        {
+                                            "BlockType": "text",
+                                            "Source": "{Item.Driver.RaceNumber, Converter=StringToUpperString}",
+                                            "HorizontalAlignment": "Center",
+                                            "MarginLeft": -270,
+                                            "MarginRight": 270,
+                                            "MarginTop": 0,
+                                            "FontName": "{Formula1-Black}",
+                                            "FontSize": 70,
+                                            "VerticalAlignment": "Center",
+                                            "Triggers": [
+                                                {
+                                                    "Condition": "{NotF1SeasonOrCustomTeams}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "FontName",
+                                                            "Value": "F1NumbersRedBull"
+                                                        },
+                                                        {
+                                                            "Property": "FontSize",
+                                                            "Value": "120"
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{TeamNumberFontOnLineUps, Converter=BoolReverse}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "FontName",
+                                                            "Value": "Formula1-Black"
+                                                        },
+                                                        {
+                                                            "Property": "FontSize",
+                                                            "Value": "70"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "Foreground": "000000"
+                                        },      
+                                //right part
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Right",
+                                    "MarginLeft": 0,
+                                    "Orientation": "Vertical",
+                                    "Items": [
+                                      {
+                                            "BlockType": "stack",
+                                            "VerticalAlignment": "Center",
+                                            "HorizontalAlignment": "Right",
+                                            "MarginLeft": 0,
+                                            "MarginBottom": 0,
+                                            "Orientation": "Horizontal",
+                                            "Items": [
+                                      {
+                    "BlockType": "text",
+                    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{FontSizeOnOfficialRenders}",
+                    "Foreground" : "#ffffff",
+                    "FontName": "{Formula1-Bold}",
+                    "Triggers" : [
+                                                {
+                                                    "Condition": "{Item.Driver.Name, Converter=EmptyObjectToFalse}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "FFFFFF"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{RealNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{InGameNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{FullNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                            ]
+                                        },
+                                     ]
+                                  },
+                                  {
+                                            "BlockType": "text",
+                                            "Source": "",
+                                            "HorizontalAlignment": "Right",
+                                            "VerticalAlignment": "Center",
+                                            "FontName": "{Formula1-Regular}",
+                                            "Foreground": "000000",
+                                            "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=10}",
+                                            "Triggers": [
+                                                {
+                                                     "Condition": "{RenderInGameNameOnLineUps}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}"
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp, Converter=BoolReverse}",
+                                                     "Property": "Source",
+                                                     "Value": ""
+                                                },
+                                                {
+                                                     "Condition": "{RenderInGameNameOnLineUps}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                                },
+                                            ]
+                                        } 
+                                
+                                    ]
+                                },
+                                    ]
+                                }
+                            ]
+                        },
+                    ]
+                }
+    ]
+
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "ItemStackOptions": {
+                                    "RenderIf": "{RenderReserveDriver}",
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "Limit": "{ReserveDriverMax}",
+                                    "Template": {
+            "BlockType": "stack",
+            "Height": "120",
+            "Width": "420",
+            "MarginBottom": 20,
+            "Background": "#7F7F7F",
+            "Items": [
+                //left part
+                {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Center",
+                    "Orientation": "Vertical",
+                    "Width": "*",
+                    "MarginLeft": 0,
+                    "Items": [
+                                                {
+                                                    "BlockType": "image",
+                                                    "HorizontalAlignment": "Center",
+                                                    "MarginTop": -20,
+                                                    "MarginLeft": 0,
+                                                    "Height": 160,
+                                                    "VerticalAlignment": "Center",
+                                                    "ImageOptions": {
+                                                        "Path": "images/reserve.png",
+                                                        "VerticalAlignment": "Center"
+                                                    },   
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "ItemStackOptions": {
+                                    "RenderIf": "{RenderReserveDriver}",
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "Limit": "{ReserveDriverMax}",
+                                    "IndexStart": "{ReserveDriverMax}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriverReserve_rn"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

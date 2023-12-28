@@ -1,0 +1,1869 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "Height": 2160,
+        "Width": 3840,
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Items": [
+            {                            
+                "BlockType": "text",
+                "Margin": "74,42,-0,-79",
+                "HorizontalAlignment": "Left",
+                "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} - {Season.Name, Converter=StringToUpperString}",                            
+                "FontName": "{FontRegular}",
+                "FontSize": 30,
+                "Foreground": "FFFFFF"
+            },
+            {
+                "Name": "headerLeftPart",
+                "BlockType": "stack",
+                "MarginBottom": -126,
+                "Orientation": "Vertical",
+                "Spacing": 0,
+                "HorizontalAlignment": "Right",
+                "Items": [
+                    {
+                        "Name": "f1-logo",
+                        "BlockType": "image",
+                        "Margin": "0,56,55,0",
+                        "Height": 70,
+                        "HorizontalAlignment" : "Right",
+                        "Source": "images/f1-logo.png",
+                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
+                        "Triggers": [
+                            {
+                               "Condition": "{DarkOfficialRenders}",
+                                "Property": "Source",
+                                "Value": "images/f1-logo-white.png",
+                            }
+                        ],
+                    },
+                    {
+                        "Name":"LeagueLogo",
+                        "BlockType":"image",
+                        "Margin": "0,26,140,0",
+                        "Height": "100",
+                        "Width":"auto",
+                        "HorizontalAlignment" : "Right",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                    },
+                ]
+            },
+            // avatar line 1
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 0, 
+                "MarginTop": 11,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -350,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 0,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 660,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 0,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -163,
+                        "MarginBottom": -160,
+                        "MarginTop": -14,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 0,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "340"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 480,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 2,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 0,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 2,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -1280,
+                        "MarginBottom": -160,
+                        "MarginTop": 47,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 2,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "220"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                "BlockType": "Dock", 
+                "MarginTop": 0,
+                "Orientation": "Horizontal",
+                "MarginBottom": 16, 
+                "Width": "*",
+                "Items": [
+                    //
+                    //Block for each team
+                    {
+                        "BlockType": "Dock",
+                        "Orientation": "Horizontal",              
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Right",
+                                "Margin": "0,0,615,0",
+                                "ItemStackOptions": {
+                                    "IndexStart": 2,
+                                    "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            },
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Left",
+                                "Margin": "591,0,0,0",
+                                "ItemStackOptions": {
+                                    "IndexStart": 0,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            // avatar line 2
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 0, 
+                "MarginTop": -15,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -600,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 6,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 580,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 6,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": -230,
+                        "MarginLeft": -60,
+                        "MarginBottom": -160,
+                        "MarginTop": -85,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 6,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "440",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=aston martin}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/logos/aston martin.coloured.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": -110,
+                        "MarginLeft": 1240,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 1,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 350,
+                        "MarginLeft": 0,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 1,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": -91,
+                        "MarginLeft": 0,
+                        "MarginBottom": -160,
+                        "MarginTop": 52,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 1,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "210"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 334, 
+                "MarginTop": 0,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    //
+                    //Block for each team
+                    {
+                        "BlockType": "Dock",
+                        "Orientation": "Horizontal",  
+                        "MarginRight": 0,
+                        "MarginLeft": 0,              
+                        "HorizontalAlignment": "center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "Margin": "0,0,300,0",
+                                "ItemStackOptions": {
+                                    "IndexStart": 1,
+                                    "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            },
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 6,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            // avatar line 3
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 0, 
+                "MarginTop": -2,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -865,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 4,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 130,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 4,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -125,
+                        "MarginBottom": -160,
+                        "MarginTop": 15,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 4,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "270"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 0,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 3,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 130,
+                        "MarginLeft": 0,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 3,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -1520,
+                        "MarginBottom": -160,
+                        "MarginTop": 35,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 3,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "240",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alpine}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/logos/alpine.black.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 67, 
+                "MarginTop": 0,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    //
+                    //Block for each team
+                    {
+                        "BlockType": "Dock",
+                        "Orientation": "Horizontal",  
+                        "MarginRight": 0,
+                        "MarginLeft": 0,              
+                        "HorizontalAlignment": "center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "Margin": "0,0,75,0",
+                                "ItemStackOptions": {
+                                    "IndexStart": 3,
+                                    "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            },
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 4,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            // avatar line 4
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 0, 
+                "MarginTop": 10,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -600,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 9,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 485,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 9,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": -140,
+                        "MarginLeft": 0,
+                        "MarginBottom": -160,
+                        "MarginTop": 42,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 9,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "225",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/logos/williams.light.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": -100,
+                        "MarginLeft": 1250,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 7,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 350,
+                        "MarginLeft": 0,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 7,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": -90,
+                        "MarginLeft": 0,
+                        "MarginBottom": -160,
+                        "MarginTop": 58,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 7,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "200"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 332, 
+                "MarginTop": 0,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    //
+                    //Block for each team
+                    {
+                        "BlockType": "Dock",
+                        "Orientation": "Horizontal",  
+                        "MarginRight": 0,
+                        "MarginLeft": 0,              
+                        "HorizontalAlignment": "center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "Margin": "0,0,295,0",
+                                "ItemStackOptions": {
+                                    "IndexStart": 7,
+                                    "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            },
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 9,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            // avatar line 5
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 0, 
+                "MarginTop": 0,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -410,
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 5,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 590,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 5,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -66,
+                        "MarginBottom": -160,
+                        "MarginTop": 57,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 5,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "198",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alfa romeo}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/logos/alfa romeo.coloured.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 590,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 8,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": 0,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "IndexStart": 8,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,-350",
+                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                        "Height" : "620",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/reserve.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/suit/placeholder0.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "MarginRight": 0,
+                        "MarginLeft": -1272,
+                        "MarginBottom": -160,
+                        "MarginTop": 28,
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "IndexStart": 8,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment": "Center",
+                                        "Margin": "0,0,0,0",
+                                        "Source" : "images/logos/{Item.Team.Name}.png",
+                                        "Height" : "238",
+                                        "Triggers" : [
+                                            {
+                                                "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alphatauri}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": "images/alphatauri.black.png"
+                                                    }  
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                "BlockType": "Dock",
+                "MarginLeft": 530, 
+                "MarginTop": 0,
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    //
+                    //Block for each team
+                    {
+                        "BlockType": "Dock",
+                        "Orientation": "Horizontal",  
+                        "MarginRight": 0,
+                        "MarginLeft": 0,              
+                        "HorizontalAlignment": "center",
+                        "Items": [
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "Margin": "0,0,618,0",
+                                "ItemStackOptions": {
+                                    "IndexStart": 8,
+                                    "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            },
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "IndexStart": 5,
+                                     "Limit": 1,
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                "Name": "headerLeftPart",
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "Spacing": 0,
+                "HorizontalAlignment": "Left",
+                "Items": [
+                    {
+                        "Name": "f1-logo",
+                        "BlockType": "image",
+                        "Margin": "78,58,0,0",
+                        "Height": 70,
+                        "HorizontalAlignment" : "Left",
+                        "Source": "images/f1-logo.png",
+                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
+                        "Triggers": [
+                            {
+                               "Condition": "{DarkOfficialRenders}",
+                                "Property": "Source",
+                                "Value": "images/f1-logo-white.png",
+                            }
+                        ],
+                    },
+                    {
+                        "Name":"LeagueLogo",
+                        "BlockType":"image",
+                        "Margin": "160,58,0,0",
+                        "Height": "100",
+                        "Width":"auto",
+                        "HorizontalAlignment" : "Left",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                    },
+                ]
+            },
+            {                            
+                "BlockType": "text",
+                "Margin": "540,-50,-250,0",
+                "HorizontalAlignment": "Left",
+                "Source": "D                    R                    I                     V                    E                   R                                 L                    I                     N                   E                    -                    U                    P",                            
+                "FontName": "{FontRegular}",
+                "FontSize": 30,
+                "Foreground": "FFFFFF"
+            },
+            {
+                "Name": "SeasonName",
+                "BlockType": "text",              
+                "Source": "[DRIVER]",
+                "FontSize": 180,
+                "FontName": "{FontBlack}",
+                "Foreground": "0A0820",
+                "HorizontalAlignment": "Center",
+                "Margin": "7,-1400,0,900",
+            },
+            {
+                "Name": "SeasonName",
+                "BlockType": "text",              
+                "Source": "[LINE-UP]",
+                "FontSize": 171,
+                "FontName": "{FontBlack}",
+                "Foreground": "0A0820",
+                "HorizontalAlignment": "Center",
+                "Margin": "7,-1100,0,850",
+            }
+        ]
+    }
+}

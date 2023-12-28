@@ -1,0 +1,123 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_stints"
+            },
+            {
+                "BlockType": "stack",
+                "Orientation" : "Horizontal",
+                "Items" : [
+                    {
+                        "BlockType" : "stack",
+                        "Orientation" : "Vertical",
+                        "Items" : [
+                            {
+                                "Name": "mainTable",
+                                "BlockType": "table",
+                                "Margin" : "{MarginTable}",
+                                "MarginRight" : 0,
+                                "TableOptions": {
+                                    "ItemsSource": "{Session.Drivers}",
+                                    "RowSpacing": 0,
+                                    "ColSpacing": 0,
+                                    "HeaderTemplate": {
+                                        "BlockType": "text",
+                                        "MarginBottom": 8,
+                                        "TextOptionsExtern" : "tableColumnHeader"
+                                    },
+                                    "Columns": [
+                                    //position
+                                        {
+                                            "Header": "",
+                                            "Template": {
+                                                "BlockType" : "component",                                
+                                                "ComponentName" : "position_cell_stints",
+                                                "MarginRight": 15,
+                                                "ComponentOptions" :{
+                                                    "Vars" :{
+                                                        "position" : "{Item.PositionString}"
+                                                    }
+                                                }
+                                            },
+                                            
+                                            "RenderIf": "{RenderStatsFinishPos}",
+                                        },
+                                        {
+                                            "Header": "",
+                                            "MarginRight": 30,
+                                            "Template":
+                                            {
+                                                "BlockType" : "component",
+                                                "ComponentName" : "driver_line_stints"                        
+                                            }
+                                        },
+                                        {
+                                            "Header": "",
+                                            "Template":
+                                            {
+                                                "BlockType" : "stack",
+                                                "Orientation" : "Horizontal",
+                                                "Width" : "0",
+
+                                                
+                                                //"PaddingTop" : 10,
+                                                "Items" : [
+                                                    {
+                                                        "BlockType": "itemstack",
+                                                        "Spacing": 0,
+                                                        "Height" : "{StintsBGHeight}",
+                                                        "MaxWidth" : "{Item.RaceDistancePercentage, Converter=NumberMultiply, Parameter=20}",
+                                                        "ItemStackOptions": {
+                                                            "ItemSource": "{Item.Stints}",
+                                                            "Template": {
+                                                                "BlockType" : "component",
+                                                                "ComponentOptions" : {
+                                                                    "ComponentName" : "stints_bar"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "Spacing": 0,
+                                                        "Height" : 0,
+                                                        "Background": "000000",
+                                                        "Padding": "12, -4",
+                                                        "MarginTop": 38,
+                                                        "MarginRight": 0,
+                                                        "PaddingBottom": 0,
+                                                        "MarginLeft": 0,
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "top",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType" : "text",
+                                                                "Source" : "{Item.LapsCount}",
+                                                                "FontName" : "{FontNameBold}",
+                                                                "FontSize" : 25,
+                                                                "MarginRight": -2,
+                                                                "MarginTop": -2,
+                                                                "VerticalAlignment" : "Bottom",
+                                                                "HorzontallAlignment" : "Center",
+                                                            }
+                                                        ]
+                                                    },
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

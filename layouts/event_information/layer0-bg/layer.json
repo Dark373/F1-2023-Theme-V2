@@ -1,0 +1,14 @@
+{
+    "BlockRoot": {
+        "Name": "root",
+        "BlockType": "dock",
+        "Orientation" : "Vertical",
+        "Items": [
+            {
+                "BlockType" : "image",
+                "RenderIf": "{DarkOfficialRenders, Converter=BoolReverse}",
+                "Source" : "bg1.png"
+            }
+        ],
+    }
+}
