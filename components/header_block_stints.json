@@ -1,0 +1,191 @@
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal", 
+    "Background": "{HeaderDefault}",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Items": [
+
+                //league name
+                {
+                    "BlockType" : "stack",
+                    "VerticalAlignment" : "Center",
+                    "Items" :
+                    [
+                        {
+                            "Name": "CountryFlag",
+                            "BlockType": "image",
+                            "VerticalAlignment": "Center",
+                            "Height": 180,
+                            "Source": ""
+                        },
+                        {                            
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} {Season.Name, Converter=StringToUpperString} [{Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX] 2023",                            
+                            "FontName": "{Formula1-Black}",
+                            "FontSize": 40,
+                            "Foreground": "FFFFFF"
+                        },
+                        {                            
+                            "BlockType": "text",
+                            "Source": "",
+                            "VerticalAlignment" : "Center",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 16,
+                            "Foreground": "{Foregroundwhithe}"
+                        }
+                    ]
+                },                
+
+                //session
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Spacing": 0,
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "PaddingTop": 8,
+                            "Source": "[{Session.Track.LocationName, Converter=StringToUpperString}] [PIT STOPS]",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 70,
+                            "Foreground": "{Foregroundwhithe}"
+                        },
+
+                        {
+                            "Name": "LocationName",
+                            "BlockType": "text",
+                            //"MarginLeft": 12,
+                            //"MarginTop": 2,
+                            "VerticalAlignment": "Center",
+                            "Source": "",
+                            "FontName": "{FontNameBold}",                            
+                            "FontSize": 18,
+                            "Foreground": "{Foregroundwhithe}"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "MarginLeft" : 56,
+            "Orientation": "Vertical",
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Vertical",
+                            "Spacing": 8,
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "",
+                                    "FontName": "{FontNameBold}", 
+                                    "FontSize": 18,
+                                    "Foreground": "{Foregroundwhithe}"
+                                },
+
+                                {
+                                    "BlockType": "stack",
+                                    "HorizontalAlignment": "Right",
+                                    "Items": [
+                                        {
+                                            "BlockType": "text",
+                                            "Source": "",
+                                            "FontName": "{FontNameBold}", 
+                                            "FontSize": 18,
+                                            "Foreground": "{Foregroundwhithe}"
+                                        },
+                                        //race duration
+                                        {
+                                            "BlockType": "text",                                            
+                                            "RenderIf": false,
+                                            "Source": "",
+                                            "FontName": "{FontNameBold}", 
+                                            "FontSize": 18,
+                                            "Foreground": "{Foregroundwhithe}",
+                                            "Triggers" : 
+                                            [
+                                                {
+                                                    "Condition" : "{Session.IsLiveData}",
+                                                    "ConditionAnd" : "{Session.SessionType, Converter=StringEquals, Parameter=Race}",
+                                                    "Property" : "RenderIf",
+                                                    "Value" : true
+                                                }
+                                            ]
+                                        },
+                                        //qual, practice duration
+                                        {
+                                            "BlockType": "text",                                                                                  
+                                            "RenderIf": false,
+                                            "Source": "",
+                                            "FontName": "{FontNameBold}", 
+                                            "FontSize": 18,
+                                            "Foreground": "{Foregroundwhithe}",
+                                            "Triggers" : 
+                                            [
+                                                {
+                                                    "Condition" : "{Session.IsLiveData}",
+                                                    "ConditionAnd" : "{Session.SessionType, Converter=StringNotEquals, Parameter=Race}",
+                                                    "Property" : "RenderIf",
+                                                    "Value" : true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "BlockType": "stack",
+                                    "RenderIf": "{Session.IsLiveData}",
+                                    "HorizontalAlignment": "Right",
+                                    "Spacing": 4,
+                                    "Items": [
+                                        {
+                                            "BlockType": "image",
+                                            "Height": 32,
+                                            "VerticalAlignment": "Center",
+                                            "Source": ""
+                                        },
+                                        {
+                                            "BlockType": "text",
+                                            "VerticalAlignment": "Center",
+                                            "Source": "",
+                                            "FontName": "{FontNameBold}", 
+                                            "FontSize": 15,
+                                            "Foreground": "{Foregroundwhithe}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+
+                        {
+                            "Name": "leagueLogo",
+                            "BlockType": "image",
+                            "Height": "{LogoSize}",
+                            "Margin": "0, 0, 0, 0",
+                            "Source": "{Season.LeagueInfo.LeagueLogo}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

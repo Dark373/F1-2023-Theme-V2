@@ -1,0 +1,496 @@
+{
+    "BlockType": "dock",
+    "Padding": "0,0,0,0",
+    "Orientation": "Horizontal",
+    "HorizontalAlignment": "Center",
+    "Width": "*",
+    "Items": [
+        {
+            "BlockType": "stack",
+            "MarginRight": "-110",
+            "Height": "121",
+            "Width": "728",
+            "BackgroundImage": "images/team/lineups_block.png",
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{Item.Team.SecondaryColor}",
+                "BlendPercentage": 100
+            },
+            "Items": [        
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center", 
+                    "Orientation": "Vertical",
+                    "Width": "*",
+                    "MarginLeft": 0,
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Left",
+                            "MarginLeft": 0,
+                            "Width": "*",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "dock",
+                                    "HorizontalAlignment": "Right",
+                                    "VerticalAlignment": "Center",                                 
+                                    "Items": [
+                                        
+                                //right part
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Center",
+                                    "MarginLeft": 0,
+                                    "Orientation": "Vertical",
+                                    "Items": [
+                                      {
+                                            "BlockType": "stack",
+                                            "VerticalAlignment": "Center",
+                                            "HorizontalAlignment": "Center",
+                                            "MarginLeft": 0,
+                                            "MarginBottom": 0,
+                                            "Orientation": "Horizontal",
+                                            "Items": [
+                                                {
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Line0.Driver.Name, Converter=StringToUpperString}",
+                                                    "HorizontalAlignment": "Center",
+                                                    "VerticalAlignment": "Center",
+                                                    "FontSize": "{FontSizeOnOfficialRenders}",
+                                                    "Foreground" : "#ffffff",
+                                                    "FontName": "{FontBlack}",
+                                                    "Triggers" : [
+                                                {
+                                                    "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToFalse}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "FFFFFF"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "00A0DE"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alpine}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "006FBA"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=virtuosi}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{RealNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{InGameNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.InGameName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{FullNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.Name, Converter=StringToUpperString} {Item.Line0.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.RealName, Converter=StringToUpperString} {Item.Line0.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "?"
+                                                        },
+                                                         
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                     ]
+                                  },
+                                  {
+                                            "BlockType": "text",
+                                            "Source": "",
+                                            "HorizontalAlignment": "Center",
+                                            "VerticalAlignment": "Center",
+                                            "FontName": "{Formula1-Regular}",
+                                            "Foreground": "FFFFFF",
+                                            "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
+                                            "Triggers": [
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=ferrari}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line0.Driver.RealName, Converter=StringToUpperString} {Item.Line0.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line0.Driver.Name, Converter=StringToUpperString} {Item.Line0.Driver.RealName, Converter=StringToUpperString}"
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp, Converter=BoolReverse}",
+                                                     "Property": "Source",
+                                                     "Value": ""
+                                                },
+                                                {
+                                                     "Condition": "{InGameNameOnLineUps}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line0.Driver.InGameName, Converter=StringToUpperString}"
+                                                },
+                                            ]
+                                        } 
+                                
+                                    ]
+                                },
+                                    ]
+                                }
+                            ]
+                        },
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType": "stack",
+            "Height": "121",
+            "Width": "728",
+            "BackgroundImage": "images/team/lineups_block.png",
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{Item.Team.SecondaryColor}",
+                "BlendPercentage": 100
+            },
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Right",
+                    "Orientation": "Vertical",
+                    "Width": "*",
+                    "MarginLeft": 0,
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Right",
+                            "MarginLeft": 0,
+                            "Width": "*",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "dock",
+                                    "HorizontalAlignment": "Right",
+                                    "VerticalAlignment": "Center",                                 
+                                    "Items": [
+//right part
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Center",
+                                    "MarginRight": 0,
+                                    "Orientation": "Vertical",
+                                    "Items": [
+{
+                                            "BlockType": "stack",
+                                            "VerticalAlignment": "Center",
+                                            "HorizontalAlignment": "Center",
+                                            "MarginLeft": 0,
+                                            "MarginBottom": 0,
+                                            "Orientation": "Horizontal",
+                                            "Items": [
+                                                {
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Line1.Driver.Name, Converter=StringToUpperString}",
+                                                    "HorizontalAlignment": "Center",
+                                                    "VerticalAlignment": "Center",
+                                                    "FontSize": "{FontSizeOnOfficialRenders}",
+                                                    "Foreground" : "#ffffff",
+                                                    "FontName": "{FontBlack}",
+                                                    "Triggers" : [
+                                                {
+                                                    "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToFalse}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "FFFFFF"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "00A0DE"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alpine}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "006FBA"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=virtuosi}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Foreground",
+                                                            "Value": "000000"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{RealNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{InGameNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.InGameName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{FullNameOnRenders}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.Name, Converter=StringToUpperString} {Item.Line1.Driver.RealName, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.RealName, Converter=StringToUpperString} {Item.Line1.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                    "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "?"
+                                                        },
+                                                         
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                     ]
+                                  },
+                                  {
+                                            "BlockType": "text",
+                                            "Source": "",
+                                            "HorizontalAlignment": "Center",
+                                            "VerticalAlignment": "Center",
+                                            "FontName": "{Formula1-Regular}",
+                                            "Foreground": "FFFFFF",
+                                            "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
+                                            "Triggers": [
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=ferrari}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
+                                                     "Property": "Foreground",
+                                                     "Value": "000000"
+                                                },
+                                                {
+                                                    "Condition": "{SwitchNameFields}",
+                                                    "Setters": [
+                                                        {
+                                                            "Property": "Source",
+                                                            "Value": "{Item.Line1.Driver.RealName, Converter=StringToUpperString} {Item.Line1.Driver.Name, Converter=StringToUpperString}"
+                                                        },
+                                                         
+                                                    ]
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line1.Driver.Name, Converter=StringToUpperString} {Item.Line1.Driver.RealName, Converter=StringToUpperString}"
+                                                },
+                                                {
+                                                     "Condition": "{DriverNameOnLineUp, Converter=BoolReverse}",
+                                                     "Property": "Source",
+                                                     "Value": ""
+                                                },
+                                                {
+                                                     "Condition": "{InGameNameOnLineUps}",
+                                                     "Property": "Source",
+                                                     "Value": "{Item.Line1.Driver.InGameName, Converter=StringToUpperString}"
+                                                },
+                                            ]
+                                        } 
+                                    ]
+                                },
+                            ]
+                        },
+                     ]
+                  },                     
+                    ]
+                }
+            ]
+        },
+    ]
+}
