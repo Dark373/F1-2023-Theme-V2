@@ -1,9 +1,0 @@
-{
-    "Name": "separator",
-    "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
-    "BlockType": "image",
-    "Margin" : "25,40,25,40",
-    "Width": "*",
-    "Background": "{PenaltySeparator}",
-    "Source": "separator.png"
-}
