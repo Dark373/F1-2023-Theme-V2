@@ -1,0 +1,144 @@
+{
+    "BlockType": "dock",
+    "Width": "573",
+    "Background": "14141C",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{DriverLimit, Converter=NumberLess, Parameter=10}",
+            "Property": "Width",
+            "Value": "586"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=2}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=4}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=6}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=8}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=10}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=12}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=14}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=16}",
+            "Property": "Background",
+            "Value": "0C0B11"
+        }
+    ],
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Height": 42,
+                    "MarginRight": 5,
+                    "PaddingLeft": 28,
+                    "PaddingRight": 28,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "images/logos/{Item.Team.Name}.png",
+                        "VerticalAlignment": "Center"
+                    },
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=aston martin}",
+                            "Property": "Source",
+                            "Value": "images/logos/aston martin.white"
+                        }
+                    ]
+                },
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 800,
+                    "Source": "{Item.Driver.Name}",
+                    "Foreground": "{White}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{Formula1-Regular}",
+                    "FontSize": 20,
+                    "Triggers": [
+                        {
+                            "Condition": "{RealNameOnRenders}",
+                            "Property": "Source",
+                            "Value": "{Item.Driver.RealName}"
+                        },
+                        {
+                            "Condition": "{InGameNameOnRenders}",
+                            "Property": "Source",
+                            "Value": "{Item.Driver.InGameName}"
+                        },
+                        {
+                            "Condition": "{SwitchNameFields}",
+                            "Property": "Source",
+                            "Value": "{Item.Driver.RealName}"
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "text",
+                    "RenderIf": "{FullNameOnRenders}",
+                    "MaxWidth": 600,
+                    "Source": " {Item.Driver.RealName, Converter=StringToUpperString}",
+                    "Foreground": "{White}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{Formula1-Bold}",
+                    "FontSize": 20,
+                    "Triggers": [
+                        {
+                            "Condition": "{SwitchNameFields}",
+                            "Property": "Source",
+                            "Value": " {Item.Driver.Name, Converter=StringToUpperString}"
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "text",
+                    "MarginLeft": 8,
+                    "MaxWidth": 1000,
+                    "Source": " {Item.Team.Name, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Left",
+                    "MarginRight": 100,
+                    "FontSize": 10,
+                    "VerticalAlignment": "Center",
+                    "Foreground": "{White}",
+                    "TextOptionsExtern": "teamCell"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "BlockType": "image",
+    "HorizontalAlignment": "Center",
+    "Margin": "0,0,0,-350",
+    "Source": "<source>",
+    "Height": "620",
+    "Triggers": [
+        {
+            "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
+            "Setters": [
+                {
+                    "Property": "Source",
+                    "Value": "images/suit/reserve.png"
+                }
+            ]
+        },
+        {
+            "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
+            "Setters": [
+                {
+                    "Property": "Source",
+                    "Value": "images/suit/placeholder0.png"
+                }
+            ]
+        },
+        {
+            "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+            "Setters": [
+                {
+                    "Property": "Source",
+                    "Value": "images/suit/placeholder1.png"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "BlockType" : "text",
+    "Width": "<width>",
+    "Padding": "<padding>",
+    "Background": "<background>",
+    "Source" : "<source>",
+    "FontName": "<font>",
+    "Foreground": "<foreground>",
+    "FontSize": "<fontsize>",
+    "TextOptionsExtern" : "Num0"
+}

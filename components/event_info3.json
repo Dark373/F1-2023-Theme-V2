@@ -1,0 +1,206 @@
+//table
+{
+    "Name": "mainTable",
+    "BlockType": "table",
+    "Margin": "{MarginTable}",
+    "TableOptions": {
+        "ItemsSource": "{Session.Drivers}",
+        "Limit": "3",
+        "RowSpacing": 30,
+        "HeaderTemplate": {
+            "BlockType": "text",
+            "PaddingBottom": 12,
+            "MarginLeft": -30,
+            "FontSize": 20,
+            "HorizontalAlignment": "Left",
+            "Foreground": "{Black}"
+        },
+        "Columns": [
+            // //position
+            {
+                "Header": "",
+                "Template": {
+                    "BlockType": "text",
+                    "Source": "{Item.PositionString}",
+                    "Width": 45,
+                    "Height": 0,
+                    "FontName": "{Formula1-Italic}",
+                    "FontSize": 30,
+                    "TextOptions": {
+                        "HorizontalAlignment": "Center"
+                    },
+                    "Triggers": [
+                        {
+                            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                            "Property": "Foreground",
+                            "Value": "E9C652"
+                        },
+                        {
+                            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=1}",
+                            "Property": "Foreground",
+                            "Value": "{Standings2ndCountForeground}"
+                        },
+                        {
+                            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=2}",
+                            "Property": "Foreground",
+                            "Value": "{Standings3rdCountForeground}"
+                        }
+                    ]
+                }
+            },
+            //driver line
+            {
+                "Header": "[Previous Podium]",
+                "Template": {
+                    "BlockType": "dock",
+                    "PaddingLeft": 12,
+                    "PaddingRight": 4,
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "Items": [
+                                //flag
+                                {
+                                    "BlockType": "image",
+                                    "Height": 40,
+                                    "MarginRight": 12,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Driver.Nationality.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //name
+                                {
+                                    "BlockType": "text",
+                                    "MaxWidth": 600,
+                                    "MarginLeft": 10,
+                                    "Source": "{Item.Driver.Name}",
+                                    "Foreground": "{Black}",
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "FontName": "{Formula1-Italic}",
+                                    "FontSize": 30,
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{RealNameOnRenders}",
+                                            "Property": "Source",
+                                            "Value": "{Item.Driver.RealName}"
+                                        },
+                                        {
+                                            "Condition": "{InGameNameOnRenders}",
+                                            "Property": "Source",
+                                            "Value": "{Item.Driver.InGameName}"
+                                        },
+                                        {
+                                            "Condition": "{SwitchNameFields}",
+                                            "Property": "Source",
+                                            "Value": "{Item.Driver.RealName}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "BlockType": "text",
+                                    "RenderIf": "{FullNameOnRenders}",
+                                    "MaxWidth": 600,
+                                    "MarginLeft": 8,
+                                    "Source": "{Item.Driver.RealName, Converter=StringToUpperString}",
+                                    "Foreground": "{Black}",
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Bottom",
+                                    "FontName": "{Magistral-BoldItalic}",
+                                    "FontSize": 30,
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{SwitchNameFields}",
+                                            "Setters": [
+                                                {
+                                                    "Property": "Source",
+                                                    "Value": "{Item.Driver.Name, Converter=StringToUpperString}"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Condition": "{Item.Driver.RealName, Converter=EmptyObjectToTrue}",
+                                            "Property": "MarginLeft",
+                                            "Value": 0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "Header": "",
+                "Template": {
+                    "BlockType": "dock",
+                    "MarginRight": "",
+                    "VerticalAlignment": "Center",
+                    "Padding": "0, 0",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "Items": [
+                                {
+                                    "BlockType": "image",
+                                    "MarginLeft": 25,
+                                    "Height": 40,
+                                    "Width": 40,
+                                    "MarginRight": 25,
+                                    "Padding": "12, 0",
+                                    "VerticalAlignment": "Center",
+                                    "Source": "images/logos/{Item.Team.Name}.png",
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alfa romeo}",
+                                            "Setters": [
+                                                {
+                                                    "Property": "Source",
+                                                    "Value": "images/logos/alfa romeo.black.png"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alphatauri}",
+                                            "Setters": [
+                                                {
+                                                    "Property": "Source",
+                                                    "Value": "images/logos/alphatauri.black.png"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "ImageOptions": {
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            //interval
+            {
+                "Header": "",
+                "Template": {
+                    "Padding": "12, 0",
+                    "BlockType": "text",
+                    "Source": "{Item.IntervalRace}",
+                    "HorizontalAlignment": "Left",
+                    "TextOptions": {
+                        "FontName": "{Formula1-Italic}",
+                        "Foreground": "{Black}",
+                        "FontSize": 30,
+                        "HorizontalAlignment": "Right"
+                    }
+                }
+            }
+        ]
+    }
+}
