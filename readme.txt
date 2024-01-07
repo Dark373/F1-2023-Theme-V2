@@ -1,32 +1,62 @@
-To change the rendered images you need to override the default images and settings. Please do not change the files in the root folder of the app, but only in the mods folder.
+1. Correct Round Count On Calendar Renders (With Pre-seasons)
+- File location: components/event_calendar.json
+- Code: R{Item.Position, Converter=NumberSubtract, Parameter=0} 
+- Change number (Parameter-0) to the amount of pre-season races on your calendar
+- Example: 2 pre-season races ->  R{Item.Position, Converter=NumberSubtract, Parameter=2}
+- Leave value at 0 for calendars with no pre-season races
 
-If any reuqired file is not found in the mod folder, the default file will be used.
+2. Add Custom Logos
+- File location: images/Logos
+- Name logo png image must match the name of the team it belongs to.
+- Logo size must be 256x256 maximum (advised to fill 90% of the square).
 
-Each mod must contain a description.json file in the root folder of the mod. It must contain the name of the mod and the author, as well as the version in the format "x.x" (only in this format).
+3. Add Custom Avatars For Multi Tiers
+- File location: images/suits (add images here)
+- Name images to match the driver online username with _1 or _2 to represent seat position. Example: JohnsGaming0705 second driver -> JohnsGaming0705_2
+- File locations: layouts/lineup_f1/layer1-main/layer.json | components/driver_line_cell_official.json | components/podium.json
+- Replace images/suit/{Item.Team.Name}_1/2 (wriiten as images/suit/{Item.Team.Name}_{Item.SeatPosition} in other renders) with images/suit/{Item.Driver.Name}_1/2 or images/suit/{Item.Driver.Name}_{Item.SeatPosition}.
 
-A mod may contain a small picture called 'preview.png' to roughly show what the mod does.
+4. Add My/New Language
+- Folder location: localizations
+- Copy & paste "english.json"
+- Rename copied file to new Language
+- Convert left-hand side text to the translation
+- Example: "LAPS": "VOLTAS",
+- If english translation is in uppercase, the translation must also be in uppercase
+- Send new language file to Dark373 for permanent addition to the theme.
 
-To distribute the mod it can be packed in a zip-archive (without the root folder mod, the archive should contains immediately folders overridden by the mod), and then placed in the folder 'mods/' of the app. At the next launch the mod will be automatically unpacked and displayed in the list of mods.
+5. Theme Settings
+- Position Progress: change driver/team progress to position from points.
+- Real Name On Renders: Use driver name field (1) to name field (2). Example: (John Smith), John -> Smith
+- In Game Name On Renders: Uses In-game name field, replacing name field (1). Example: John -> JohnsGaming0705.
+- Full Name On Renders: Renders both name fields together. Example: John -> John SMITH
+- Switch Name Fields: Name field (2) renders infront of name field (1). Example: John SMITH -> Smith JOHN OR John -> Smith
+*if all name related settings are turned off, name only name field (1) will render. Example: (John Smith) -> John
 
-Driver name (general / displayed) -> First name or Online ID
-Real name -> Second name (leave blank if you are not using real names)
-Driver Description -> Team name (for fastest lap at the bottom of race results)
+- Champion Colour: Convert the font colour for points to gold to signify P1 has won the championship. (Entire P1 line in session results.)
+- Logo Size (int): Size of the league logo on all renders.
+- Driver Limit (int): Amount of positions/drvers being rendered. Example: value of 12 -> positions 1st to 12th will render.**
+- Start Positions From (int): Starts counting positions from this value. Example: value of 11 -> renders will show positions from 11th and above.**
+**Combination: Driver Limit (20) & Start Positions From (11), Positions from 11th to 20th will render.
 
-For pre season R0 round count:
-components -> event_calendar, look for this line:
+- Change Word Order: Word ordering changes for different language localizations with a different word order to english,.
 
-"Source": "R{Item.Position, Converter=NumberSubtract, Parameter=1}",
+// Lineup Settings 
+- Driver Name On Line Up & In Game Name On Line Ups: Render name fields below main name field used in line up graphics. (cannot be active at the sane time).
+- Render Reserve Driver: Render reserves on universal line up render.
+- Reserve Driver Max (int): Amount of lines (Pairs of reserves) should be rendered. Example: 4 reserves -> value=2.
 
-change number on the end to how many pre season races you have. Set 0 for none.
+// Calendar Settings
+- Second Calendar Events In Column: Amount of events that renders in the second cloumn (set to 0 for one column). Example: 10 total rounds -> set value to 5 (half the total) for equal events in both columns.
 
-DriverLimit: 10 & StartPositionsFrom: 0 = Top 10
-(Change DriverLimit to get any Top ... positions you wish)
+6. Change/Switch Renders
+- Desired render (example_layout2) does not appear on drop down menus due to size limits:
+- File location: layouts/example_layout1/layout_description.json
+- Idex (position on drop-down menu).
+- Swap Index numbers of example_layout1 and example_layout2.
+- example_layout2 now appears on the drop-down menu instead of example_layout1
 
-DriverLimit: 20 & StartPositionsFrom: 9 = Positions 10-20
-(Or all positions past P9).
-
-
-To add F2 logos to renders:
-user\mods\F1-2023-Theme-V2-main\images\logos (or V1)
-Copy and paste all logos to the following:
-RacingLeagueTools_v075_portable\images\logos\teams
+7. Add Official F1 2023 Team Colours To Your Database
+- File location: global/global_vars.json
+- Under //colors header are the official hex codes. Copy and paste them into your database (in app): Database -> Teams -> Color #1
+- Note: Haas official color intended use for F1 2023 Lineups only, set to FFFFFF (White) for all other renders.
