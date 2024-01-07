@@ -1,7 +1,6 @@
 [
     {
-        "Name" : "primaryNumber",
-        "FontName": "{FontNameDefault}",
+        "Name" : "Num1",
         "FontSize": 30,
         "HorizontalAlignment" : "Center"        
     },
@@ -9,12 +8,10 @@
         "Name" : "tableColumnHeader",
         "FontName": "{FontNameDefault}",
         "FontSize": 30,
-        "Foreground": "FFFFFF",     
+        "Foreground": "{White}"     
     },
     {
-        "Name" : "OfficialNumber",
-        "FontName": "{Formula1-Black}",
-        "FontSize": 48,
-        "HorizontalAlignment" : "Center"        
+        "Name" : "Num0",
+        "HorizontalAlignment" : "Center"  
     },
 ]
