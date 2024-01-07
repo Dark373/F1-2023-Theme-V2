@@ -1,0 +1,123 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Background": "#ffffff",
+        "Items": [
+            //event info
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "MarginBottom" : 24,
+                "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
+                "Items": [
+                    //header
+                    {
+                        "Name": "headerLeftPart",
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": 12,
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            //league name
+                            {
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "Name":"LeagueLogo",
+                                        "BlockType":"image",
+                                        "Height":88,
+                                        "Width":"auto",
+                                        "HorizontalAlignment" : "Center",
+                                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                                    },
+                                    {
+                                    "BlockType": "stack",
+                                    "Orientation":"Vertical",
+                                    "VerticalAlignment": "Center",
+                                    "MarginLeft": 20,
+                                    "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Season.LeagueInfo.LeagueName}",
+                                                "FontName": "{FIAFontWide}",
+                                                "Foreground":"{FIAText}",
+                                                "FontSize": 30
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Season.Name}",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FIAFontWide}",
+                                                "FontSize": 25,
+                                                "Foreground": "{FIAText}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            //session
+                            {
+                                "Name": "headerSessionLine",
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
+                                "Spacing": 8,
+                                "Items": [
+
+                                    {
+                                        "Name": "CountryName",
+                                        "BlockType": "text",
+                                        "MarginLeft": 12,
+                                        "VerticalAlignment": "Center",
+                                        "Source": "[{Event.Track.CircuitName} Grand Prix]",
+                                        "TextOptionsExtern": "CountryName",
+                                        "FontName": "{FIAFontWide}",
+                                        "Foreground":"{FIAGrandPrix}",
+                                        "FontSize": 35
+                                    },
+
+                                    {
+                                        "Name": "LocationName",
+                                        "BlockType": "text",
+                                        "HorizontalAlignment" :"Center",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{Event.Date, Converter=DateToDayOfMonth} {Event.Date, Converter=DateToMonthInWords} {Event.Date, Converter=DateToYear}",
+                                        "FontName": "{FIAFontWide}",
+                                        "FontSize": 18,
+                                        "Foreground": "{FIAText}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },         
+            //penalties
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 48,
+                "ItemStackOptions": {
+                    "ItemSource": "{Penalties.Penalties}",
+                    "Template": {
+                        "BlockType": "component",
+                        "Width" : "*",
+                        "Background" : "#09FFFFFF",
+                        "ComponentName": "fia_penalty_item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "Penalty": "{Item}"
+                            }
+                        }
+                    }
+                }
+            },
+            
+        ]
+    }
+}
