@@ -48,8 +48,8 @@
                             {
                                 "Condition": "{DarkTheme}",
                                 "Property": "Foreground",
-                                "Value": "FFFFFF",
-                            },
+                                "Value": "FFFFFF"
+                            }
                         ]
                     },
                     "Columns": [
@@ -94,6 +94,11 @@
                                         "Condition": "{RenderPositions}",
                                         "Property": "MarginLeft",
                                         "Value": "10"
+                                    },
+                                    {
+                                        "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                        "Property": "Foreground",
+                                        "Value": "{ReserveDriverNumberForeground}"
                                     }
                                 ]
                             }
@@ -287,13 +292,12 @@
                                             {
                                                 "Condition": "{DarkTheme}",
                                                 "Property": "Foreground",
-                                                "Value": "FFFFFF",
-                                            },
+                                                "Value": "FFFFFF"
+                                            }
                                         ]
                                     }
                                 ]
                             },
-                            //           "Width": "120",
                             "Template": {
                                 "Padding": "10, 0",
                                 "RenderIf": "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
@@ -312,12 +316,12 @@
                                     {
                                         "Condition": "{PositionProgress}",
                                         "Property": "Source",
-                                        "Value": "{Item.RaceMajorPositionString}",
+                                        "Value": "{Item.RaceMajorPositionString}"
                                     },
                                     {
                                         "Condition": "{DarkTheme}",
                                         "Property": "Background",
-                                        "Value": "171717",
+                                        "Value": "171717"
                                     },
                                     {
                                         "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
@@ -583,7 +587,7 @@
                                         "foreground": "{StandingsPoleCountForeground}",
                                         "fontsize": "60"
                                     }
-                                },
+                                }
                             }
                         },
                         {
