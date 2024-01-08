@@ -13,7 +13,7 @@
                 },
                 {
                     "Property": "Width",
-                    "Value": "*"
+                    "Value": "{TheGridPositionLength}"
                 }
             ]
         }
@@ -33,6 +33,7 @@
                     "BlockType": "text",
                     "Width": 160,
                     "Height": 65,
+                    "MarginRight": 20,
                     "Source": "[{Item.Position}TH]",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment": "Center",
@@ -58,7 +59,6 @@
                 },
                 {
                     "BlockType": "text",
-                    "MarginLeft": 20,
                     "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
@@ -80,11 +80,6 @@
                             "Condition": "{SwitchNameFields}",
                             "Property": "Source",
                             "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
-                        },
-                        {
-                            "Condition": "{FullNameOnRenders, Converter=BoolReverse}",
-                            "Property": "MarginRight",
-                            "Value": 40
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
@@ -126,7 +121,6 @@
                 {
                     "BlockType": "text",
                     "RenderIf": "{FullNameOnRenders}",
-                    "MarginRight": 40,
                     "Source": " {Item.Driver.RealName, Converter=StringToUpperString}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
@@ -139,11 +133,6 @@
                             "Condition": "{SwitchNameFields}",
                             "Property": "Source",
                             "Value": " {Item.Driver.Name, Converter=StringToUpperString}"
-                        },
-                        {
-                            "Condition": "{Item.Driver.RealName, Converter=EmptyObjectToTrue}",
-                            "Property": "MarginLeft",
-                            "Value": 20
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
@@ -187,6 +176,7 @@
         {
             "BlockType": "stack",
             "HorizontalAlignment": "Right",
+            "MarginLeft": 20,
             "VerticalAlignment": "Center",
             "Items": [
                 {
