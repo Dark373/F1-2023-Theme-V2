@@ -91,7 +91,7 @@
                     {
                         "BlockType": "Dock",
                         "MarginRight": 0,
-                        "MarginLeft": 830,
+                        "MarginLeft": 800,
                         "Orientation": "Horizontal",
                         "Items": [
                             {
@@ -125,7 +125,7 @@
                     },
                     {
                         "BlockType": "Dock",
-                        "Margin": "-10,0,500,-160",
+                        "Margin": "0,20,700,-250",
                         "Orientation": "Vertical",
                         "Items": [
                             {
@@ -140,7 +140,7 @@
                                     "Template": {
                                         "BlockType": "image",
                                         "HorizontalAlignment": "Center",
-                                        "Margin": "0,25,80,0",
+                                        "Margin": "0,45,80,0",
                                         "Source": "images/logos/{Item.Team.Name}.png",
                                         "Height": "250",
                                         "Triggers": [
@@ -149,7 +149,7 @@
                                                 "Setters": [
                                                     {
                                                         "Property": "Height",
-                                                        "Value": "340"
+                                                        "Value": "300"
                                                     },
                                                     {
                                                         "Property": "Margin",
@@ -192,7 +192,7 @@
                                                     },
                                                     {
                                                         "Property": "Height",
-                                                        "Value": "340"
+                                                        "Value": "300"
                                                     },
                                                     {
                                                         "Property": "Margin",
@@ -281,8 +281,8 @@
                     },
                     {
                         "BlockType": "Dock",
-                        "MarginRight": -390,
-                        "MarginLeft": 0,
+                        "MarginRight": -180,
+                        "MarginLeft": -180,
                         "Orientation": "Horizontal",
                         "Items": [
                             {
@@ -352,7 +352,7 @@
                     },
                     {
                         "BlockType": "Dock",
-                        "Margin": "200,0,-150,-160",
+                        "Margin": "0,0,-160,-160",
                         "Orientation": "Vertical",
                         "Items": [
                             {
@@ -794,7 +794,7 @@
                     },
                     {
                         "BlockType": "Dock",
-                        "MarginRight": -345,
+                        "MarginRight": -340,
                         "MarginLeft": 1240,
                         "Orientation": "Horizontal",
                         "Items": [
@@ -865,7 +865,7 @@
                     },
                     {
                         "BlockType": "Dock",
-                        "Margin": "155,0,-155,-160",
+                        "Margin": "160,0,-170,-160",
                         "Orientation": "Vertical",
                         "Items": [
                             {
