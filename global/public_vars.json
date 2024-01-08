@@ -49,6 +49,7 @@
   "SecondCalendarEventsInColumn": 5,
   "LogoSize": 44,
   "ReserveDriverMax": 7,
+  "TheGridPositionLength": 900,
   "StewardReportType": "Report",
-  "GPName": "Change Me In Settings"
+  "GPName": "Change Me"
 }
