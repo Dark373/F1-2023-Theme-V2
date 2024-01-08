@@ -91,6 +91,11 @@
                                 },
                                 "Triggers" : [
                                     {
+                                        "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                        "Property": "Foreground",
+                                        "Value": "{ReserveDriverNumberForeground}"
+                                    },
+                                    {
                                         "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                                         "Property": "Foreground",
                                         "Value": "{Black}"
@@ -109,6 +114,11 @@
                                         "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
                                         "Property": "Background",
                                         "Value": ""
+                                    },
+                                    {
+                                        "Condition": "{Item.IsLiveData, Converter=BoolReverse}",
+                                        "Property": "RenderIf",
+                                        "Value": "False"
                                     }
                                 ]                           
                             }
