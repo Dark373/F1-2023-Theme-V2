@@ -104,7 +104,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "00A0DE"
+                                                                            "Value": "{WillaimsLineUpForeground}"
                                                                         }
                                                                     ]
                                                                 },
@@ -113,7 +113,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "006FBA"
+                                                                            "Value": "{AlpineLineUpForeground}"
                                                                         }
                                                                     ]
                                                                 },
