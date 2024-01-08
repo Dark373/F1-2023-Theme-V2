@@ -6,24 +6,6 @@
     "Height": "620",
     "Triggers": [
         {
-            "Condition": "{Item.SeatPosition, Converter=NumberEquals, Parameter=0}",
-            "Setters": [
-                {
-                    "Property": "Source",
-                    "Value": "images/suit/reserve.png"
-                }
-            ]
-        },
-        {
-            "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
-            "Setters": [
-                {
-                    "Property": "Source",
-                    "Value": "images/suit/placeholder0.png"
-                }
-            ]
-        },
-        {
             "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
             "Setters": [
                 {
