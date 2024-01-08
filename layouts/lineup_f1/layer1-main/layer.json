@@ -140,7 +140,7 @@
                                     "Template": {
                                         "BlockType": "image",
                                         "HorizontalAlignment": "Center",
-                                        "Margin": "0,45,80,0",
+                                        "Margin": "-20,25,70,0",
                                         "Source": "images/logos/{Item.Team.Name}.png",
                                         "Height": "250",
                                         "Triggers": [
@@ -166,7 +166,7 @@
                                                     },
                                                     {
                                                         "Property": "Margin",
-                                                        "Value": "0,45,120,0"
+                                                        "Value": "-20,25,100,0"
                                                     }
                                                 ]
                                             },
@@ -179,7 +179,7 @@
                                                     },
                                                     {
                                                         "Property": "Margin",
-                                                        "Value": "0,45,120,0"
+                                                        "Value": "-20,25,100,0"
                                                     }
                                                 ]
                                             },
@@ -222,7 +222,7 @@
                                                     },
                                                     {
                                                         "Property": "Margin",
-                                                        "Value": "0,45,110,0"
+                                                        "Value": "-20,25,90,0"
                                                     }
                                                 ]
                                             },
@@ -239,7 +239,7 @@
                                                     },
                                                     {
                                                         "Property": "Margin",
-                                                        "Value": "0,45,120,0"
+                                                        "Value": "-20,25,100,0"
                                                     }
                                                 ]
                                             },
@@ -252,7 +252,7 @@
                                                     },
                                                     {
                                                         "Property": "Margin",
-                                                        "Value": "0,45,120,0"
+                                                        "Value": "-20,25,100,0"
                                                     }
                                                 ]
                                             },
@@ -269,7 +269,7 @@
                                                     },
                                                     {
                                                         "Property": "Margin",
-                                                        "Value": "0,60,120,0"
+                                                        "Value": "-20,25,100,0"
                                                     }
                                                 ]
                                             }
