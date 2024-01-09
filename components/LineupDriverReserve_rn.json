@@ -8,27 +8,27 @@
     "Items": [
         //left part
         {
+            "BlockType": "stack",
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",
+            "Orientation": "Vertical",
+            "Width": "*",
+            "MarginLeft": 0,
+            "Items": [
+                {
                     "BlockType": "stack",
                     "VerticalAlignment": "Center",
                     "HorizontalAlignment": "Right",
-                    "Orientation": "Vertical",
-                    "Width": "*",
                     "MarginLeft": 0,
+                    "Width": "*",
+                    "Orientation": "Horizontal",
                     "Items": [
                         {
-                            "BlockType": "stack",
-                            "VerticalAlignment": "Center",
+                            "BlockType": "dock",
                             "HorizontalAlignment": "Right",
-                            "MarginLeft": 0,
-                            "Width": "*",
-                            "Orientation": "Horizontal",
+                            "VerticalAlignment": "Center",
                             "Items": [
-                                {
-                                    "BlockType": "dock",
-                                    "HorizontalAlignment": "Right",
-                                    "VerticalAlignment": "Center",                                 
-                                    "Items": [
-//right part
+                                //right part
                                 {
                                     "BlockType": "stack",
                                     "VerticalAlignment": "Center",
@@ -36,7 +36,7 @@
                                     "MarginRight": 0,
                                     "Orientation": "Vertical",
                                     "Items": [
-{
+                                        {
                                             "BlockType": "stack",
                                             "VerticalAlignment": "Center",
                                             "HorizontalAlignment": "Left",
@@ -44,89 +44,83 @@
                                             "MarginBottom": 0,
                                             "Orientation": "Horizontal",
                                             "Items": [
-{
-                    "BlockType": "text",
-                    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "FontSize": "{FontSizeOnOfficialRenders}",
-                    "Foreground" : "#ffffff",
-                    "FontName": "{Formula1-Bold}",
-                    "Triggers" : [
                                                 {
-                                                    "Condition": "{Item.Driver.Name, Converter=EmptyObjectToFalse}",
-                                                    "Setters": [
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                                                    "HorizontalAlignment": "Left",
+                                                    "VerticalAlignment": "Center",
+                                                    "FontSize": "{FontSizeOnOfficialRenders}",
+                                                    "Foreground": "#ffffff",
+                                                    "FontName": "{Formula1-Bold}",
+                                                    "Triggers": [
                                                         {
-                                                            "Property": "Foreground",
-                                                            "Value": "FFFFFF"
+                                                            "Condition": "{Item.Driver.Name, Converter=EmptyObjectToFalse}",
+                                                            "Setters": [
+                                                                {
+                                                                    "Property": "Foreground",
+                                                                    "Value": "FFFFFF"
+                                                                },
+                                                            ]
                                                         },
-                                                         
+                                                        {
+                                                            "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                            "Setters": [
+                                                                {
+                                                                    "Property": "Foreground",
+                                                                    "Value": "000000"
+                                                                },
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition": "{RealNameOnRenders}",
+                                                            "Setters": [
+                                                                {
+                                                                    "Property": "Source",
+                                                                    "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
+                                                                },
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition": "{InGameNameOnRenders}",
+                                                            "Setters": [
+                                                                {
+                                                                    "Property": "Source",
+                                                                    "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                                                },
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition": "{FullNameOnRenders}",
+                                                            "Setters": [
+                                                                {
+                                                                    "Property": "Source",
+                                                                    "Value": "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}"
+                                                                },
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition": "{SwitchNameFields}",
+                                                            "Setters": [
+                                                                {
+                                                                    "Property": "Source",
+                                                                    "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
+                                                                },
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition": "{Item.Driver.Name, Converter=EmptyObjectToTrue}",
+                                                            "Setters": [
+                                                                {
+                                                                    "Property": "Source",
+                                                                    "Value": "?"
+                                                                },
+                                                            ]
+                                                        }
                                                     ]
                                                 },
-                                                {
-                                                    "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Foreground",
-                                                            "Value": "000000"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{RealNameOnRenders}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{InGameNameOnRenders}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{FullNameOnRenders}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{SwitchNameFields}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
-                                                        },
-                                                         
-                                                    ]
-                                                },
-                                                {
-                                                    "Condition": "{Item.Driver.Name, Converter=EmptyObjectToTrue}",
-                                                    "Setters": [
-                                                        {
-                                                            "Property": "Source",
-                                                            "Value": "?"
-                                                        },   
-                                                    ]
-                                                }
                                             ]
                                         },
-                                     ]
-                                  },
-                                  {
+                                        {
                                             "BlockType": "text",
                                             "Source": "",
                                             "HorizontalAlignment": "Left",
@@ -142,27 +136,25 @@
                                                             "Property": "Source",
                                                             "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
                                                         },
-                                                         
                                                     ]
                                                 },
                                                 {
-                                                     "Condition": "{DriverNameOnLineUp}",
-                                                     "Property": "Source",
-                                                     "Value": "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}"
+                                                    "Condition": "{DriverNameOnLineUp}",
+                                                    "Property": "Source",
+                                                    "Value": "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}"
                                                 },
                                                 {
-                                                     "Condition": "{DriverNameOnLineUp, Converter=BoolReverse}",
-                                                     "Property": "Source",
-                                                     "Value": ""
+                                                    "Condition": "{DriverNameOnLineUp, Converter=BoolReverse}",
+                                                    "Property": "Source",
+                                                    "Value": ""
                                                 },
                                                 {
-                                                     "Condition": "{InGameNameOnLineUps}",
-                                                     "Property": "Source",
-                                                     "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
+                                                    "Condition": "{InGameNameOnLineUps}",
+                                                    "Property": "Source",
+                                                    "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
                                                 },
                                             ]
-                                        } 
-                                
+                                        }
                                     ]
                                 },
                                 {
@@ -173,7 +165,7 @@
                                     "MarginRight": -275,
                                     "Orientation": "Vertical",
                                     "Items": [
-//number
+                                        //number
                                         {
                                             "BlockType": "text",
                                             "RenderIf": "{DriverNumber}",
@@ -201,7 +193,7 @@
                                                     "Setters": [
                                                         {
                                                             "Property": "FontName",
-                                                            "Value": "Formula1-Black"
+                                                            "Value": "{Formula1-Black}"
                                                         },
                                                         {
                                                             "Property": "FontSize",
@@ -210,12 +202,17 @@
                                                     ]
                                                 },
                                                 {
+                                                    "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                    "Property": "Foreground",
+                                                    "Value": "{ReserveDriverNumberForeground}"
+                                                },
+                                                {
                                                     "Condition": "{Item.Driver.Name, Converter=EmptyObjectToTrue}",
                                                     "Setters": [
                                                         {
                                                             "Property": "Source",
                                                             "Value": "?"
-                                                        },   
+                                                        },
                                                     ]
                                                 }
                                             ],
@@ -225,10 +222,9 @@
                                 }
                             ]
                         },
-                     ]
-                  },
-                                        
                     ]
-                }
+                },
             ]
         }
+    ]
+}
