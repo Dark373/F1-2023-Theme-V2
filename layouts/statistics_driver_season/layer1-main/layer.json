@@ -90,6 +90,13 @@
                                         "fontsize": "52"
                                     }
                                 },
+                                "Triggers" : [
+                                    {
+                                        "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                        "Property": "Foreground",
+                                        "Value": "{ReserveDriverNumberForeground}"
+                                    }
+                                ]
                             }
                         },
                         //driver line
@@ -107,12 +114,12 @@
                                     {
                                         "Condition": "{RenderPositions}",
                                         "Property": "MarginLeft",
-                                        "Value": "10",
+                                        "Value": "10"
                                     },
                                     {
                                         "Condition": "{DriverNumber}",
                                         "Property": "MarginLeft",
-                                        "Value": "10",
+                                        "Value": "10"
                                     }
                                 ]
                             }
