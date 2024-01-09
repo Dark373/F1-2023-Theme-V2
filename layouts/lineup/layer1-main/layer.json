@@ -134,7 +134,7 @@
                                                                                     {
                                                                                         "Property": "FontSize",
                                                                                         "Value": "120"
-                                                                                    },
+                                                                                    }
                                                                                 ]
                                                                             },
                                                                             {
@@ -151,12 +151,17 @@
                                                                                 ]
                                                                             },
                                                                             {
+                                                                                "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                                                "Property": "Foreground",
+                                                                                "Value": "{ReserveDriverNumberForeground}"
+                                                                            },
+                                                                            {
                                                                                 "Condition": "{Item.Driver.Name, Converter=EmptyObjectToTrue}",
                                                                                 "Setters": [
                                                                                     {
                                                                                         "Property": "Source",
                                                                                         "Value": "?"
-                                                                                    },
+                                                                                    }
                                                                                 ]
                                                                             }
                                                                         ],

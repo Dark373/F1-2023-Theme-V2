@@ -91,6 +91,11 @@
                                         "Condition": "{RenderPositions}",
                                         "Property": "MarginLeft",
                                         "Value": "10"
+                                    },
+                                    {
+                                        "Condition": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                        "Property": "Foreground",
+                                        "Value": "{ReserveDriverNumberForeground}"
                                     }
                                 ]
                             }
