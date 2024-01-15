@@ -15,6 +15,7 @@
 - Name images to match the driver online username with _1 or _2 to represent seat position. Example: JohnsGaming0705 second driver -> JohnsGaming0705_2
 - File locations: layouts/lineup_f1/layer1-main/layer.json | components/driver_line_cell_official.json | components/podium.json
 - Replace images/suit/{Item.Team.Name}_1/2 (wriiten as images/suit/{Item.Team.Name}_{Item.SeatPosition} in other renders) with images/suit/{Item.Driver.Name}_1/2 or images/suit/{Item.Driver.Name}_{Item.SeatPosition}.
+- Specificly for lineup renders, a list function is used: Line0 (left list) Line1 (right list). images/suit/{Item.Line0/1.Driver.Name}_1/2 should replace the existing team name lines.
 
 4. Add My/New Language
 - Folder location: localizations
