@@ -3,6 +3,7 @@
     "VerticalAlignment": "Bottom",
     "HorizontalAlignment": "Center",
     "Orientation": "Vertical",
+    "Width": 700,
     "Items": [
         {
             "Name": "headerSessionLine",

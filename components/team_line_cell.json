@@ -83,7 +83,7 @@
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
                             "Property": "Source",
-                            "Value": "images/mclaren.white.png"
+                            "Value": "images/logos/mclaren.white.png"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
@@ -109,6 +109,11 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
                             "Property": "Background",
                             "Value": "03A0E3"
+                        },
+                        {
+                            "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                            "Property": "Source",
+                            "Value": "images/logos/{Item.Team.Name}.png"
                         },
                         {
                             "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
