@@ -170,7 +170,7 @@
                         },
                         {
                             "Header": "",
-                            "MarginLeft": "-45",
+                            "MarginLeft": "-465",
                             "Template": {
                                 "BlockType": "component",
                                 "ComponentName": "points_header"

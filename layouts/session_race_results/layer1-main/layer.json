@@ -614,6 +614,7 @@
             //footer
             {
                 "BlockType": "stack",
+                "RenderIf": "{Item.Position, Converter=NumberLess, Parameter=11}",
                 "Margin": "8, 36, 0, 0",
                 "Spacing": 32,
                 "Items": [
@@ -632,6 +633,44 @@
                                 "data": " {Session.FastestLapTime}",
                                 "lap": "  [LAP] {Session.FastestLapNumLap}",
                                 "point": "  (+1 [point])"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Margin": "8, 36, 0, 0",
+                "Spacing": 32,
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Name": "stickerFastestLap",
+                        "RenderIf": "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                        "ComponentOptions": {
+                            "ComponentName": "sticker",
+                            "Vars": {
+                                "bg": "{FastestLapRaceStickerBackground}",
+                                "header": "[FASTEST LAP]",
+                                "main": " {Session.FastestLapDriver.Name}",
+                                "main2": "{Session.FastestLapDriver.RealName, Converter=StringToUpperString}",
+                                "team": "  {Session.FastestLapDriver.Description, Converter=StringToUpperString}",
+                                "data": " {Session.FastestLapTime}",
+                                "lap": "  [LAP] {Session.FastestLapNumLap}",
+                                "point": "  (+1 [point])"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Name": "stickerDOTD",
+                        "RenderIf": "{DOTD}",
+                        "ComponentOptions": {
+                            "ComponentName": "sticker",
+                            "Vars": {
+                                "DOTD": "[DOTD]",
+                                "main": " {Session.DriverDayDriver.Name}",
+                                "main2": "{Session.DriverDayDriver.RealName, Converter=StringToUpperString}"
                             }
                         }
                     }
