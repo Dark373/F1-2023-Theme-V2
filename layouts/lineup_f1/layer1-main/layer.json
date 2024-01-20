@@ -81,6 +81,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -116,6 +121,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -307,6 +317,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -343,6 +358,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -594,6 +614,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -629,6 +654,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -820,6 +850,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -856,6 +891,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1107,6 +1147,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1143,6 +1188,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1335,6 +1385,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1528,6 +1583,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1623,6 +1683,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1658,6 +1723,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1849,6 +1919,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -1885,6 +1960,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -2136,6 +2216,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -2171,6 +2256,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -2362,6 +2452,11 @@
                                                 "Condition": "{Item.Line0.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }
@@ -2553,6 +2648,11 @@
                                                 "Condition": "{Item.Line1.Driver.Name, Converter=EmptyObjectToTrue}",
                                                 "Property": "Source",
                                                 "Value": "images/suit/placeholder0.png"
+                                            },
+                                            {
+                                                "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
+                                                "Property": "Source",
+                                                "Value": "images/suit/placeholder1.png"
                                             }
                                         ]
                                     }

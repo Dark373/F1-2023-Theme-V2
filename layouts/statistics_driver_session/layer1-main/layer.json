@@ -363,6 +363,57 @@
                     ]
                 }
             },
+            //description
+            {
+                "BlockType": "dock",
+                "RenderIf": "{StatisticsDescription}",
+                "Width": "*",
+                "Height": "*",
+                "Margin": "0, 28, 0, 0",
+                "HorizontalAlignment": "Left",
+                "Spacing": 0,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Width": "*",
+                        "Foreground": "{Black}",
+                        "Height": "*",
+                        "Source": "{Statistics.Description}",
+                        "TextOptions": {
+                            "FontSize": 16,
+                            "Wrap": true,
+                            "HorizontalAlignment": "Left"
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "{DarkTheme}",
+                                "Property": "Foreground",
+                                "Value": "{White}"
+                            },
+                            {
+                                "Condition": "{Statistics.Description, Converter=EmptyObjectToTrue}",
+                                "Property": "Width",
+                                "Value": "1360"
+                            },
+                            {
+                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=pure race pace}",
+                                "Property": "Height",
+                                "Value": "150"
+                            },
+                            {
+                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=consistency rating}",
+                                "Property": "Height",
+                                "Value": "150"
+                            },
+                            {
+                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=longest stints}",
+                                "Property": "Height",
+                                "Value": "34"
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     }
 }
