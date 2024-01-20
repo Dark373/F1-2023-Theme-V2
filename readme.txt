@@ -52,6 +52,8 @@
 
 6. Change/Switch Renders
 - Desired render (example_layout2) does not appear on drop down menus due to size limits:
+- example_layout1 does appear as a renderable image in the app so we need to swap index numbers between example_layout1 and example_layout2
+- Index numbers are located in the layout_description.json files for each layout
 - File location: layouts/example_layout1/layout_description.json
 - Idex (position on drop-down menu).
 - Swap Index numbers of example_layout1 and example_layout2.
@@ -61,3 +63,15 @@
 - File location: global/global_vars.json
 - Under //colors header are the official hex codes. Copy and paste them into your database (in app): Database -> Teams -> Color #1
 - Note: Haas official color intended use for F1 2023 Lineups only, set to FFFFFF (White) for all other renders.
+
+8. Lne-up/Driver Translation On F1 2023 Render Too Large
+- Go to: layouts/lineup_f1.json
+- Scroll to the bottom of the file
+- Change "FontSize" accordingly
+
+9. Change Font Colour For Season Names
+- (In app) go to "Categories"
+- Create Category "+ Add"
+- Primary colour of the category determines season name font colour
+- (In app) go to "Calendar", right-click on the season and "Edit"
+- Apply category
