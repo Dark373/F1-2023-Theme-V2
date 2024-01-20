@@ -251,8 +251,16 @@
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mclaren}",
-                            "Property": "MarginLeft",
-                            "Value": "3"
+                            "Setters": [
+                                {
+                                    "Property": "MarginLeft",
+                                    "Value": "3"
+                                },
+                                {
+                                    "Property": "Source",
+                                    "Value": "[McLAREN]"
+                                }
+                            ]
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=alfa romeo}",
