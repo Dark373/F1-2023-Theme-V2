@@ -48,10 +48,10 @@
   "DriverLimit": 10,
   "StartPositionsFrom": 0,
   "FontSizeOnOfficialRenders": 38,
-  "SecondCalendarEventsInColumn": 5,
+  "SecondCalendarEventsInColumn": 0,
   "LogoSize": 44,
   "ReserveDriverMax": 0,
   "TheGridPositionLength": 920,
   "StewardReportType": "Report",
-  "GPName": "Austrian"
+  "GPName": "Change Me"
 }
