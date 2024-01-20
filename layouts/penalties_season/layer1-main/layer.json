@@ -117,7 +117,7 @@
                             }
                         },
                         {
-                            "Header": "[WARNINGS]",
+                            "Header": "[WA]",
                             "MarginLeft": "10",
                             "Template": {
                                 "BlockType": "component",
@@ -217,7 +217,7 @@
                             }
                         },
                         {
-                            "Header": "[WARNS-AT]",
+                            "Header": "[WO]",
                             "MarginLeft": "10",
                             "Template": {
                                 "BlockType": "component",
@@ -238,6 +238,37 @@
                         }
                     ]
                 }
+            },
+            //description
+            {
+                "BlockType": "dock",
+                "RenderIf": "{StatisticsDescription}",
+                "Width": "*",
+                "Height": "*",
+                "Margin": "0, 28, 0, 0",
+                "HorizontalAlignment": "Left",
+                "Spacing": 0,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Width": "*",
+                        "Foreground": "{Black}",
+                        "Height": "38",
+                        "Source": "PP - active penalty points, WA - active warnings, STEWARDS - penalty time (seconds) by stewards, GAME - penalty time (seconds) by game, POSITIONS - penalty positions by stewards, TOTAL - penalty points overall, WO - warnings overall",
+                        "TextOptions": {
+                            "FontSize": 16,
+                            "Wrap": true,
+                            "HorizontalAlignment": "Left"
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "{DarkTheme}",
+                                "Property": "Foreground",
+                                "Value": "{White}"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
