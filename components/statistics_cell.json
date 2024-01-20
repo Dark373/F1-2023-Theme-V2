@@ -17,7 +17,7 @@
             "VerticalAlignment": "Center",
             "TextOptions": {
                 "FontName": "{Formula1-Black}",
-                "Foreground": "FFFFFF",
+                "Foreground": "{White}",
                 "FontSize": 52,
                 "HorizontalAlignment": "Center"
             },
@@ -78,7 +78,7 @@
             "VerticalAlignment": "Center",
             "TextOptions": {
                 "FontName": "{Formula1-Black}",
-                "Foreground": "FFFFFF",
+                "Foreground": "{White}",
                 "FontSize": 26,
                 "HorizontalAlignment": "Center"
             },
@@ -121,7 +121,7 @@
             "VerticalAlignment": "Center",
             "TextOptions": {
                 "FontName": "{FontNameDefault}",
-                "Foreground": "FFFFFF",
+                "Foreground": "{White}",
                 "FontSize": 26,
                 "HorizontalAlignment": "Center"
             },
@@ -182,7 +182,7 @@
             "VerticalAlignment": "Center",
             "TextOptions": {
                 "FontName": "{Formula1-Black}",
-                "Foreground": "FFFFFF",
+                "Foreground": "{White}",
                 "FontSize": 52,
                 "HorizontalAlignment": "Center"
             },
@@ -225,7 +225,7 @@
             "VerticalAlignment": "Center",
             "TextOptions": {
                 "FontName": "{Formula1-Black}",
-                "Foreground": "FFFFFF",
+                "Foreground": "{White}",
                 "FontSize": 52,
                 "HorizontalAlignment": "Center"
             },
@@ -329,7 +329,7 @@
                             "VerticalAlignment": "Center",
                             "TextOptions": {
                                 "FontName": "{Formula1-Black}",
-                                "Foreground": "FFFFFF",
+                                "Foreground": "{White}",
                                 "FontSize": 30,
                                 "HorizontalAlignment": "Center"
                             },
@@ -403,7 +403,7 @@
                     "VerticalAlignment": "Center",
                     "TextOptions": {
                         "FontName": "{FontNameDefault}",
-                        "Foreground": "FFFFFF",
+                        "Foreground": "{White}",
                         "FontSize": 19,
                         "HorizontalAlignment": "Center"
                     }
@@ -461,7 +461,7 @@
                             "Source": "<{data.RawValue.Name}>",
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Center",
-                            "Foreground": "FFFFFF",
+                            "Foreground": "{White}",
                             "FontName": "{Formula1-Black}",
                             "FontSize": 48
                         }

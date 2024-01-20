@@ -7,62 +7,62 @@
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
             "Property": "Background",
-            "Value": "15185F"
+            "Value": "{RedBullOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
             "Property": "Background",
-            "Value": "FE0000"
+            "Value": "{FerrariOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
             "Property": "Background",
-            "Value": "00A19C"
+            "Value": "{MercedesOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
             "Property": "Background",
-            "Value": "0C1E2C"
+            "Value": "{AlpineOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
             "Property": "Background",
-            "Value": "FD8000"
+            "Value": "{McLarenOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
             "Property": "Background",
-            "Value": "A50E2D"
+            "Value": "{AlfaRomeoOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
             "Property": "Background",
-            "Value": "015850"
+            "Value": "{AstonMartinOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
             "Property": "Background",
-            "Value": "B6BABD"
+            "Value": "{HaasOfficialGrey}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
             "Property": "Background",
-            "Value": "022948"
+            "Value": "{AlphaTauriOfficial}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
             "Property": "Background",
-            "Value": "03A0E3"
+            "Value": "{WilliamsOfficial2}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=trident}",
             "Property": "Background",
-            "Value": "FFFFFF"
+            "Value": "{White}"
         },
         {
             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=carlin}",
             "Property": "Background",
-            "Value": "000000"
+            "Value": "{Black}"
         },
         {
             "Condition": "{Item.PositionString, Converter=StringEquals, Parameter=1}",
@@ -97,7 +97,7 @@
                                     "Margin": "10,5,0,0",
                                     "Orientation": "Horizontal",
                                     "Source": "[{Item.Position}]",
-                                    "Foreground": "#ffffff",
+                                    "Foreground": "{White}",
                                     "FontName": "{Formula1-Black}",
                                     "FontSize": "60",
                                     "TextOptions": {
@@ -107,32 +107,32 @@
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=trident}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=virtuosi}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.PositionString, Converter=StringEquals, Parameter=2}",
@@ -159,7 +159,7 @@
                                     "Margin": "48,-69,0,28",
                                     "Orientation": "Horizontal",
                                     "Source": "[TH]",
-                                    "Foreground": "#ffffff",
+                                    "Foreground": "{White}",
                                     "FontName": "{Formula1-Black}",
                                     "FontSize": "35",
                                     "TextOptions": {
@@ -169,32 +169,32 @@
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=trident}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=art}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=virtuosi}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         },
                                         {
                                             "Condition": "{Item.PositionString, Converter=StringEquals, Parameter=1}",
@@ -403,7 +403,7 @@
                             "BlockType": "text",
                             "RenderIf": "{FullNameOnRenders}",
                             "Source": " {Item.Driver.RealName, Converter=StringToUpperString}",
-                            "Foreground": "#ffffff",
+                            "Foreground": "{White}",
                             "FontName": "{Formula1-Black}",
                             "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter= 20}",
                             "HorizontalAlignment": "Center",
@@ -436,7 +436,7 @@
                         {
                             "BlockType": "text",
                             "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
-                            "Foreground": "#ffffff",
+                            "Foreground": "{White}",
                             "FontName": "{Formula1-Black}",
                             "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter= 20}",
                             "HorizontalAlignment": "Center",

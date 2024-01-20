@@ -13,56 +13,55 @@
             "Spacing": 0,
             "HorizontalAlignment": "Left",
             "Items": [
-            {
-            "Name": "f1-logo",
-            "BlockType": "image",
-            "Height": "55",
-            "HorizontalAlignment" : "Left",
-            "Source": "images/f1-logo.png",
-            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
-            "Triggers": [
-        {
-            "Condition": "{DarkTheme}",
-            "Property": "Source",
-            "Value": "images/f1-logo-white.png",
-        }
-    ],
-        },
-        {
-            "Name":"LeagueLogo",
-            "BlockType":"image",
-            "Height": "{LogoSize}",
-            "Width":"auto",
-            "HorizontalAlignment" : "Left",
-            "Source": "{Season.LeagueInfo.LeagueLogo}",
-            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
-        },
+                {
+                    "Name": "f1-logo",
+                    "BlockType": "image",
+                    "Height": "55",
+                    "HorizontalAlignment": "Left",
+                    "Source": "images/f1-logo.png",
+                    "RenderIf": "{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
+                    "Triggers": [
+                        {
+                            "Condition": "{DarkTheme}",
+                            "Property": "Source",
+                            "Value": "images/f1-logo-white.png"
+                        }
+                    ],
+                },
+                {
+                    "Name": "LeagueLogo",
+                    "BlockType": "image",
+                    "Height": "{LogoSize}",
+                    "Width": "auto",
+                    "HorizontalAlignment": "Left",
+                    "Source": "{Season.LeagueInfo.LeagueLogo}",
+                    "RenderIf": "{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                },
                 //league name
                 {
-                    "BlockType" : "stack",
-                    "VerticalAlignment" : "Center",
-                    "Items" :
-                    [
-                         {                            
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        {
                             "BlockType": "text",
                             "VerticalAlignment": "Center",
-                            "Source": "{Season.Name, Converter=StringToUpperString}",                            
+                            "Source": "{Season.Name, Converter=StringToUpperString}",
                             "FontName": "{Formula1-Black}",
                             "FontSize": 110,
                             "Foreground": "FF0000",
-                            "Triggers":[
-                                    {
-                                        "Condition":"{SecondCalendarEventsInColumn, Converter=NumberEquals, Parameter=0}",
-                                        "Setters":[
-                                            {
-                                                "Property": "FontSize",
-                                                "Value": 108
-                                            }
-                                        ]
-                                    }
-                                ]
-                        },
-                     ]
+                            "Triggers": [
+                                {
+                                    "Condition": "{SecondCalendarEventsInColumn, Converter=NumberEquals, Parameter=0}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": 108
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "Name": "headerSessionLine",
@@ -74,30 +73,30 @@
                         {
                             "Name": "leagueLogo",
                             "BlockType": "text",
-                            "Foreground": "000000",
+                            "Foreground": "{Black}",
                             "FontSize": 110,
                             "FontName": "Formula1-Black",
                             "Source": "[CALENDAR]",
                             "Triggers": [
-        {
-            "Condition": "{DarkTheme}",
-            "Property": "Foreground",
-            "Value": "FFFFFF",
-        },
-                                    {
-                                        "Condition":"{SecondCalendarEventsInColumn, Converter=NumberEquals, Parameter=0}",
-                                        "Setters":[
-                                            {
-                                                "Property": "FontSize",
-                                                "Value": 108
-                                            }
-                                        ]
-                                    }
-                                ]
-                        },
+                                {
+                                    "Condition": "{DarkTheme}",
+                                    "Property": "Foreground",
+                                    "Value": "{White}"
+                                },
+                                {
+                                    "Condition": "{SecondCalendarEventsInColumn, Converter=NumberEquals, Parameter=0}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": 108
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
                     ]
-                },       
+                }
             ]
-        },
+        }
     ]
 }

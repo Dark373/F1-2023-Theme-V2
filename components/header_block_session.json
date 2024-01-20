@@ -21,7 +21,7 @@
                             "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} {Season.Name, Converter=StringToUpperString} [{Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX] 2023",
                             "FontName": "{Formula1-Black}",
                             "FontSize": 40,
-                            "Foreground": "FFFFFF"
+                            "Foreground": "{White}"
                         },
                     ]
                 },

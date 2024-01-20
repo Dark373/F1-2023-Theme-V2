@@ -8,7 +8,7 @@
         {
             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
             "Property": "Background",
-            "Value": "FFFFFF"
+            "Value": "{White}"
         },
         {
             "Condition": "{ChampionColour}",
@@ -38,47 +38,47 @@
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=carlin}",
                             "Property": "Background",
-                            "Value": "000000"
+                            "Value": "{Black}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=prema}",
                             "Property": "Background",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=var}",
                             "Property": "Background",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=hitech}",
                             "Property": "Background",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
                             "Property": "Background",
-                            "Value": "15185F"
+                            "Value": "{RedBullOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
                             "Property": "Background",
-                            "Value": "FE0000"
+                            "Value": "{FerrariOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
                             "Property": "Background",
-                            "Value": "00A19C"
+                            "Value": "{MercedesOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
                             "Property": "Background",
-                            "Value": "0C1E2C"
+                            "Value": "{AlpineOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
                             "Property": "Background",
-                            "Value": "FD8000"
+                            "Value": "{McLarenOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
@@ -88,27 +88,27 @@
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
                             "Property": "Background",
-                            "Value": "A50E2D"
+                            "Value": "{AlfaRomeoOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=aston martin}",
                             "Property": "Background",
-                            "Value": "015850"
+                            "Value": "{AstonMartinOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
                             "Property": "Background",
-                            "Value": "B6BABD"
+                            "Value": "{HaasOfficialGrey}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
                             "Property": "Background",
-                            "Value": "022948"
+                            "Value": "{AlphaTauriOfficial}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
                             "Property": "Background",
-                            "Value": "03A0E3"
+                            "Value": "{WilliamsOfficial2}"
                         },
                         {
                             "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
@@ -163,7 +163,7 @@
                         {
                             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                             "Property": "Foreground",
-                            "Value": "000000"
+                            "Value": "{Black}"
                         },
                         {
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=red bull}",
@@ -183,7 +183,7 @@
                             "Setters": [
                                 {
                                     "Property": "Foreground",
-                                    "Value": "FE0000"
+                                    "Value": "{FerrariOfficial}"
                                 },
                                 {
                                     "Property": "Source",
@@ -196,7 +196,7 @@
                             "Setters": [
                                 {
                                     "Property": "Foreground",
-                                    "Value": "00A19C"
+                                    "Value": "{MercedesOfficial}"
                                 },
                                 {
                                     "Property": "Source",
@@ -222,7 +222,7 @@
                             "Setters": [
                                 {
                                     "Property": "Foreground",
-                                    "Value": "FD8000"
+                                    "Value": "{McLarenOfficial}"
                                 },
                                 {
                                     "Property": "Source",
@@ -235,7 +235,7 @@
                             "Setters": [
                                 {
                                     "Property": "Foreground",
-                                    "Value": "A50E2D"
+                                    "Value": "{AlfaRomeoOfficial}"
                                 },
                                 {
                                     "Property": "Source",
@@ -248,7 +248,7 @@
                             "Setters": [
                                 {
                                     "Property": "Foreground",
-                                    "Value": "015850"
+                                    "Value": "{AstonMartinOfficial}"
                                 },
                                 {
                                     "Property": "Source",
@@ -261,7 +261,7 @@
                             "Setters": [
                                 {
                                     "Property": "Foreground",
-                                    "Value": "B6BABD"
+                                    "Value": "{HaasOfficialGrey}"
                                 },
                                 {
                                     "Property": "Source",
@@ -324,7 +324,7 @@
                         {
                             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                             "Property": "Foreground",
-                            "Value": "000000"
+                            "Value": "{Black}"
                         }
                     ]
                 }

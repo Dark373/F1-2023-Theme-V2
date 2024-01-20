@@ -50,7 +50,7 @@
                                                     "HorizontalAlignment": "Left",
                                                     "VerticalAlignment": "Center",
                                                     "FontSize": "{FontSizeOnOfficialRenders}",
-                                                    "Foreground": "#ffffff",
+                                                    "Foreground": "{White}",
                                                     "FontName": "{Formula1-Bold}",
                                                     "Triggers": [
                                                         {
@@ -58,7 +58,7 @@
                                                             "Setters": [
                                                                 {
                                                                     "Property": "Foreground",
-                                                                    "Value": "FFFFFF"
+                                                                    "Value": "{White}"
                                                                 },
                                                             ]
                                                         },
@@ -67,8 +67,8 @@
                                                             "Setters": [
                                                                 {
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
-                                                                },
+                                                                    "Value": "{Black}"
+                                                                }
                                                             ]
                                                         },
                                                         {
@@ -77,7 +77,7 @@
                                                                 {
                                                                     "Property": "Source",
                                                                     "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
-                                                                },
+                                                                }
                                                             ]
                                                         },
                                                         {
@@ -86,7 +86,7 @@
                                                                 {
                                                                     "Property": "Source",
                                                                     "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
-                                                                },
+                                                                }
                                                             ]
                                                         },
                                                         {
@@ -126,7 +126,7 @@
                                             "HorizontalAlignment": "Left",
                                             "VerticalAlignment": "Center",
                                             "FontName": "{Formula1-Regular}",
-                                            "Foreground": "000000",
+                                            "Foreground": "{Black}",
                                             "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=10}",
                                             "Triggers": [
                                                 {
@@ -216,7 +216,7 @@
                                                     ]
                                                 }
                                             ],
-                                            "Foreground": "000000"
+                                            "Foreground": "{Black}"
                                         },
                                     ]
                                 }

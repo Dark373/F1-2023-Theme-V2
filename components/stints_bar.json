@@ -1,28 +1,25 @@
-
 {
     "BlockType": "stack",
     "VerticalAlignment": "Center",
     "Items": [
-        
         {
-            "BlockType" : "Canvas",
-            "Orientation" : "Vertical",
+            "BlockType": "Canvas",
+            "Orientation": "Vertical",
             "Background": "",
             "Spacing": 0,
-            "Height" : "{StintsBGHeight}",
-            "Items" : [
-                
+            "Height": "{StintsBGHeight}",
+            "Items": [
                 {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#ff001e"
+                    "BlockType": "shape",
+                    "Height": "{StintsBarHeight}",
+                    "VerticalAlignment": "Bottom",
+                    "PositionY": "{StintsBarPositionY}",
+                    "Width": "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+                    "ShapeOptions": {
+                        "ShapeType": "rectangle",
+                        "Fill": "#ff001e"
                     },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=soft}",
+                    "RenderIf": "{Item.Tyres, Converter=StringEquals, Parameter=soft}",
                     //"Triggers" : [
                     //    {
                     //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
@@ -36,16 +33,16 @@
                     //]
                 },
                 {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#fffb00"
+                    "BlockType": "shape",
+                    "Height": "{StintsBarHeight}",
+                    "VerticalAlignment": "Bottom",
+                    "PositionY": "{StintsBarPositionY}",
+                    "Width": "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+                    "ShapeOptions": {
+                        "ShapeType": "rectangle",
+                        "Fill": "#fffb00"
                     },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=medium}",
+                    "RenderIf": "{Item.Tyres, Converter=StringEquals, Parameter=medium}",
                     //"Triggers" : [
                     //    {
                     //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
@@ -59,16 +56,16 @@
                     //]
                 },
                 {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#FFFFFF"
+                    "BlockType": "shape",
+                    "Height": "{StintsBarHeight}",
+                    "VerticalAlignment": "Bottom",
+                    "PositionY": "{StintsBarPositionY}",
+                    "Width": "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+                    "ShapeOptions": {
+                        "ShapeType": "rectangle",
+                        "Fill": "{White}"
                     },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=hard}",
+                    "RenderIf": "{Item.Tyres, Converter=StringEquals, Parameter=hard}",
                     //"Triggers" : [
                     //    {
                     //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
@@ -82,16 +79,16 @@
                     //]
                 },
                 {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#19c702"
+                    "BlockType": "shape",
+                    "Height": "{StintsBarHeight}",
+                    "VerticalAlignment": "Bottom",
+                    "PositionY": "{StintsBarPositionY}",
+                    "Width": "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+                    "ShapeOptions": {
+                        "ShapeType": "rectangle",
+                        "Fill": "#19c702"
                     },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=intermediate}",
+                    "RenderIf": "{Item.Tyres, Converter=StringEquals, Parameter=intermediate}",
                     //"Triggers" : [
                     //    {
                     //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
@@ -105,16 +102,16 @@
                     //]
                 },
                 {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#024dc7"
+                    "BlockType": "shape",
+                    "Height": "{StintsBarHeight}",
+                    "VerticalAlignment": "Bottom",
+                    "PositionY": "{StintsBarPositionY}",
+                    "Width": "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+                    "ShapeOptions": {
+                        "ShapeType": "rectangle",
+                        "Fill": "#024dc7"
                     },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=wet}",
+                    "RenderIf": "{Item.Tyres, Converter=StringEquals, Parameter=wet}",
                     //"Triggers" : [
                     //    {
                     //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
@@ -127,40 +124,39 @@
                     //    }
                     //]
                 },
-                
                 {
-                    "BlockType" : "stack",
-                    "Height" : 0,
+                    "BlockType": "stack",
+                    "Height": 0,
                     "PositionY": 38,
-                    "Orientation" : "Horizontal",
-                    "Background": "000000",
+                    "Orientation": "Horizontal",
+                    "Background": "{Black}",
                     "Padding": "12, 0",
                     "PaddingTop": 0,
                     "PaddingBottom": 0,
-                    "RenderIf" : true,
-                    "Items" : [
+                    "RenderIf": true,
+                    "Items": [
                         {
-                            "BlockType" : "text",
-                            "Source" : "{Item.StartLapNumber}",
-                            "HorizontalAlignment" : "Center",
-                            "FontName" : "{FontNameBold}",
-                            "FontSize" : 25,
-                            "PaddingBottom" : 20,
-                            "Height" : 5,
-                            "Triggers" : [
+                            "BlockType": "text",
+                            "Source": "{Item.StartLapNumber}",
+                            "HorizontalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 25,
+                            "PaddingBottom": 20,
+                            "Height": 5,
+                            "Triggers": [
                                 {
-                                    "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                                    "Setters" : [
+                                    "Condition": "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
+                                    "Setters": [
                                         {
-                                            "Property" : "Source",
-                                            "Value" : ""
+                                            "Property": "Source",
+                                            "Value": ""
                                         }
                                     ]
                                 }
-                            ]  
+                            ]
                         },
-                    ],    
-                }, 
+                    ],
+                },
             ]
         }
     ]

@@ -18,12 +18,12 @@
                     "Source": "[POINTS AFTER THE]",
                     "FontName": "{Formula1-Regular}",
                     "FontSize": 25,
-                    "Foreground": "000000",
+                    "Foreground": "{Black}",
                     "Triggers": [
                         {
                             "Condition": "{DarkTheme}",
                             "Property": "Foreground",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         }
                     ]
                 }
@@ -42,12 +42,12 @@
                     "Source": "{GPName, Converter=StringToUpperString} GP",
                     "FontName": "{Formula1-Bold}",
                     "FontSize": 25,
-                    "Foreground": "000000",
+                    "Foreground": "{Black}",
                     "Triggers": [
                         {
                             "Condition": "{DarkTheme}",
                             "Property": "Foreground",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         },
                         {
                             "Condition": "{ChangeWordOrder}",

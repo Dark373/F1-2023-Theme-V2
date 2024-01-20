@@ -31,7 +31,7 @@
                             "Setters": [
                                 {
                                     "Property": "Background",
-                                    "Value": "FFFFFF"
+                                    "Value": "{White}"
                                 }
                             ]
                         }
@@ -45,7 +45,7 @@
                     "Items": [
                         {
                             "BlockType": "text",
-                            "Foreground": "000000",
+                            "Foreground": "{Black}",
                             "Orientation": "Vertical",
                             "FontName": "{Formula1-Regular}",
                             "VerticalAlignment": "Center",
@@ -58,7 +58,7 @@
                                     "Setters": [
                                         {
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         }
                                     ]
                                 }
@@ -72,7 +72,7 @@
                                 {
                                     "BlockType": "text",
                                     "MarginTop": 0,
-                                    "Foreground": "000000",
+                                    "Foreground": "{Black}",
                                     "HorizontalAlignment": "Left",
                                     "FontName": "{Formula1-Bold}",
                                     "FontSize": 72,
@@ -81,7 +81,7 @@
                                 {
                                     "BlockType": "text",
                                     "MarginBottom": 15,
-                                    "Foreground": "000000",
+                                    "Foreground": "{Black}",
                                     "HorizontalAlignment": "Left",
                                     "VerticalAlignment": "Bottom",
                                     "FontName": "{Formula1-Regular}",
@@ -91,7 +91,7 @@
                                 {
                                     "BlockType": "text",
                                     "MarginBottom": 15,
-                                    "Foreground": "000000",
+                                    "Foreground": "{Black}",
                                     "HorizontalAlignment": "Left",
                                     "VerticalAlignment": "Bottom",
                                     "FontName": "{Formula1-Regular}",
@@ -130,7 +130,7 @@
                         {
                             "Condition": "{DarkTheme}",
                             "Property": "Foreground",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         }
                     ]
                 }

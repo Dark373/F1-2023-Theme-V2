@@ -51,12 +51,12 @@
                     "Source": " <source0>",
                     "FontName": "{Formula1-Black}",
                     "FontSize": "<fontsize0>",
-                    "Foreground": "000000",
+                    "Foreground": "{Black}",
                     "Triggers": [
                         {
                             "Condition": "{DarkTheme}",
                             "Property": "Foreground",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         },
                         {
                             "Condition": "{ChangeWordOrder}",
@@ -80,12 +80,12 @@
                     "Source": "<source1>",
                     "FontName": "{Formula1-Black}",
                     "FontSize": "<fontsize1>",
-                    "Foreground": "000000",
+                    "Foreground": "{Black}",
                     "Triggers": [
                         {
                             "Condition": "{DarkTheme}",
                             "Property": "Foreground",
-                            "Value": "FFFFFF"
+                            "Value": "{White}"
                         },
                         {
                             "Condition": "{ChangeWordOrder}",

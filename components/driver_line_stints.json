@@ -106,7 +106,7 @@
                         {
                             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                             "Property": "Foreground",
-                            "Value": "000000"
+                            "Value": "{Black}"
                         }
                     ]
                 }

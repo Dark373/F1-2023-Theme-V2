@@ -24,12 +24,12 @@
                             "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} {Season.Name, Converter=StringToUpperString} {Session.Track.CountryName, Converter=StringToUpperString}",                            
                             "FontName": "{Formula1-Black}",
                             "FontSize": 50,
-                            "Foreground": "000000",
+                            "Foreground": "{Black}",
                             "Triggers" : [
                                 {
                                      "Condition": "{DarkTheme}",
                                      "Property": "Foreground",
-                                     "Value": "FFFFFF"
+                                     "Value": "{White}"
                                 },
                              ]
                         },

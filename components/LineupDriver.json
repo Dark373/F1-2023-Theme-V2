@@ -60,7 +60,7 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontSize": "{FontSizeOnOfficialRenders}",
-                                                            "Foreground": "#ffffff",
+                                                            "Foreground": "{White}",
                                                             "FontName": "{FontBlack}",
                                                             "Triggers": [
                                                                 {
@@ -68,7 +68,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "FFFFFF"
+                                                                            "Value": "{White}"
                                                                         }
                                                                     ]
                                                                 },
@@ -77,7 +77,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -86,7 +86,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -95,7 +95,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -122,7 +122,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -131,7 +131,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -180,7 +180,7 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontSize": "{FontSizeOnOfficialRenders}",
-                                                            "Foreground": "#ffffff",
+                                                            "Foreground": "{White}",
                                                             "FontName": "{FontBlack}",
                                                             "Triggers": [
                                                                 {
@@ -188,7 +188,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "FFFFFF"
+                                                                            "Value": "{White}"
                                                                         }
                                                                     ]
                                                                 },
@@ -197,7 +197,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -206,7 +206,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -215,7 +215,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -242,7 +242,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -251,7 +251,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -280,18 +280,18 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontName": "{Formula1-Regular}",
-                                                            "Foreground": "FFFFFF",
+                                                            "Foreground": "{White}",
                                                             "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
                                                             "Triggers": [
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
@@ -335,18 +335,18 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontName": "{Formula1-Regular}",
-                                                            "Foreground": "FFFFFF",
+                                                            "Foreground": "{White}",
                                                             "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
                                                             "Triggers": [
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
@@ -444,7 +444,7 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontSize": "{FontSizeOnOfficialRenders}",
-                                                            "Foreground": "#ffffff",
+                                                            "Foreground": "{White}",
                                                             "FontName": "{FontBlack}",
                                                             "Triggers": [
                                                                 {
@@ -452,7 +452,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "FFFFFF"
+                                                                            "Value": "{White}"
                                                                         }
                                                                     ]
                                                                 },
@@ -461,19 +461,19 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
@@ -498,7 +498,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -507,7 +507,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -556,7 +556,7 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontSize": "{FontSizeOnOfficialRenders}",
-                                                            "Foreground": "#ffffff",
+                                                            "Foreground": "{White}",
                                                             "FontName": "{FontBlack}",
                                                             "Triggers": [
                                                                 {
@@ -564,7 +564,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "FFFFFF"
+                                                                            "Value": "{White}"
                                                                         }
                                                                     ]
                                                                 },
@@ -573,19 +573,19 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
@@ -610,7 +610,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -619,7 +619,7 @@
                                                                     "Setters": [
                                                                         {
                                                                             "Property": "Foreground",
-                                                                            "Value": "000000"
+                                                                            "Value": "{Black}"
                                                                         }
                                                                     ]
                                                                 },
@@ -648,18 +648,18 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontName": "{Formula1-Regular}",
-                                                            "Foreground": "FFFFFF",
+                                                            "Foreground": "{White}",
                                                             "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
                                                             "Triggers": [
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",
@@ -703,18 +703,18 @@
                                                             "HorizontalAlignment": "Center",
                                                             "VerticalAlignment": "Center",
                                                             "FontName": "{Formula1-Regular}",
-                                                            "Foreground": "FFFFFF",
+                                                            "Foreground": "{White}",
                                                             "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=12}",
                                                             "Triggers": [
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=mercedes}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=haas}",
                                                                     "Property": "Foreground",
-                                                                    "Value": "000000"
+                                                                    "Value": "{Black}"
                                                                 },
                                                                 {
                                                                     "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=williams}",

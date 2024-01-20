@@ -43,7 +43,7 @@
             "Source" : "<hard>",
             "VerticalAlignment" : "Center",
             "FontName": "{Formula1-Regular}",   
-            "Foreground" : "#FFFFFF",
+            "Foreground" : "{White}",
             "FontSize" : 30          
         },
 

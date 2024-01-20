@@ -7,7 +7,7 @@
         {
             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
             "Property": "Background",
-            "Value": "FFFFFF"
+            "Value": "{White}"
         },
         {
             "Condition": "{ChampionColour}",
@@ -68,7 +68,7 @@
                         {
                             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                             "Property": "Foreground",
-                            "Value": "000000"
+                            "Value": "{Black}"
                         }
                     ]
                 },
@@ -96,7 +96,7 @@
                         {
                             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                             "Property": "Foreground",
-                            "Value": "000000"
+                            "Value": "{Black}"
                         }
                     ]
                 },
@@ -130,7 +130,7 @@
                         {
                             "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                             "Property": "Foreground",
-                            "Value": "000000"
+                            "Value": "{Black}"
                         }
                     ]
                 }

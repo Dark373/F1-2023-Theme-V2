@@ -77,7 +77,7 @@
                                     "BlockType": "text",
                                     "Source": "[STARTING GRID]",
                                     "FontSize": 45,
-                                    "Foreground": "#ffffff",
+                                    "Foreground": "{White}",
                                     "HorizontalAlignment": "Right",
                                     "VerticalAlignment": "Center",
                                     "FontName": "{Formula1-Black}",
@@ -88,7 +88,7 @@
                                         {
                                             "Condition": "{DarkTheme, Converter=BoolReverse}",
                                             "Property": "Foreground",
-                                            "Value": "000000"
+                                            "Value": "{Black}"
                                         }
                                     ]
                                 },
