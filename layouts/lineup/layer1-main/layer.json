@@ -165,7 +165,7 @@
                                                                                 ]
                                                                             }
                                                                         ],
-                                                                        "Foreground": "000000"
+                                                                        "Foreground": "{Black}"
                                                                     },
                                                                     //right part
                                                                     {
@@ -189,7 +189,7 @@
                                                                                         "HorizontalAlignment": "Right",
                                                                                         "VerticalAlignment": "Center",
                                                                                         "FontSize": "{FontSizeOnOfficialRenders}",
-                                                                                        "Foreground": "#ffffff",
+                                                                                        "Foreground": "{White}",
                                                                                         "FontName": "{Formula1-Bold}",
                                                                                         "Triggers": [
                                                                                             {
@@ -197,7 +197,7 @@
                                                                                                 "Setters": [
                                                                                                     {
                                                                                                         "Property": "Foreground",
-                                                                                                        "Value": "FFFFFF"
+                                                                                                        "Value": "{White}"
                                                                                                     },
                                                                                                 ]
                                                                                             },
@@ -206,7 +206,7 @@
                                                                                                 "Setters": [
                                                                                                     {
                                                                                                         "Property": "Foreground",
-                                                                                                        "Value": "000000"
+                                                                                                        "Value": "{Black}"
                                                                                                     },
                                                                                                 ]
                                                                                             },
@@ -265,7 +265,7 @@
                                                                                 "HorizontalAlignment": "Right",
                                                                                 "VerticalAlignment": "Center",
                                                                                 "FontName": "{Formula1-Regular}",
-                                                                                "Foreground": "000000",
+                                                                                "Foreground": "{Black}",
                                                                                 "FontSize": "{FontSizeOnOfficialRenders, Converter=NumberSubtract, Parameter=10}",
                                                                                 "Triggers": [
                                                                                     {

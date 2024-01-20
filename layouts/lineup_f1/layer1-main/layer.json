@@ -13,7 +13,7 @@
                 "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} - {Season.Name, Converter=StringToUpperString}",
                 "FontName": "{FontRegular}",
                 "FontSize": 30,
-                "Foreground": "FFFFFF"
+                "Foreground": "{White}"
             },
             {
                 "Name": "headerLeftPart",
@@ -2753,7 +2753,7 @@
                 "Source": "D                    R                    I                     V                    E                   R                                 L                    I                     N                   E                    -                    U                    P",
                 "FontName": "{FontRegular}",
                 "FontSize": 30,
-                "Foreground": "FFFFFF"
+                "Foreground": "{White}"
             },
             {
                 "Name": "SeasonName",

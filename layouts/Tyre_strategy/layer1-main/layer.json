@@ -88,7 +88,7 @@
                                                         "BlockType": "stack",
                                                         "Spacing": 0,
                                                         "Height": 0,
-                                                        "Background": "000000",
+                                                        "Background": "{Black}",
                                                         "Padding": "12, -4",
                                                         "MarginTop": 38,
                                                         "MarginRight": 0,

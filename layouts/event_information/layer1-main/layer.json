@@ -24,7 +24,7 @@
                                 "Height": "150",
                                 "HorizontalAlignment": "Left",
                                 "Source": "{Session.Track.Nation.LogoPath}",
-                                "Background": "000000",
+                                "Background": "{Black}",
                                 "Padding": "2, -23"
                             },
                             {
@@ -47,7 +47,7 @@
                                                 "Source": "[{Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
                                                 "FontName": "{Formula1-Regular}",
                                                 "FontSize": 30,
-                                                "Foreground": "000000"
+                                                "Foreground": "{Black}"
                                             }
                                         ]
                                     },
@@ -61,7 +61,7 @@
                                             {
                                                 "Name": "leagueLogo",
                                                 "BlockType": "text",
-                                                "Foreground": "000000",
+                                                "Foreground": "{Black}",
                                                 "FontSize": 50,
                                                 "FontName": "Formula1-Bold",
                                                 "Source": "{Session.Track.CircuitFullName}"

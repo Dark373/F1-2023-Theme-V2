@@ -38,7 +38,7 @@
                         "BlockType": "text",
                         "FontName": "{FontNameDefault}",
                         "FontSize": 30,
-                        "Foreground": "000000",
+                        "Foreground": "{Black}",
                         "MarginBottom": 8,
                         "Triggers": [
                             {
@@ -404,6 +404,21 @@
                                 "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=consistency rating}",
                                 "Property": "Height",
                                 "Value": "150"
+                            },
+                            {
+                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=attack rating}",
+                                "Property": "Height",
+                                "Value": "76"
+                            },
+                            {
+                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=defence rating}",
+                                "Property": "Height",
+                                "Value": "76"
+                            },
+                            {
+                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=top battles}",
+                                "Property": "Height",
+                                "Value": "95"
                             },
                             {
                                 "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=longest stints}",

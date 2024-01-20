@@ -39,13 +39,13 @@
                         "BlockType": "text",
                         "FontName": "{FontNameDefault}",
                         "FontSize": 30,
-                        "Foreground": "000000",
+                        "Foreground": "{Black}",
                         "PaddingBottom": 25,
                         "Triggers": [
                             {
                                 "Condition": "{DarkTheme}",
                                 "Property": "Foreground",
-                                "Value": "FFFFFF"
+                                "Value": "{White}"
                             }
                         ]
                     },

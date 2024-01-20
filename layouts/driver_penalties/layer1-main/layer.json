@@ -3,7 +3,7 @@
         "Name": "mainStack",
         "BlockType": "stack",
         "Margin": "24, 24, 24, 24",
-        "Background": "#ffffff",
+        "Background": "{White}",
         "Orientation": "Vertical",
         "Items": [            
             {

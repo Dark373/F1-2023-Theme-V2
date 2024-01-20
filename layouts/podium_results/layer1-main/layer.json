@@ -30,9 +30,9 @@
                                     {
                                         "Condition": "{DarkTheme}",
                                         "Property": "Source",
-                                        "Value": "images/f1-logo-white.png",
+                                        "Value": "images/f1-logo-white.png"
                                     }
-                                ],
+                                ]
                             },
                             {
                                 "Name": "LeagueLogo",
@@ -62,7 +62,7 @@
                                                 "Setters": [
                                                     {
                                                         "Property": "Background",
-                                                        "Value": "000000"
+                                                        "Value": "{Black}"
                                                     },
                                                     {
                                                         "Property": "Padding",
@@ -90,19 +90,19 @@
                                         "Source": "[TOP] {DriverLimit}",
                                         "FontName": "{Formula1-Black}",
                                         "FontSize": 60,
-                                        "Foreground": "000000",
+                                        "Foreground": "{Black}",
                                         "Triggers": [
                                             {
                                                 "Condition": "{DarkTheme}",
                                                 "Property": "Foreground",
-                                                "Value": "FFFFFF",
+                                                "Value": "{White}"
                                             }
-                                        ],
-                                    },
+                                        ]
+                                    }
                                 ]
-                            },
+                            }
                         ]
-                    },
+                    }
                 ]
             },
             {
@@ -203,7 +203,7 @@
                                                         "BlockType": "component",
                                                         "RenderIf": "{DarkTheme, Converter=BoolReverse}",
                                                         "ComponentOptions": {
-                                                            "ComponentName": "driver_line_podium",
+                                                            "ComponentName": "driver_line_podium"
                                                         }
                                                     }
                                                 },
@@ -214,7 +214,7 @@
                                                         "BlockType": "component",
                                                         "RenderIf": "{DarkTheme}",
                                                         "ComponentOptions": {
-                                                            "ComponentName": "driver_line_podium1",
+                                                            "ComponentName": "driver_line_podium1"
                                                         }
                                                     }
                                                 },
@@ -231,7 +231,7 @@
                                                         "FontSize": "20",
                                                         "TextOptions": {
                                                             "HorizontalAlignment": "Center",
-                                                            "Foreground": "#000000"
+                                                            "Foreground": "#{Black}"
                                                         },
                                                         "Triggers": [
                                                             {
@@ -248,7 +248,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -257,7 +257,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -266,7 +266,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -275,7 +275,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -284,7 +284,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -293,7 +293,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -302,7 +302,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -311,7 +311,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -320,7 +320,7 @@
                                                                 "Setters": [
                                                                     {
                                                                         "Property": "Background",
-                                                                        "Value": "#ffffff"
+                                                                        "Value": "{White}"
                                                                     }
                                                                 ]
                                                             },
@@ -340,7 +340,7 @@
                                                         "FontSize": "20",
                                                         "TextOptions": {
                                                             "HorizontalAlignment": "Center",
-                                                            "Foreground": "#FFFFFF"
+                                                            "Foreground": "{White}"
                                                         },
                                                         "Triggers": [
                                                             {
@@ -432,19 +432,19 @@
                                                                         "Value": "DNF"
                                                                     }
                                                                 ]
-                                                            },
+                                                            }
                                                         ]
                                                     }
-                                                },
+                                                }
                                             ]
                                         }
                                     }
                                 ]
                             }
                         ]
-                    },
+                    }
                 ]
-            },
+            }
         ]
     }
 }

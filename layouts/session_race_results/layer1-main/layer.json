@@ -515,7 +515,7 @@
                                     {
                                         "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
                                         "Property": "Background",
-                                        "Value": "FFFFFF"
+                                        "Value": "{White}"
                                     },
                                     {
                                         "Condition": "{ChampionColour}",

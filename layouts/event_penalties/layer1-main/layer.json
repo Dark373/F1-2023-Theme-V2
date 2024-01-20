@@ -4,7 +4,7 @@
         "BlockType": "stack",
         "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
-        "Background": "#ffffff",
+        "Background": "{White}",
         "Items": [
             //event info
             {

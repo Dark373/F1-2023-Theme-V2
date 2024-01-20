@@ -11,7 +11,7 @@
                 "RenderIf": "{RenderPositions, Converter=BoolReverse}",
                 "PaddingLeft": 5,
                 "PaddingRight": 4,
-                "Background": "000000",
+                "Background": "{Black}",
                 "MarginTop": 0,
                 "MarginBottom": -20,
                 "VerticalAlignment": "Center",
@@ -19,7 +19,7 @@
                 "Source": "[{StartPositionsFrom, Converter=NumberAdd, Parameter=1}TH] - [{DriverLimit}TH]",
                 "FontName": "{Formula1-Black}",
                 "FontSize": 20,
-                "Foreground": "FFFFFF",
+                "Foreground": "{White}",
                 "Triggers": [
                     {
                         "Condition": "{DriverLimit, Converter=NumberEquals, Parameter=1}",
@@ -35,11 +35,11 @@
                         "Setters": [
                             {
                                 "Property": "Background",
-                                "Value": "FFFFFF"
+                                "Value": "{White}"
                             },
                             {
                                 "Property": "Foreground",
-                                "Value": "000000"
+                                "Value": "{Black}"
                             }
                         ]
                     },
@@ -81,13 +81,13 @@
                         "BlockType": "text",
                         "FontName": "{FontNameDefault}",
                         "FontSize": 30,
-                        "Foreground": "000000",
+                        "Foreground": "{Black}",
                         "PaddingBottom": 25,
                         "Triggers": [
                             {
                                 "Condition": "{DarkTheme}",
                                 "Property": "Foreground",
-                                "Value": "FFFFFF",
+                                "Value": "{White}",
                             }
                         ]
                     },
