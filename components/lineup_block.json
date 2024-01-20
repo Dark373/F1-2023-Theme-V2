@@ -3,16 +3,5 @@
     "HorizontalAlignment": "Center",
     "Margin": "0,0,0,-350",
     "Source": "<source>",
-    "Height": "620",
-    "Triggers": [
-        {
-            "Condition": "{UseDriverAvatars, Converter=BoolReverse}",
-            "Setters": [
-                {
-                    "Property": "Source",
-                    "Value": "images/suit/placeholder1.png"
-                }
-            ]
-        }
-    ]
+    "Height": "620"
 }
