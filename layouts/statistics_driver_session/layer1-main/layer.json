@@ -411,7 +411,7 @@
                                 "Value": "76"
                             },
                             {
-                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=defence rating}",
+                                "Condition": "{Statistics.Header, Converter=StringEquals, Parameter=defense rating}",
                                 "Property": "Height",
                                 "Value": "76"
                             },
