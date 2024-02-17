@@ -137,11 +137,19 @@
                     "MaxWidth": 1000,
                     "Source": " {Item.Team.Name, Converter=StringToUpperString}",
                     "HorizontalAlignment": "Left",
-                    "MarginRight": 100,
                     "FontSize": 10,
                     "VerticalAlignment": "Center",
                     "Foreground": "{Black}",
                     "TextOptionsExtern": "teamCell"
+                },
+                {
+                    "BlockType": "image",
+                    "RenderIf": "{Item.IsRaceFastestLap}",
+                    "MarginLeft": 8,
+                    "Source": "images/FL",
+                    "HorizontalAlignment": "Left",
+                    "Height": 20,
+                    "VerticalAlignment": "Center"
                 }
             ]
         }
