@@ -31,7 +31,7 @@
                                 {
                                     "BlockType": "text",
                                     "Padding": "80, 40",
-                                    "Source": "R{Item.Position, Converter=NumberSubtract, Parameter=0}",
+                                    "Source": "R{Item.Position, Converter=NumberSubtract, Parameter=1}",
                                     "HorizontalAlignment": "Center",
                                     "VerticalAlignment": "Center",
                                     "FontName": "{Formula1-Black}",
@@ -47,14 +47,24 @@
                                                     "Value": "R0"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                                            "Property": "Background",
+                                            "Value": "#2B2B2B"
+                                        },
+                                        {
+                                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                                            "Property": "Foreground",
+                                            "Value": "#606060"
                                         }
                                     ],
                                     "TextOptions": {
                                         "HorizontalAlignment": "Center"
                                     }
-                                },
+                                }
                             ]
-                        },
+                        }
                     ]
                 },
                 {
@@ -92,6 +102,11 @@
                                     "Value": "24"
                                 }
                             ]
+                        },
+                        {
+                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                            "Property": "Background",
+                            "Value": "#1F1F1F"
                         }
                     ],
                     "Items": [
@@ -133,6 +148,16 @@
                                             "Value": "{Black}"
                                         }
                                     ]
+                                },
+                                {
+                                    "Condition": "{Item.Track.Name, Converter=StringEquals, Parameter=TBC}",
+                                    "Property": "Source",
+                                    "Value": "images/Tracks/tbc.png"
+                                },
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                                    "Property": "Opacity",
+                                    "Value": 15
                                 }
                             ]
                         }
@@ -153,6 +178,11 @@
                                     "Value": "{White}"
                                 }
                             ]
+                        },
+                        {
+                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                            "Property": "Background",
+                            "Value": "#1F1F1F"
                         }
                     ],
                     "Items": [
@@ -174,6 +204,11 @@
                                             "Value": "{Black}"
                                         }
                                     ]
+                                },
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                                    "Property": "Foreground",
+                                    "Value": "#606060"
                                 }
                             ]
                         },
@@ -199,9 +234,19 @@
                                                     "Value": "PRE-SEASON"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "Condition": "{Item.Track.Name, Converter=StringEquals, Parameter=TBC}",
+                                            "Property": "Source",
+                                            "Value": "TBC"
+                                        },
+                                        {
+                                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                                            "Property": "Foreground",
+                                            "Value": "#474747"
                                         }
                                     ]
-                                },
+                                }
                             ]
                         },
                         {
@@ -226,9 +271,19 @@
                                                     "Value": "{Black}"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "Condition": "{Item.Track.LocationName, Converter=StringEquals, Parameter=TBC}",
+                                            "Property": "Source",
+                                            "Value": "TBC"
+                                        },
+                                        {
+                                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                                            "Property": "Foreground",
+                                            "Value": "#606060"
                                         }
-                                    ],
-                                },
+                                    ]
+                                }
                             ]
                         }
                     ]
@@ -253,12 +308,25 @@
                                     "Condition": "{DarkTheme}",
                                     "Setters": [
                                         {
+                                            "Property": "Background",
+                                            "Value": "FFFFFF"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=completed}",
+                                    "Setters": [
+                                        {
+                                            "Property": "Background",
+                                            "Value": "1F1F1F"
+                                        },
+                                        {
                                             "Property": "Source",
                                             "Value": "images/sprint_.png"
                                         }
                                     ]
                                 }
-                            ],
+                            ]
                         }
                     }
                 }
