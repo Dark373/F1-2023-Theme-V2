@@ -69,7 +69,29 @@
                                         "foreground": "{White}",
                                         "fontsize": "60"
                                     }
-                                }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ChampionColour}",
+                                        "Property": "Source",
+                                        "Value": "C"
+                                    },
+                                    {
+                                        "Condition": "{ChampionColour}",
+                                        "Property": "Foreground",
+                                        "Value": "E9C652"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "Foreground",
+                                        "Value": "{White}"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "Source",
+                                        "Value": "{Item.PositionString}"
+                                    }
+                                ]
                             }
                         },
                         {

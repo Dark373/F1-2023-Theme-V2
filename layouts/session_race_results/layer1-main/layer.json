@@ -120,11 +120,6 @@
                                         "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
                                         "Property": "Background",
                                         "Value": "{BackgroundDefault}"
-                                    },
-                                    {
-                                        "Condition": "{Item.IsLiveData, Converter=BoolReverse}",
-                                        "Property": "RenderIf",
-                                        "Value": "False"
                                     }
                                 ]
                             }
@@ -268,11 +263,6 @@
                                         "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
                                         "Property": "Background",
                                         "Value": "{BackgroundDefault}"
-                                    },
-                                    {
-                                        "Condition": "{Item.IsLiveData, Converter=BoolReverse}",
-                                        "Property": "RenderIf",
-                                        "Value": "False"
                                     }
                                 ]
                             }
@@ -355,11 +345,6 @@
                                         "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
                                         "Property": "Background",
                                         "Value": "{BackgroundDefault}"
-                                    },
-                                    {
-                                        "Condition": "{Item.IsLiveData, Converter=BoolReverse}",
-                                        "Property": "RenderIf",
-                                        "Value": "False"
                                     }
                                 ]
                             }
@@ -372,7 +357,7 @@
                                 "ComponentName": "columns",
                                 "ComponentOptions": {
                                     "Vars": {
-                                        "padding": "50, 0",
+                                        "padding": "40, 0",
                                         "width": "",
                                         "background": "",
                                         "source": "{Item.MaxSpeed}",
@@ -401,11 +386,6 @@
                                         "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
                                         "Property": "Background",
                                         "Value": "{BackgroundDefault}"
-                                    },
-                                    {
-                                        "Condition": "{Item.IsLiveData, Converter=BoolReverse}",
-                                        "Property": "RenderIf",
-                                        "Value": "False"
                                     }
                                 ]
                             }
@@ -418,8 +398,8 @@
                                 "ComponentName": "columns",
                                 "ComponentOptions": {
                                     "Vars": {
-                                        "padding": "50, 0",
-                                        "width": "",
+                                        "padding": "0, 0",
+                                        "width": "150",
                                         "background": "",
                                         "source": "{Item.OvertakesCount}",
                                         "font": "{FontItalic}",
@@ -447,11 +427,6 @@
                                         "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
                                         "Property": "Background",
                                         "Value": "{BackgroundDefault}"
-                                    },
-                                    {
-                                        "Condition": "{Item.IsLiveData, Converter=BoolReverse}",
-                                        "Property": "RenderIf",
-                                        "Value": "False"
                                     }
                                 ]
                             }
@@ -476,6 +451,98 @@
                                 "Triggers": [
                                     {
                                         "Condition": "{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Source",
+                                        "Value": ""
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Foreground",
+                                        "Value": "{Black}"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Background",
+                                        "Value": "{White}"
+                                    },
+                                    {
+                                        "Condition": "{ChampionColour}",
+                                        "Property": "Background",
+                                        "Value": "E9C652"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "Background",
+                                        "Value": "{BackgroundDefault}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "[STEW.]",
+                            "Template": {
+                                "BlockType": "component",
+                                "RenderIf": "{StewardsPenalty}",
+                                "ComponentName": "columns",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "40, 0",
+                                        "width": "",
+                                        "background": "",
+                                        "source": "+{Item.PenaltyTimeStewards}s",
+                                        "font": "{FontItalic}",
+                                        "foreground": "",
+                                        "fontsize": "30"
+                                    }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.PenaltyTimeStewards, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Source",
+                                        "Value": ""
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Foreground",
+                                        "Value": "{Black}"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Background",
+                                        "Value": "{White}"
+                                    },
+                                    {
+                                        "Condition": "{ChampionColour}",
+                                        "Property": "Background",
+                                        "Value": "E9C652"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "Background",
+                                        "Value": "{BackgroundDefault}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "[GAME]",
+                            "Template": {
+                                "BlockType": "component",
+                                "RenderIf": "{StewardsPenalty}",
+                                "ComponentName": "columns",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "40, 0",
+                                        "width": "",
+                                        "background": "",
+                                        "source": "+{Item.PenaltyTimeIngame}s",
+                                        "font": "{FontItalic}",
+                                        "foreground": "",
+                                        "fontsize": "30"
+                                    }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.PenaltyTimeIngame, Converter=NumberEquals, Parameter=0}",
                                         "Property": "Source",
                                         "Value": ""
                                     },

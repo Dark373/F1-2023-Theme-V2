@@ -198,7 +198,7 @@
                                                                                                     {
                                                                                                         "Property": "Foreground",
                                                                                                         "Value": "{White}"
-                                                                                                    },
+                                                                                                    }
                                                                                                 ]
                                                                                             },
                                                                                             {
@@ -207,7 +207,7 @@
                                                                                                     {
                                                                                                         "Property": "Foreground",
                                                                                                         "Value": "{Black}"
-                                                                                                    },
+                                                                                                    }
                                                                                                 ]
                                                                                             },
                                                                                             {
@@ -216,7 +216,7 @@
                                                                                                     {
                                                                                                         "Property": "Source",
                                                                                                         "Value": "{Item.Driver.RealName, Converter=StringToUpperString}"
-                                                                                                    },
+                                                                                                    }
                                                                                                 ]
                                                                                             },
                                                                                             {
@@ -225,7 +225,7 @@
                                                                                                     {
                                                                                                         "Property": "Source",
                                                                                                         "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
-                                                                                                    },
+                                                                                                    }
                                                                                                 ]
                                                                                             },
                                                                                             {
@@ -234,7 +234,7 @@
                                                                                                     {
                                                                                                         "Property": "Source",
                                                                                                         "Value": "{Item.Driver.Name, Converter=StringToUpperString} {Item.Driver.RealName, Converter=StringToUpperString}"
-                                                                                                    },
+                                                                                                    }
                                                                                                 ]
                                                                                             },
                                                                                             {
@@ -243,7 +243,7 @@
                                                                                                     {
                                                                                                         "Property": "Source",
                                                                                                         "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
-                                                                                                    },
+                                                                                                    }
                                                                                                 ]
                                                                                             },
                                                                                             {
@@ -252,11 +252,11 @@
                                                                                                     {
                                                                                                         "Property": "Source",
                                                                                                         "Value": "?"
-                                                                                                    },
+                                                                                                    }
                                                                                                 ]
                                                                                             }
                                                                                         ]
-                                                                                    },
+                                                                                    }
                                                                                 ]
                                                                             },
                                                                             {
@@ -279,7 +279,7 @@
                                                                                             {
                                                                                                 "Property": "Source",
                                                                                                 "Value": "{Item.Driver.RealName, Converter=StringToUpperString} {Item.Driver.Name, Converter=StringToUpperString}"
-                                                                                            },
+                                                                                            }
                                                                                         ]
                                                                                     },
                                                                                     {
@@ -296,15 +296,15 @@
                                                                                         "Condition": "{InGameNameOnLineUps}",
                                                                                         "Property": "Source",
                                                                                         "Value": "{Item.Driver.InGameName, Converter=StringToUpperString}"
-                                                                                    },
+                                                                                    }
                                                                                 ]
                                                                             }
                                                                         ]
-                                                                    },
+                                                                    }
                                                                 ]
                                                             }
                                                         ]
-                                                    },
+                                                    }
                                                 ]
                                             }
                                         ]
@@ -344,7 +344,7 @@
                                                         "ImageOptions": {
                                                             "Path": "images/reserve.png",
                                                             "VerticalAlignment": "Center"
-                                                        },
+                                                        }
                                                     }
                                                 ]
                                             }

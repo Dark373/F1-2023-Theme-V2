@@ -141,7 +141,7 @@
                                         "Condition": "{DarkTheme}",
                                         "Property": "Background",
                                         "Value": "{White}"
-                                    },
+                                    }
                                 ]
                             }
                         },
@@ -165,7 +165,7 @@
                                         "Condition": "{DarkTheme}",
                                         "Property": "Background",
                                         "Value": "{White}"
-                                    },
+                                    }
                                 ]
                             }
                         },
@@ -189,7 +189,7 @@
                                         "Condition": "{DarkTheme}",
                                         "Property": "Background",
                                         "Value": "{White}"
-                                    },
+                                    }
                                 ]
                             }
                         },
@@ -213,7 +213,7 @@
                                         "Condition": "{DarkTheme}",
                                         "Property": "Background",
                                         "Value": "{White}"
-                                    },
+                                    }
                                 ]
                             }
                         },
@@ -237,7 +237,7 @@
                                         "Condition": "{DarkTheme}",
                                         "Property": "Background",
                                         "Value": "{White}"
-                                    },
+                                    }
                                 ]
                             }
                         },

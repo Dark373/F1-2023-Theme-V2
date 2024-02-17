@@ -14,7 +14,7 @@
                         "Property": "Source",
                         "Value": "bg2.png"
                     }
-                ],
+                ]
             },
             {
                 "BlockType": "image",
@@ -26,8 +26,8 @@
                         "Property": "Source",
                         "Value": "bg1.png"
                     }
-                ],
+                ]
             }
-        ],
+        ]
     }
 }

@@ -20,29 +20,70 @@
                         "HorizontalAlignment": "Center",
                         "Items": [
                             {
-                                "Name": "f1-logo",
-                                "BlockType": "image",
-                                "Height": "30",
-                                "HorizontalAlignment": "Center",
-                                "Source": "images/f1-logo.png",
-                                "RenderIf": "{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
-                                "Triggers": [
+                                "Name": "headerBlock",
+                                "Margin": "0,0,0,0",
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
                                     {
-                                        "Condition": "{DarkTheme}",
-                                        "Property": "Source",
-                                        "Value": "images/f1-logo-white.png"
+                                        "Name": "f1-logo",
+                                        "BlockType": "image",
+                                        "Height": "30",
+                                        "MarginBottom": 10,
+                                        "HorizontalAlignment": "Center",
+                                        "Source": "images/f1-logo.png",
+                                        "RenderIf": "{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}",
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{DarkTheme}",
+                                                "Property": "Source",
+                                                "Value": "images/f1-logo-white.png"
+                                            },
+                                            {
+                                                "Condition": "{Session.RaceType, Converter=StringEquals, Parameter=sprint}",
+                                                "Property": "HorizontalAlignment",
+                                                "Value": "Left"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "LeagueLogo",
+                                        "BlockType": "image",
+                                        "Height": "{LogoSize}",
+                                        "Width": "auto",
+                                        "MarginBottom": 10,
+                                        "HorizontalAlignment": "Center",
+                                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                        "RenderIf": "{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}",
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Session.RaceType, Converter=StringEquals, Parameter=sprint}",
+                                                "Property": "HorizontalAlignment",
+                                                "Value": "Left"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "image",
+                                        "RenderIf": "{Session.RaceType, Converter=StringEquals, Parameter=sprint}",
+                                        "Height": 33,
+                                        "MarginLeft": -20,
+                                        "MarginBottom": 10,
+                                        "HorizontalAlignment": "Right",
+                                        "ImageOptions": {
+                                            "Path": "sprint.red.png",
+                                            "VerticalAlignment": "Center"
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{DarkTheme}",
+                                                "Property": "Source",
+                                                "Value": "images/sprint.white.png"
+                                            }
+                                        ]
                                     }
                                 ]
-                            },
-                            {
-                                "Name": "LeagueLogo",
-                                "BlockType": "image",
-                                "Height": "{LogoSize}",
-                                "Width": "auto",
-                                "HorizontalAlignment": "Center",
-                                "Source": "{Season.LeagueInfo.LeagueLogo}",
-                                "RenderIf": "{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
-                            },
+                            },   
                             {
                                 "BlockType": "stack",
                                 "VerticalAlignment": "Center",
@@ -75,6 +116,10 @@
                                                     {
                                                         "Property": "PaddingBottom",
                                                         "Value": "-11"
+                                                    },
+                                                    {
+                                                        "Property": "MarginTop",
+                                                        "Value": -3
                                                     }
                                                 ]
                                             }
@@ -102,6 +147,23 @@
                                 ]
                             }
                         ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "RenderIf": "{RenderSeasonName}",
+                "Margin": "0,-15,0,10",
+                "HorizontalAlignment": "Center",
+                "Source": "{Season.MainLeagueCategory.Name, Converter=StringToUpperString} - [ROUND] {Event.Position}",
+                "FontSize": "15",
+                "FontName": "{FontBold}",
+                "Foreground": "{Season.MainLeagueCategory.Color}",
+                "Triggers": [
+                    {
+                        "Condition": "{DarkTheme, Converter=BoolReverse}",
+                        "Property": "Margin",
+                        "Value": "0,-10,0,10"
                     }
                 ]
             },
