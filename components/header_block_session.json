@@ -1,0 +1,80 @@
+{
+    "ComponentName": "header_block_session",
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Items": [
+                //league name
+                {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} {Season.Name, Converter=StringToUpperString} [{Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX] 2023",
+                            "FontName": "{FontBlack}",
+                            "FontSize": 40,
+                            "Foreground": "{White}"
+                        },
+                    ]
+                },
+                //session
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "PaddingTop": 8,
+                            "VerticalAlignment": "Center",
+                            "Source": "[{Session.SessionType, Converter=StringToUpperString} CLASSIFICATION]",
+                            "FontName": "{FontBold}",
+                            "FontSize": 70,
+                            "Triggers": [
+                                {
+                                    "Condition": "{Session.SessionType, Converter=StringEquals, Parameter=race}",
+                                    "Setters": [
+                                        {
+                                            "Property": "Source",
+                                            "Value": "[{Session.RaceType, Converter=StringToUpperString} CLASSIFICATION]"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "MarginLeft": 20,
+            "Orientation": "Vertical",
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Items": [
+                        {
+                            "Name": "leagueLogo",
+                            "BlockType": "image",
+                            "Height": "{LogoSize}",
+                            "Margin": "0, 0, 0, 0",
+                            "Source": "{Season.LeagueInfo.LeagueLogo}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
