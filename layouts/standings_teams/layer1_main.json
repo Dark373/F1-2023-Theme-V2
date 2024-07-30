@@ -1,0 +1,466 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "Name": "headerBlock",
+                "MarginBottom": "-65",
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "header_block_standings",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "fontsize0": "57",
+                                "fontsize1": "57",
+                                "source0": "[TEAM]",
+                                "source1": "[STANDINGS]"
+                            }
+                        }
+                    }
+                ]
+            },
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "MarginRight": 0,
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Teams}",
+                    "RowSpacing": 12,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "FontName": "{FontRegular}",
+                        "FontSize": 30,
+                        "Foreground": "{Black}",
+                        "PaddingBottom": 25,
+                        "Triggers": [
+                            {
+                                "Condition": "{DarkTheme}",
+                                "Property": "Foreground",
+                                "Value": "{White}"
+                            }
+                        ]
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "RenderIf": "{RenderPositions}",
+                                "Component": "columns",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "20, 0",
+                                        "width": "70",
+                                        "background": "171717",
+                                        "source": "{Item.PositionString}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{White}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ChampionColour}",
+                                        "Property": "Source",
+                                        "Value": "C"
+                                    },
+                                    {
+                                        "Condition": "{ChampionColour}",
+                                        "Property": "Foreground",
+                                        "Value": "E9C652"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "Foreground",
+                                        "Value": "{White}"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "Source",
+                                        "Value": "{Item.PositionString}"
+                                    }
+                                ]
+                            }
+                        },
+                        //team line
+                        {
+                            "Header": "",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "team_line_cell_official",
+                                "ComponentOptions": {
+                                    "Vars": {}
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{RenderPositions}",
+                                        "Property": "MarginLeft",
+                                        "Value": "10",
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "MarginLeft": "-465",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "points_header"
+                            }
+                        },
+                        {
+                            "Header": "‎ ",
+                            "MarginLeft": "-224",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "",
+                                        "width": "225",
+                                        "background": "171717",
+                                        "source": "{Item.Points}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{White}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ChampionColour}",
+                                        "Property": "Foreground",
+                                        "Value": "E9C652"
+                                    },
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "Foreground",
+                                        "Value": "{White}"
+                                    },
+                                    {
+                                        "Condition": "{Item.Points, Converter=EmptyObjectToTrue}",
+                                        "Property": "Source",
+                                        "Value": "0",
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "MarginLeft": 10,
+                            "Template": {
+                                "BlockType": "component",
+                                "RenderIf": "{PositionJump}",
+                                "Component": "position_jump_cell_official"
+                            }
+                        },
+                        {
+                            "Header": "[INTERVAL]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{GapInterval}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "20, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "+{Item.PointsToAboveDiff}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{White}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Source",
+                                        "Value": ""
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "[LEADER]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{GapLeader}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "20, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "+{Item.PointsToLeaderDiff}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{White}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Source",
+                                        "Value": ""
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "[P1]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Podiums}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.CountP1, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{Standings1stCountForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[P2]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Podiums}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.CountP2, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{Standings2ndCountForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[P3]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Podiums}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.CountP3, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{Standings3rdCountForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[TOP 5]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Top5}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.CountTop5, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{StandingsTop5Foreground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[TOP 10]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Top10}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.CountTop10, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{StandingsTop10Foreground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[BEST]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Best}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.BestPos1, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{StandingsBestPositionForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[DOTD]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{DOTD}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.RaceDriverDayCount, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{StandingsDOTDForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[FL]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{FastestLap}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{SeasonProgressPointsFastestLapForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[POLES]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Poles}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{StandingsPoleCountForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[PP]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{PenaltyPoints}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{StandingsPenaltyPointCountForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[DNF]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{DNF}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.CountDnf, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{StandingsDNFForeground}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        },
+                        {
+                            "Header": "[EVENTS]",
+                            "MarginLeft": "10",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "columns",
+                                "RenderIf": "{Events}",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "padding": "30, 0",
+                                        "width": "",
+                                        "background": "171717",
+                                        "source": "{Item.EventsCount, Converter=NumberZeroToEmpty}",
+                                        "font": "{FontBlack}",
+                                        "foreground": "{White}",
+                                        "fontsize": "60"
+                                    }
+                                },
+                            }
+                        }
+                    ]
+                }
+            },
+        ]
+    }
+}

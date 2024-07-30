@@ -1,0 +1,6 @@
+{
+    "BlockRoot": {
+        "BlockType" : "component",
+        "Component" : "grid_main"
+    }
+}

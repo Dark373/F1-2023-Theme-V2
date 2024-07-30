@@ -1,0 +1,6 @@
+{
+    "LayoutName": "teamStandings",
+    "RenderType": "TeamStandings",
+	"RenderCaption": "team standings",
+    "RenderVersion" : 1
+}
