@@ -1,0 +1,20 @@
+{
+  "ThemeId": "Dark373.F1_2023_test",
+  "Name": "F1 2023 Test Build",
+  "Author": "Dark373",
+  "Version": "2.5.0",
+  "DefaultLocalizationId": "en-GB",
+  "Links": [
+    {
+      "Type": "SupportAuthor",
+      "Url": "https://www.paypal.me/373Dark?locale.x=en_GB",
+      "Caption": "Support Me"
+    },
+    {
+      "Type": "ThemeIssueReport",
+      "Url": "https://github.com/Dark373/F1-2024-Theme/issues",
+      "Caption": "Bug Report"
+    }
+  ],
+  "ForceLiveriesLoading": false
+}
