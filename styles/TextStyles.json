@@ -1,0 +1,17 @@
+[
+    {
+        "StyleName": "Num0",
+        "HorizontalAlignment": "Center"
+    },
+    {
+        "StyleName" : "Num1",
+        "FontSize": 30,
+        "HorizontalAlignment" : "Center"        
+    },
+    {
+        "StyleName" : "tableColumnHeader",
+        "FontName": "{FontRegular}",
+        "FontSize": 30,
+        "Foreground": "{White}"     
+    }
+]

@@ -1,0 +1,334 @@
+{
+    "Properties": [
+        {
+            "Name": "DarkTheme",
+            "PublicName": "Dark Theme",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "PlainBackground",
+            "PublicName": "Plain Background",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "RenderPositions",
+            "PublicName": "Render Positions",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "DriverNumber",
+            "PublicName": "Driver Number",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "DriverNationality",
+            "PublicName": "Driver Nationality",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "PositionJump",
+            "PublicName": "Position Jump",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "GapInterval",
+            "PublicName": "Gap Interval",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "GapLeader",
+            "PublicName": "Gap Leader",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Podiums",
+            "PublicName": "Podiums",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Top5",
+            "PublicName": "Top 5",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Top10",
+            "PublicName": "Top 10",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Best",
+            "PublicName": "Best",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "DOTD",
+            "PublicName": "DOTD",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "FastestLap",
+            "PublicName": "Fastest Lap",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Poles",
+            "PublicName": "Poles",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "PenaltyPoints",
+            "PublicName": "Penalty Points",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "DNF",
+            "PublicName": "DNF",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Events",
+            "PublicName": "Events",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Warnings",
+            "PublicName": "Warnings",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Time",
+            "PublicName": "Time",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Laps",
+            "PublicName": "Laps",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Grid",
+            "PublicName": "Grid",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "PitStops",
+            "PublicName": "Pit Stops",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Speed",
+            "PublicName": "Speed",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Overtakes",
+            "PublicName": "Overtakes",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Penalties",
+            "PublicName": "Penalties",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "StewardsPenalty",
+            "PublicName": "Stewards Penalty",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "GamePenalty",
+            "PublicName": "Game Penalty",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "Stints",
+            "PublicName": "Stints",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "FLPoint",
+            "PublicName": "FL Point",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "SectorTimes",
+            "PublicName": "Sector Times",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "QualiFooter",
+            "PublicName": "Quali Footer",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "StatisticsDescription",
+            "PublicName": "Statistics Description",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "PositionProgress",
+            "PublicName": "Position Progress",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "UseDriverAvatars",
+            "PublicName": "Use Driver Avatars",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "TeamNumberFontOnLineUps",
+            "PublicName": "Team Number Font On Line Ups",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "NotF1SeasonOrCustomTeams",
+            "PublicName": "Not F1 Season Or Custom Teams",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "RenderTeamColours",
+            "PublicName": "Render Team Colours",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "RealNameOnRenders",
+            "PublicName": "Real Name On Renders",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "InGameNameOnRenders",
+            "PublicName": "In Game Name On Renders",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "FullNameOnRenders",
+            "PublicName": "Full Name On Renders",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "DriverNameOnLineUp",
+            "PublicName": "Driver Name On Line Up",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "InGameNameOnLineUps",
+            "PublicName": "In Game Name On Line Ups",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ChampionColour",
+            "PublicName": "Champion Colour",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "RenderReserveDriver",
+            "PublicName": "Render Reserve Driver",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "RenderSeasonName",
+            "PublicName": "Render Season Name",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ChangeWordOrder",
+            "PublicName": "Change Word Order",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "DriverLimit",
+            "PublicName": "Driver Limit",
+            "Type": "Integer",
+            "DefaultValue": 20
+        },
+        {
+            "Name": "StartPositionsFrom",
+            "PublicName": "Start Positions From",
+            "Type": "Integer",
+            "DefaultValue": 0
+        },
+        {
+            "Name": "FontSizeOnOfficialRenders",
+            "PublicName": "Font Size On Official Renders",
+            "Type": "Integer",
+            "DefaultValue": 38
+        },
+        {
+            "Name": "SecondCalendarEventsInColumn",
+            "PublicName": "Second Calendar Events In Column",
+            "Type": "Integer",
+            "DefaultValue": 12
+        },
+        {
+            "Name": "LogoSize",
+            "PublicName": "Logo Size",
+            "Type": "Integer",
+            "DefaultValue": 44
+        },
+        {
+            "Name": "ReserveDriverMax",
+            "PublicName": "Reserve Driver Max",
+            "Type": "Integer",
+            "DefaultValue": 0
+        },
+        {
+            "Name": "TheGridPositionLength",
+            "PublicName": "The Grid Position Length",
+            "Type": "Integer",
+            "DefaultValue": 920
+        },
+        {
+            "Name": "GPName",
+            "PublicName": "GP Name",
+            "Type": "String",
+            "DefaultValue": "Change Me"
+        }
+    ]
+}
