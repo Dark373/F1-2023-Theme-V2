@@ -1,8 +1,8 @@
 {
-  "ThemeId": "Dark373.F1_2023_test",
-  "Name": "F1 2023 Test Build",
+  "ThemeId": "Dark373.F1_2023_Theme",
+  "Name": "F1 2023 Theme",
   "Author": "Dark373",
-  "Version": "2.5.0",
+  "Version": "2.3.0",
   "DefaultLocalizationId": "en-GB",
   "Links": [
     {
