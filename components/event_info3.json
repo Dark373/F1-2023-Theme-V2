@@ -14,6 +14,7 @@
             "MarginLeft": -30,
             "FontSize": 20,
             "HorizontalAlignment": "Left",
+            "FontName": "{FontRegular}",
             "Foreground": "{Black}"
         },
         "Columns": [
@@ -111,7 +112,7 @@
                                     "Foreground": "{Black}",
                                     "HorizontalAlignment": "Left",
                                     "VerticalAlignment": "Bottom",
-                                    "FontName": "{Magistral-BoldItalic}",
+                                    "FontName": "Magistral-BoldItalic",
                                     "FontSize": 30,
                                     "Triggers": [
                                         {
@@ -139,7 +140,6 @@
                 "Header": "",
                 "Template": {
                     "BlockType": "dock",
-                    "MarginRight": "",
                     "VerticalAlignment": "Center",
                     "Padding": "0, 0",
                     "Items": [
@@ -194,8 +194,8 @@
                     "BlockType": "text",
                     "Source": "{Item.IntervalRace}",
                     "HorizontalAlignment": "Left",
+                    "FontName": "{FontItalic}",
                     "TextOptions": {
-                        "FontName": "{FontItalic}",
                         "Foreground": "{Black}",
                         "FontSize": 30,
                         "HorizontalAlignment": "Right"
